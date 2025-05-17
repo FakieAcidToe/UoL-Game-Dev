@@ -10,7 +10,7 @@ public class CardsManager : MonoBehaviour
 
 	[SerializeField] float xDistApart = 100f; // distance between cards in hand
 	[SerializeField] float cardTilt = 10f; // angle to tilt cards in hand
-	[SerializeField] float tiltOffsetDist = 50f; // distance to offset the cards depending on angle
+	[SerializeField] float tiltOffsetDist = 200f; // distance to offset the cards depending on angle
 
 	List<AbstractCard> cardsInHand;
 
@@ -42,8 +42,8 @@ public class CardsManager : MonoBehaviour
 		{
 			AbstractCard card = cardsInHand[i];
 
-			float angle = cardTilt * (cardsInHand.Count / 2 - i);
-			card.SetTargetPosition(-xDistApart * (cardsInHand.Count - i - 1) + Mathf.Sin(Mathf.Deg2Rad * angle) * tiltOffsetDist, Mathf.Cos(Mathf.Deg2Rad * angle) * tiltOffsetDist);
+			float angle = cardTilt * ((float)(cardsInHand.Count - 1) / 2 - i);
+			card.SetTargetPosition(-xDistApart * (cardsInHand.Count - i - 1) + Mathf.Sin(Mathf.Deg2Rad * angle) * tiltOffsetDist, (Mathf.Cos(Mathf.Deg2Rad * angle) - 1) * tiltOffsetDist);
 			card.SetTargetRotation(angle);
 		}
 	}
