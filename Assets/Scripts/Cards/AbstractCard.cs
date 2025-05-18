@@ -5,7 +5,7 @@ public class AbstractCard : MonoBehaviour
 {
 	Image image;
 
-	[SerializeField] float lerpAmount = 0.1f; // how fast to lerp to target position and angle
+	[SerializeField] float lerpSpeed = 20f; // how fast to lerp to target position and angle
 	Vector3 targetPosition;
 	float targetAngle;
 
@@ -33,7 +33,7 @@ public class AbstractCard : MonoBehaviour
 				shouldLerpPos = false;
 			}
 			else
-				transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, lerpAmount);
+				transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, 1f - Mathf.Exp(-lerpSpeed * Time.deltaTime));
 		}
 
 		if (shouldLerpRot)
@@ -45,7 +45,7 @@ public class AbstractCard : MonoBehaviour
 				shouldLerpRot = false;
 			}
 			else
-				transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0, 0, targetAngle), lerpAmount);
+				transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0, 0, targetAngle), 1f - Mathf.Exp(-lerpSpeed * Time.deltaTime));
 		}
 	}
 

@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c320b1b22f23647a8ab0e00ebf6c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpAmount: 0.1
+  lerpSpeed: 20
   lerpLeeway: 0.01
 --- !u!222 &8662785545797471071
 CanvasRenderer:
