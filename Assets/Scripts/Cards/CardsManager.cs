@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class CardsManager : MonoBehaviour
@@ -27,27 +26,25 @@ public class CardsManager : MonoBehaviour
 
 	void Update()
 	{
-		// switch cards with scroll wheel
 		if (cardsInHand.Count > 0)
 		{
+			// switch cards with number key
+			for (KeyCode key = KeyCode.Alpha0; key <= KeyCode.Alpha9; ++key)
+			{
+				if (Input.GetKeyDown(key))
+				{
+					int numberPressed = KeyCode.Alpha0 == key ? 9 : key - KeyCode.Alpha0 - 1;
+					if (numberPressed < cardsInHand.Count)
+						SelectCard(numberPressed);
+				}
+			}
+
+			// switch cards with scroll wheel
 			float scroll = Input.GetAxis("Mouse ScrollWheel");
-
 			if (scroll > 0f) // scroll up
-			{
-				int oldCard = selectedCard;
-				selectedCard = (cardsInHand.Count + selectedCard - 1) % cardsInHand.Count;
-
-				OrganizeCard(oldCard);
-				OrganizeCard(selectedCard);
-			}
+				SelectCard((cardsInHand.Count + selectedCard - 1) % cardsInHand.Count);
 			else if (scroll < 0f) // scroll down
-			{
-				int oldCard = selectedCard;
-				selectedCard = (selectedCard + 1) % cardsInHand.Count;
-
-				OrganizeCard(oldCard);
-				OrganizeCard(selectedCard);
-			}
+				SelectCard((selectedCard + 1) % cardsInHand.Count);
 		}
 
 		// use selected card with space
@@ -103,6 +100,17 @@ public class CardsManager : MonoBehaviour
 					(Mathf.Cos(Mathf.Deg2Rad * angle) - 1) * tiltOffsetDist + (_cardNo == selectedCard ? selectedCardY : 0));
 				card.SetTargetRotation(_cardNo == selectedCard ? 0 : angle);
 			}
+		}
+	}
+
+	void SelectCard(int _cardNo)
+	{
+		if (cardsInHand.Count > 0 && cardsInHand.Count > _cardNo)
+		{
+			int oldCard = selectedCard;
+			selectedCard = _cardNo;
+			OrganizeCard(oldCard);
+			OrganizeCard(selectedCard);
 		}
 	}
 }
