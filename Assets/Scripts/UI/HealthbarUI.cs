@@ -1,40 +1,74 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class HealthbarUI : MonoBehaviour
 {
+	[System.Serializable]
+	class FillBar
+	{
+		[SerializeField] float lerpSpeed = 20f;
+
+		float visualHealth = 0;
+		bool shouldLerpHealth = false;
+
+		[SerializeField] RectTransform fillBarMask;
+		[SerializeField] RectTransform fillBar;
+
+		public void SetVisualHealth(int _health)
+		{
+			visualHealth = _health;
+		}
+
+		public void SetShouldLerpHealth(bool _shouldLerp)
+		{
+			shouldLerpHealth = _shouldLerp;
+		}
+
+		public void Update(int _health, int _maxHealth)
+		{
+			if (shouldLerpHealth)
+			{
+				// lerp to current health
+				if (Mathf.Abs(visualHealth - _health) < 0.1f)
+				{
+					visualHealth = _health;
+					shouldLerpHealth = false;
+					UpdateMaskPosition(_maxHealth);
+				}
+				else
+				{
+					visualHealth = Mathf.Lerp(visualHealth, _health, 1f - Mathf.Exp(-lerpSpeed * Time.deltaTime));
+					UpdateMaskPosition(_maxHealth);
+				}
+			}
+		}
+
+		public void UpdateMaskPosition(int _maxHealth)
+		{
+			if (fillBarMask != null && fillBar != null)
+			{
+				float x = Mathf.Lerp(-fillBarMask.rect.width, 0, Mathf.Clamp(visualHealth / _maxHealth, 0, _maxHealth));
+				fillBarMask.localPosition = new Vector3(x, 0, 0);
+				fillBar.localPosition = new Vector3(-x, 0, 0);
+			}
+		}
+	}
+
 	[SerializeField, Min(0)] int health = 100;
 	[SerializeField, Min(1)] int maxHealth = 100;
 
-	[SerializeField] float lerpSpeed = 20f;
-
-	float visualHealth = 0;
-	bool shouldLerpHealth = false;
-
-	[SerializeField] RectTransform fillBarMask;
-	[SerializeField] RectTransform fillBar;
+	[SerializeField] FillBar[] fillBars;
 
 	void Awake()
 	{
-		visualHealth = health;
+		foreach (FillBar bar in fillBars)
+			bar.SetVisualHealth(health);
 	}
 
 	void Update()
 	{
-		if (shouldLerpHealth)
-		{
-			// lerp to current health
-			if (Mathf.Abs(visualHealth - health) < 1)
-			{
-				visualHealth = health;
-				shouldLerpHealth = false;
-				UpdateMaskPosition();
-			}
-			else
-			{
-				visualHealth = Mathf.Lerp(visualHealth, health, 1f - Mathf.Exp(-lerpSpeed * Time.deltaTime));
-				UpdateMaskPosition();
-			}
-		}
+		foreach (FillBar bar in fillBars)
+			bar.Update(health, maxHealth);
 	}
 
 	public void SetHealthRelative(int _healthAdd)
@@ -45,22 +79,17 @@ public class HealthbarUI : MonoBehaviour
 	public void SetHealth(int _health)
 	{
 		health = Mathf.Clamp(_health, 0, maxHealth);
-		shouldLerpHealth = true;
-	}
 
-	void UpdateMaskPosition()
-	{
-		if (fillBarMask != null && fillBar != null)
-		{
-			float x = Mathf.Lerp(-fillBarMask.rect.width, 0, Mathf.Clamp(visualHealth / maxHealth, 0, maxHealth));
-			fillBarMask.localPosition = new Vector3(x, 0, 0);
-			fillBar.localPosition = new Vector3(-x, 0, 0);
-		}
+		foreach (FillBar bar in fillBars)
+			bar.SetShouldLerpHealth(true);
 	}
 
 	void OnValidate()
 	{
-		visualHealth = health;
-		UpdateMaskPosition();
+		foreach (FillBar bar in fillBars)
+		{
+			bar.SetVisualHealth(health);
+			bar.UpdateMaskPosition(maxHealth);
+		}
 	}
 }
