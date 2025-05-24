@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class HealthbarUI : MonoBehaviour
 {
@@ -12,17 +11,11 @@ public class HealthbarUI : MonoBehaviour
 	bool shouldLerpHealth = false;
 
 	[SerializeField] RectTransform fillBarMask;
-	[SerializeField] RectTransform scrollingTexture;
-	[SerializeField] Vector2 scrollSpeed;
-
-	Image scrollingTextureImage;
-	Vector2 offset;
+	[SerializeField] RectTransform fillBar;
 
 	void Awake()
 	{
 		visualHealth = health;
-
-		scrollingTextureImage = scrollingTexture.GetComponent<Image>();
 	}
 
 	void Update()
@@ -42,10 +35,6 @@ public class HealthbarUI : MonoBehaviour
 				UpdateMaskPosition();
 			}
 		}
-
-		// scroll healthbar bg
-		offset += scrollSpeed * Time.deltaTime;
-		scrollingTextureImage.materialForRendering.SetTextureOffset("_MainTex", offset); // use materialForRendering because it's under a mask
 	}
 
 	public void SetHealthRelative(int _healthAdd)
@@ -61,11 +50,11 @@ public class HealthbarUI : MonoBehaviour
 
 	void UpdateMaskPosition()
 	{
-		if (fillBarMask != null && scrollingTexture != null)
+		if (fillBarMask != null && fillBar != null)
 		{
 			float x = Mathf.Lerp(-fillBarMask.rect.width, 0, Mathf.Clamp(visualHealth / maxHealth, 0, maxHealth));
 			fillBarMask.localPosition = new Vector3(x, 0, 0);
-			scrollingTexture.localPosition = new Vector3(-x, 0, 0);
+			fillBar.localPosition = new Vector3(-x, 0, 0);
 		}
 	}
 
