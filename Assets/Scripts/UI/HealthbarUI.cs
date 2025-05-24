@@ -6,7 +6,8 @@ public class HealthbarUI : MonoBehaviour
 	[System.Serializable]
 	class FillBar
 	{
-		[SerializeField] float lerpSpeed = 20f;
+		[SerializeField] float lerpSpeedIncrease;
+		[SerializeField] float lerpSpeedDecrease;
 
 		float visualHealth = 0;
 		bool shouldLerpHealth = false;
@@ -37,7 +38,7 @@ public class HealthbarUI : MonoBehaviour
 				}
 				else
 				{
-					visualHealth = Mathf.Lerp(visualHealth, _health, 1f - Mathf.Exp(-lerpSpeed * Time.deltaTime));
+					visualHealth = Mathf.Lerp(visualHealth, _health, 1f - Mathf.Exp(-(visualHealth < _health ? lerpSpeedIncrease : lerpSpeedDecrease) * Time.deltaTime));
 					UpdateMaskPosition(_maxHealth);
 				}
 			}
