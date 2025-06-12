@@ -1,22 +1,31 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
 	[SerializeField] float moveSpeed = 2f;
 
 	Rigidbody2D rb;
 	Vector2 movement;
 
+	Transform target;
+
 	void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
 	}
 
+	public void SetTarget(Transform _target)
+	{
+		target = _target;
+	}
+
 	void Update()
 	{
-		movement.x = Input.GetAxisRaw("Horizontal");
-		movement.y = Input.GetAxisRaw("Vertical");
+		if (target == null)
+			movement = Vector2.zero;
+		else
+			movement = target.position - transform.position;
 
 		// Normalize diagonal movement
 		if (movement.sqrMagnitude > 1) movement.Normalize();

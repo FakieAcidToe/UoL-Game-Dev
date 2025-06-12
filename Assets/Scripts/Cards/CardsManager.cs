@@ -7,6 +7,7 @@ public class CardsManager : MonoBehaviour
 
 	[SerializeField] Transform cardCanvasTransform;
 
+	[Header("Card Positioning")]
 	[SerializeField] float xDistApart = 100f; // distance between cards in hand
 	[SerializeField] float cardTilt = 10f; // angle to tilt cards in hand
 	[SerializeField] float tiltOffsetDist = 200f; // distance to offset the cards depending on angle
