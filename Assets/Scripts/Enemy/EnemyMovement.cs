@@ -20,6 +20,11 @@ public class EnemyMovement : MonoBehaviour
 		target = _target;
 	}
 
+	public void Die()
+	{
+		Destroy(gameObject);
+	}
+
 	void Update()
 	{
 		if (target == null)
