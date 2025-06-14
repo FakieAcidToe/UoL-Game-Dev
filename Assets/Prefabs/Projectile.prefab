@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  lifetime: 1
-  pierce: 0
+  lifetime: 0.8
+  pierce: 1
 --- !u!212 &8753086406733697629
 SpriteRenderer:
   m_ObjectHideFlags: 0

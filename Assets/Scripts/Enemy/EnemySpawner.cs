@@ -9,14 +9,34 @@ public class EnemySpawner : MonoBehaviour
 	[SerializeField, Min(0)] float minRadius = 10f;
 	[SerializeField, Min(0)] float maxRadius = 20f;
 
+	[Header("Spawning properties")]
+	[SerializeField] bool isSpawning = true;
+	[SerializeField] float interval = 0.3f;
+
 	void OnValidate()
 	{
 		if (minRadius > maxRadius) minRadius = maxRadius;
 	}
 
-	public void SpawnEnemyRandom() // temp function for buttons
+	public void ToggleSpawning()
 	{
-		SpawnEnemy();
+		isSpawning = !isSpawning;
+	}
+
+	float timer = 0f;
+
+	void Update()
+	{
+		if (isSpawning)
+		{
+			timer += Time.deltaTime;
+
+			if (timer >= interval)
+			{
+				SpawnEnemy();
+				timer = 0f; // Reset timer
+			}
+		}
 	}
 
 	public EnemyMovement SpawnEnemy()
