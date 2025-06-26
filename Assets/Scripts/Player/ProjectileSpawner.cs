@@ -6,17 +6,21 @@ public class ProjectileSpawner : MonoBehaviour
 	[SerializeField] float interval = 2f; // Time in seconds between each bullet
 
 	float timer = 0f;
+	public Vector2 mouseDirection { get; private set; }
 
 	Camera mainCamera;
 	
 	void Start()
 	{
 		mainCamera = Camera.main;
+		mouseDirection = Vector2.zero;
 	}
 
 	void Update()
 	{
 		timer += Time.deltaTime;
+
+		mouseDirection = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
 
 		if (timer >= interval)
 		{
@@ -30,7 +34,7 @@ public class ProjectileSpawner : MonoBehaviour
 		Projectile newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
 		// mouse direction from gameobject
-		newProjectile.SetDirection((mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized);
+		newProjectile.SetDirection(mouseDirection);
 
 		return newProjectile;
 	}

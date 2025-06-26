@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: d935724d9c9abac40819882c0f9e02d0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - idleSide1: {fileID: -7657686558104425061, guid: 577fe13de699b3043a8c6b5cae956af0,
+      type: 3}
+  - idleSide2: {fileID: 8872000701690470942, guid: 577fe13de699b3043a8c6b5cae956af0,
+      type: 3}
+  - idleFront1: {fileID: -7065880204043774816, guid: 577fe13de699b3043a8c6b5cae956af0,
+      type: 3}
+  - idleFront2: {fileID: -5744648313057964559, guid: 577fe13de699b3043a8c6b5cae956af0,
+      type: 3}
+  - idleBack1: {fileID: 580587813945240042, guid: 577fe13de699b3043a8c6b5cae956af0,
+      type: 3}
+  - idleBack2: {fileID: -3629926019360387177, guid: 577fe13de699b3043a8c6b5cae956af0,
+      type: 3}
+  - walkSide1: {instanceID: 0}
+  - walkSide2: {instanceID: 0}
+  - walkFront1: {instanceID: 0}
+  - walkFront2: {instanceID: 0}
+  - walkBack1: {instanceID: 0}
+  - walkBack2: {instanceID: 0}
+  - attackSide1: {instanceID: 0}
+  - attackSide2: {instanceID: 0}
+  - attackFront1: {instanceID: 0}
+  - attackFront2: {instanceID: 0}
+  - attackBack1: {instanceID: 0}
+  - attackBack2: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
