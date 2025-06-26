@@ -30,11 +30,9 @@ public class Projectile : MonoBehaviour
 		if (enemyHP != null)
 		{
 			enemyHP.TakeDamage(damage); // damage enemy
+			enemyHP.movement.ReceiveKnockback(direction.normalized * knockback);
+
 			if (--pierce < 0) Destroy(gameObject); // handle projectile piercing
-			
-			EnemyMovement enemyMovement = enemyHP.GetComponent<EnemyMovement>();
-			if (enemyMovement != null)
-				enemyMovement.ReceiveKnockback(direction.normalized * knockback);
 		}
 	}
 

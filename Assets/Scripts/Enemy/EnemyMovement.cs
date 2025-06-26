@@ -25,8 +25,7 @@ public class EnemyMovement : MonoBehaviour
 
 	void Update()
 	{
-
-		if (hitstun > 0)
+		if (IsInHitstun())
 		{
 			movement = Vector2.zero;
 			hitstun -= Time.deltaTime;
@@ -45,13 +44,20 @@ public class EnemyMovement : MonoBehaviour
 	void FixedUpdate()
 	{
 		// move the player using physics
-		if (hitstun <= 0)
+		if (!IsInHitstun())
 			rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 	}
 
 	public void ReceiveKnockback(Vector2 _force)
 	{
+		if (IsInHitstun()) return;
+
 		rb.AddForce(_force, ForceMode2D.Impulse);
 		hitstun = hitstunTime;
+	}
+
+	public bool IsInHitstun()
+	{
+		return hitstun > 0;
 	}
 }
