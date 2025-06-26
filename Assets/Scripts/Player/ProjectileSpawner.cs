@@ -7,6 +7,13 @@ public class ProjectileSpawner : MonoBehaviour
 
 	float timer = 0f;
 
+	Camera mainCamera;
+	
+	void Start()
+	{
+		mainCamera = Camera.main;
+	}
+
 	void Update()
 	{
 		timer += Time.deltaTime;
@@ -14,7 +21,7 @@ public class ProjectileSpawner : MonoBehaviour
 		if (timer >= interval)
 		{
 			SpawnProjectile();
-			timer = 0f; // Reset timer
+			timer = 0f; // reset timer
 		}
 	}
 
@@ -23,7 +30,7 @@ public class ProjectileSpawner : MonoBehaviour
 		Projectile newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
 		// mouse direction from gameobject
-		newProjectile.SetDirection((Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position));
+		newProjectile.SetDirection((mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized);
 
 		return newProjectile;
 	}

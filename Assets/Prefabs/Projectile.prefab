@@ -49,6 +49,8 @@ MonoBehaviour:
   speed: 2
   lifetime: 0.8
   pierce: 1
+  damage: 1
+  knockback: 0.5
 --- !u!212 &8753086406733697629
 SpriteRenderer:
   m_ObjectHideFlags: 0

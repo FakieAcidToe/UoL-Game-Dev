@@ -62,7 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1563830058664889961, guid: 4fd4100fed3b7db43bb47d054f377eda,
     type: 3}
-  interval: 0.15
+  interval: 0.3
 --- !u!212 &5878548590872061664
 SpriteRenderer:
   m_ObjectHideFlags: 0

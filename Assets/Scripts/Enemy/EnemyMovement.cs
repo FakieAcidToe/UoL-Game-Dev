@@ -10,6 +10,9 @@ public class EnemyMovement : MonoBehaviour
 
 	Transform target;
 
+	[SerializeField] float hitstunTime = 0.05f;
+	float hitstun = 0; // time left in hitstun (cant move)
+
 	void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -20,25 +23,35 @@ public class EnemyMovement : MonoBehaviour
 		target = _target;
 	}
 
-	public void Die()
-	{
-		Destroy(gameObject);
-	}
-
 	void Update()
 	{
-		if (target == null)
-			movement = Vector2.zero;
-		else
-			movement = target.position - transform.position;
 
-		// Normalize diagonal movement
-		if (movement.sqrMagnitude > 1) movement.Normalize();
+		if (hitstun > 0)
+		{
+			movement = Vector2.zero;
+			hitstun -= Time.deltaTime;
+			if (hitstun < 0) hitstun = 0;
+		}
+		else
+		{
+			if (target == null) movement = Vector2.zero;
+			else movement = target.position - transform.position;
+
+			// Normalize diagonal movement
+			if (movement.sqrMagnitude > 1) movement.Normalize();
+		}
 	}
 
 	void FixedUpdate()
 	{
 		// move the player using physics
-		rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+		if (hitstun <= 0)
+			rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+	}
+
+	public void ReceiveKnockback(Vector2 _force)
+	{
+		rb.AddForce(_force, ForceMode2D.Impulse);
+		hitstun = hitstunTime;
 	}
 }

@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
 	[SerializeField] float speed = 1f; // projectile movement speed
 	[SerializeField] float lifetime = 2f; // how long the projectile lasts
 	[SerializeField] int pierce = 0; // how many enemies the projectile can hit before dying
+	[SerializeField] int damage = 1; // damage amount
+	[SerializeField] float knockback = 0.5f; // knockback strength
 
 	Rigidbody2D rb;
 	Vector2 direction;
@@ -24,11 +26,15 @@ public class Projectile : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		EnemyMovement enemy = collision.gameObject.GetComponent<EnemyMovement>();
-		if (enemy != null)
+		EnemyHP enemyHP = collision.gameObject.GetComponent<EnemyHP>();
+		if (enemyHP != null)
 		{
-			enemy.Die(); // kill enemy
-			if (--pierce < 0) Destroy(gameObject); // handle piercing
+			enemyHP.TakeDamage(damage); // damage enemy
+			if (--pierce < 0) Destroy(gameObject); // handle projectile piercing
+			
+			EnemyMovement enemyMovement = enemyHP.GetComponent<EnemyMovement>();
+			if (enemyMovement != null)
+				enemyMovement.ReceiveKnockback(direction.normalized * knockback);
 		}
 	}
 
