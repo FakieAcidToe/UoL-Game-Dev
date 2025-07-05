@@ -56,7 +56,7 @@ public class CardsManager : MonoBehaviour
 		{
 			if (selectedCard >= 0 && selectedCard < cardsInHand.Count)
 			{
-				AbstractCard card = cardsInHand[selectedCard];
+				ActiveCard card = cardsInHand[selectedCard].GetComponent<ActiveCard>();
 				if (card != null)
 				{
 					card.UseCardEffect();
