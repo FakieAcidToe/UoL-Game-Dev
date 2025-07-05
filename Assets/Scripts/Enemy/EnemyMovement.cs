@@ -3,14 +3,18 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyMovement : MonoBehaviour
 {
+	[Header("Movement")]
 	[SerializeField] float moveSpeed = 2f;
+
+	[Header("Knockback/Hitstun Multipliers")]
+	[SerializeField, Min(0)] float knockbackAdj = 1f;
+	[SerializeField, Min(0)] float hitstunAdj = 1f;
 
 	Rigidbody2D rb;
 	Vector2 movement;
 
 	Transform target;
 
-	[SerializeField] float hitstunTime = 0.05f;
 	float hitstun = 0; // time left in hitstun (cant move)
 
 	void Awake()
@@ -36,7 +40,7 @@ public class EnemyMovement : MonoBehaviour
 			if (target == null) movement = Vector2.zero;
 			else movement = target.position - transform.position;
 
-			// Normalize diagonal movement
+			// normalize diagonal movement
 			if (movement.sqrMagnitude > 1) movement.Normalize();
 		}
 	}
@@ -48,12 +52,12 @@ public class EnemyMovement : MonoBehaviour
 			rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 	}
 
-	public void ReceiveKnockback(Vector2 _force)
+	public void ReceiveKnockback(Vector2 _force, float _hitstun)
 	{
 		if (IsInHitstun()) return;
 
-		rb.AddForce(_force, ForceMode2D.Impulse);
-		hitstun = hitstunTime;
+		rb.AddForce(_force * knockbackAdj, ForceMode2D.Impulse);
+		hitstun = _hitstun * hitstunAdj;
 	}
 
 	public bool IsInHitstun()

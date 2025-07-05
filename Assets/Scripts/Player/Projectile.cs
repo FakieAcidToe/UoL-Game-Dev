@@ -1,14 +1,20 @@
 ﻿using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Projectile : MonoBehaviour
 {
-	[SerializeField] float speed = 1f; // projectile movement speed
-	[SerializeField] float lifetime = 2f; // how long the projectile lasts
-	[SerializeField] int pierce = 0; // how many enemies the projectile can hit before dying
-	[SerializeField] int damage = 1; // damage amount
-	[SerializeField] float knockback = 0.5f; // knockback strength
+	[SerializeField, Tooltip("Projectile movement speed")]
+	float speed = 1f;
+	[SerializeField, Tooltip("How long the projectile lasts"), Min(0)]
+	float lifetime = 2f;
+	[SerializeField, Tooltip("How many enemies the projectile can hit before dying, -1 = infinite pierce"), Min(-1)]
+	int pierce = 0;
+	[SerializeField, Tooltip("Damage amount to deal on hit")]
+	int damage = 1;
+	[SerializeField, Tooltip("Knockback impulse strength applied on hit")]
+	float knockback = 0.5f;
+	[SerializeField, Tooltip("Hitstun duration applied on hit")]
+	float hitstun = 0.05f;
 
 	Rigidbody2D rb;
 	Vector2 direction;
@@ -30,9 +36,9 @@ public class Projectile : MonoBehaviour
 		if (enemyHP != null)
 		{
 			enemyHP.TakeDamage(damage); // damage enemy
-			enemyHP.movement.ReceiveKnockback(direction.normalized * knockback);
+			enemyHP.movement.ReceiveKnockback(direction.normalized * knockback, hitstun);
 
-			if (--pierce < 0) Destroy(gameObject); // handle projectile piercing
+			if (pierce > -1 && --pierce < 0) Destroy(gameObject); // handle projectile piercing
 		}
 	}
 
@@ -40,8 +46,7 @@ public class Projectile : MonoBehaviour
 	{
 		lifetimeTimer += Time.deltaTime;
 
-		if (lifetimeTimer >= lifetime)
-			Destroy(gameObject);
+		if (lifetimeTimer >= lifetime) Destroy(gameObject);
 	}
 
 	void FixedUpdate()
