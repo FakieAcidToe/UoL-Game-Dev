@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer), typeof(PlayerMovement), typeof(ProjectileSpawner))]
+[RequireComponent(typeof(SpriteRenderer), typeof(PlayerMovement))]
 public class PlayerAnimController : MonoBehaviour
 {
 	[SerializeField] PlayerAnimationSet animationSet;
@@ -15,13 +13,13 @@ public class PlayerAnimController : MonoBehaviour
 
 	SpriteRenderer spriteRenderer;
 	PlayerMovement movement;
-	ProjectileSpawner spawner;
+	Camera mainCamera;
 
 	void Awake()
 	{
+		mainCamera = Camera.main;
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		movement = GetComponent<PlayerMovement>();
-		spawner = GetComponent<ProjectileSpawner>();
 		UpdateSprite();
 	}
 
@@ -40,8 +38,9 @@ public class PlayerAnimController : MonoBehaviour
 
 	void UpdateSprite()
 	{
-		float x = spawner.mouseDirection.x;
-		float y = spawner.mouseDirection.y;
+		Vector2 mouseDirection = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+		float x = mouseDirection.x;
+		float y = mouseDirection.y;
 
 		if (Mathf.Abs(x) > Mathf.Abs(y))
 		{

@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour
 	float hitstun = 0.05f;
 
 	Rigidbody2D rb;
-	Vector2 direction;
+	Vector2 direction = Vector2.zero;
 	float lifetimeTimer = 0f;
 
 	void Awake()
