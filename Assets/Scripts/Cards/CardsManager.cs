@@ -3,9 +3,12 @@ using UnityEngine;
 
 public class CardsManager : MonoBehaviour
 {
+	[Header("Prefabs")]
 	[SerializeField] AbstractCard cardPrefab;
 
+	[Header("GameObject References")]
 	[SerializeField] Transform cardCanvasTransform;
+	[SerializeField] Transform playerTransform;
 
 	[Header("Card Positioning")]
 	[SerializeField] bool selectable = false; // if cards can be selected
@@ -71,6 +74,7 @@ public class CardsManager : MonoBehaviour
 		AbstractCard newCard = Instantiate(cardPrefab, cardCanvasTransform);
 
 		newCard.SetColour(Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f)); // random colour
+		newCard.SetPlayerTransform(playerTransform);
 
 		cardsInHand.Add(newCard);
 

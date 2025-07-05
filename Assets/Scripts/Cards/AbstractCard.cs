@@ -15,6 +15,8 @@ public class AbstractCard : MonoBehaviour
 
 	[Header("GameObject References"), SerializeField]
 	Image backgroundImage;
+	
+	protected Transform playerObj;
 
 	void Awake()
 	{
@@ -22,7 +24,10 @@ public class AbstractCard : MonoBehaviour
 		targetAngle = transform.localRotation.eulerAngles.z;
 		shouldLerpPos = false;
 		shouldLerpRot = false;
+	}
 
+	void Start()
+	{
 		OnPickup();
 	}
 
@@ -67,6 +72,11 @@ public class AbstractCard : MonoBehaviour
 	public void SetColour(Color _color)
 	{
 		backgroundImage.color = _color;
+	}
+
+	public void SetPlayerTransform(Transform _player)
+	{
+		playerObj = _player;
 	}
 
 	public void SetTargetPosition(float _x, float _y)

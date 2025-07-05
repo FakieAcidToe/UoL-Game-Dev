@@ -4,9 +4,10 @@ public class WeaponCard : AbstractCard
 {
 	[SerializeField] ProjectileSpawner weaponPrefab;
 
+	ProjectileSpawner spawnedWeapon;
+
 	protected override void OnPickup()
 	{
-		Debug.Log("Give player weapon");
-		// give playerobj the weapon
+		spawnedWeapon = Instantiate(weaponPrefab, playerObj);
 	}
 }

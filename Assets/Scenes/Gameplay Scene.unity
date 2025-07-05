@@ -750,6 +750,7 @@ MonoBehaviour:
   cardPrefab: {fileID: 4094358817951472432, guid: ef17a03cfadc7894c88e0553bc726e64,
     type: 3}
   cardCanvasTransform: {fileID: 2113112839}
+  playerTransform: {fileID: 1165122525}
   selectable: 1
   xDistApart: 100
   cardTilt: 10
@@ -786,9 +787,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ea0877e686b1546b277fdc6e74a152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+  cardPrefab: {fileID: 7976142645815946100, guid: 729de2d7bb33ece4788e49267abb9392,
     type: 3}
   cardCanvasTransform: {fileID: 2096230687}
+  playerTransform: {fileID: 1165122525}
   selectable: 0
   xDistApart: -100
   cardTilt: 0
