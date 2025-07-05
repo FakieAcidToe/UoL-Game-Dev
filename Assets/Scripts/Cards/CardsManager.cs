@@ -8,6 +8,7 @@ public class CardsManager : MonoBehaviour
 	[SerializeField] Transform cardCanvasTransform;
 
 	[Header("Card Positioning")]
+	[SerializeField] bool selectable = false; // if cards can be selected
 	[SerializeField] float xDistApart = 100f; // distance between cards in hand
 	[SerializeField] float cardTilt = 10f; // angle to tilt cards in hand
 	[SerializeField] float tiltOffsetDist = 200f; // distance to offset the cards depending on angle
@@ -27,6 +28,8 @@ public class CardsManager : MonoBehaviour
 
 	void Update()
 	{
+		if (!selectable) return;
+
 		if (cardsInHand.Count > 0)
 		{
 			// switch cards with number key
@@ -48,8 +51,8 @@ public class CardsManager : MonoBehaviour
 				SelectCard((selectedCard + 1) % cardsInHand.Count);
 		}
 
-		// use selected card with space
-		if (Input.GetKeyUp(KeyCode.Space))
+		// use selected card with Space or E
+		if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.E))
 		{
 			if (selectedCard >= 0 && selectedCard < cardsInHand.Count)
 			{
@@ -57,16 +60,7 @@ public class CardsManager : MonoBehaviour
 				if (card != null)
 				{
 					card.UseCardEffect();
-					cardsInHand.RemoveAt(selectedCard);
-					card.DestroySelf();
-
-					if (cardsInHand.Count > 0)
-					{
-						selectedCard %= cardsInHand.Count;
-						OrganizeHand();
-					}
-					else
-						selectedCard = 0;
+					//RemoveCard(card);
 				}
 			}
 		}
@@ -81,6 +75,26 @@ public class CardsManager : MonoBehaviour
 		cardsInHand.Add(newCard);
 
 		OrganizeHand();
+	}
+
+	public void RemoveCard(int _index)
+	{
+		if (selectedCard >= 0 && selectedCard < cardsInHand.Count)
+			RemoveCard(cardsInHand[selectedCard]);
+	}
+
+	public void RemoveCard(AbstractCard _card)
+	{
+		cardsInHand.Remove(_card);
+		_card.DestroySelf();
+
+		if (cardsInHand.Count > 0)
+		{
+			selectedCard %= cardsInHand.Count;
+			OrganizeHand();
+		}
+		else
+			selectedCard = 0;
 	}
 
 	void OrganizeHand()
@@ -98,8 +112,8 @@ public class CardsManager : MonoBehaviour
 			{
 				float angle = cardTilt * ((float)(cardsInHand.Count - 1) / 2 - _cardNo);
 				card.SetTargetPosition(-xDistApart * (cardsInHand.Count - _cardNo - 1) + Mathf.Sin(Mathf.Deg2Rad * angle) * tiltOffsetDist,
-					(Mathf.Cos(Mathf.Deg2Rad * angle) - 1) * tiltOffsetDist + (_cardNo == selectedCard ? selectedCardY : 0));
-				card.SetTargetRotation(_cardNo == selectedCard ? 0 : angle);
+					(Mathf.Cos(Mathf.Deg2Rad * angle) - 1) * tiltOffsetDist + ((selectable && _cardNo == selectedCard) ? selectedCardY : 0));
+				card.SetTargetRotation((selectable && _cardNo == selectedCard) ? 0 : angle);
 			}
 		}
 	}

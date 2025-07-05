@@ -3,19 +3,21 @@ using UnityEngine.UI;
 
 public class AbstractCard : MonoBehaviour
 {
-	Image image;
-
-	[SerializeField] float lerpSpeed = 20f; // how fast to lerp to target position and angle
+	[Header("Card Movement"), Tooltip("How fast to lerp to target position and angle"), SerializeField]
+	float lerpSpeed = 20f;
 	Vector3 targetPosition;
 	float targetAngle;
 
-	[SerializeField] float lerpLeeway = 0.01f; // how close should it lerp to before it snaps to target and stop lerping
+	[Tooltip("How close should it lerp to before it snaps to target and stop lerping"), SerializeField]
+	float lerpLeeway = 0.01f;
 	bool shouldLerpPos;
 	bool shouldLerpRot;
 
+	[Header("GameObject References"), SerializeField]
+	Image backgroundImage;
+
 	void Awake()
 	{
-		image = GetComponent<Image>();
 		targetPosition.Set(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
 		targetAngle = transform.localRotation.eulerAngles.z;
 		shouldLerpPos = false;
@@ -62,7 +64,7 @@ public class AbstractCard : MonoBehaviour
 
 	public void SetColour(Color _color)
 	{
-		image.color = _color;
+		backgroundImage.color = _color;
 	}
 
 	public void SetTargetPosition(float _x, float _y)
