@@ -16,6 +16,8 @@ public class ProjectileSpawner : MonoBehaviour
 	[SerializeField] Projectile projectilePrefab;
 	[SerializeField] bool requireMouseDirection = true;
 	[Tooltip("Time in seconds between each bullet"), SerializeField, Min(0)] float interval;
+	[Tooltip("Amount to displace bullet in its movement direction on spawn"), SerializeField, Min(0)] float positionOffset;
+	//[Tooltip("True: Projectile that moves relative to world\nFalse: Melee/Physical Hitbox that follows the weapon's position"), SerializeField] bool spawnInWorldSpace = true;
 	[SerializeField] ProjectileSettings[] projectileSettings;
 
 	Camera mainCamera;
@@ -47,7 +49,8 @@ public class ProjectileSpawner : MonoBehaviour
 
 	public Projectile SpawnProjectile(Vector2 _offset)
 	{
-		Projectile newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+		Projectile newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity, transform);
+
 		if (requireMouseDirection)
 		{
 			Vector2 v = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
@@ -55,6 +58,9 @@ public class ProjectileSpawner : MonoBehaviour
 				v = new Vector2(v.x * _offset.x - v.y * _offset.y, v.x * _offset.y + v.y * _offset.x);
 			newProjectile.SetDirection(v);
 		}
+
+		if (positionOffset > 0)
+			newProjectile.transform.position += (Vector3)(positionOffset * newProjectile.GetDirection());
 
 		return newProjectile;
 	}

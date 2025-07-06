@@ -47,6 +47,7 @@ MonoBehaviour:
     type: 3}
   requireMouseDirection: 1
   interval: 0.6
+  positionOffset: 0.1
   projectileSettings:
   - timeOffset: 0
     angleOffset: 0

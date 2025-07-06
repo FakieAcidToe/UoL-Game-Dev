@@ -25,6 +25,11 @@ public class Projectile : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 	}
 
+	public Vector2 GetDirection()
+	{
+		return direction;
+	}
+
 	public void SetDirection(Vector2 _direction)
 	{
 		direction = _direction.normalized;
