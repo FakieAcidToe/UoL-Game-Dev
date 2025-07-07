@@ -54,8 +54,6 @@ public class EnemyMovement : MonoBehaviour
 
 	public void ReceiveKnockback(Vector2 _force, float _hitstun)
 	{
-		if (IsInHitstun()) return;
-
 		rb.AddForce(_force * knockbackAdj, ForceMode2D.Impulse);
 		hitstun = _hitstun * hitstunAdj;
 	}

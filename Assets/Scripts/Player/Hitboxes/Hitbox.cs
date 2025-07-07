@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Hitbox : MonoBehaviour
 {
@@ -15,6 +16,13 @@ public class Hitbox : MonoBehaviour
 	protected Vector2 direction = Vector2.zero;
 	protected float lifetimeTimer = 0f;
 
+	protected List<EnemyHP> hitEnemies; // lockout
+
+	protected virtual void Awake()
+	{
+		hitEnemies = new List<EnemyHP>();
+	}
+
 	public Vector2 GetDirection()
 	{
 		return direction;
@@ -28,11 +36,15 @@ public class Hitbox : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		EnemyHP enemyHP = collision.gameObject.GetComponent<EnemyHP>();
-		if (enemyHP != null)
-		{
-			enemyHP.TakeDamage(damage); // damage enemy
-			enemyHP.movement.ReceiveKnockback(direction.normalized * knockback, hitstun);
-		}
+		if (enemyHP != null && !hitEnemies.Contains(enemyHP))
+			DamageEnemy(enemyHP);
+	}
+
+	protected void DamageEnemy(EnemyHP _enemy)
+	{
+		_enemy.TakeDamage(damage); // damage enemy
+		_enemy.movement.ReceiveKnockback(direction.normalized * knockback, hitstun);
+		hitEnemies.Add(_enemy);
 	}
 
 	void Update()

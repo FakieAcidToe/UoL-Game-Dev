@@ -16,8 +16,6 @@ public class EnemyHP : MonoBehaviour
 
 	public void TakeDamage(int damageAmount)
 	{
-		if (movement.IsInHitstun()) return;
-
 		currentHP -= damageAmount;
 		if (currentHP <= 0)
 		{

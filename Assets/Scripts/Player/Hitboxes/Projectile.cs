@@ -11,18 +11,19 @@ public class Projectile : Hitbox
 
 	Rigidbody2D rb;
 
-	void Awake()
+	protected override void Awake()
 	{
+		base.Awake();
+
 		rb = GetComponent<Rigidbody2D>();
 	}
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		EnemyHP enemyHP = collision.gameObject.GetComponent<EnemyHP>();
-		if (enemyHP != null)
+		if (enemyHP != null && !hitEnemies.Contains(enemyHP))
 		{
-			enemyHP.TakeDamage(damage); // damage enemy
-			enemyHP.movement.ReceiveKnockback(direction.normalized * knockback, hitstun);
+			DamageEnemy(enemyHP);
 
 			if (pierce > -1 && --pierce < 0) Destroy(gameObject); // handle projectile piercing
 		}
