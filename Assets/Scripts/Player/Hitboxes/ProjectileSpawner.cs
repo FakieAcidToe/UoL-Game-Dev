@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class ProjectileSpawner : MonoBehaviour
 		[HideInInspector] public Vector2 angle; // is handled by ReCalculateAngleOffset from angleOffset
 	}
 
-	[SerializeField] Projectile projectilePrefab;
+	[SerializeField] Hitbox projectilePrefab;
 	[SerializeField] bool requireMouseDirection = true;
 	[Tooltip("Time in seconds between each bullet"), SerializeField, Min(0)] float interval;
 	[Tooltip("Amount to displace bullet in its movement direction on spawn"), SerializeField, Min(0)] float positionOffset;
@@ -41,33 +40,33 @@ public class ProjectileSpawner : MonoBehaviour
 
 			if (projectileSettings[i].timer >= interval)
 			{
-				SpawnProjectile(projectileSettings[i].angle);
+				SpawnHitbox(projectileSettings[i].angle);
 				projectileSettings[i].timer -= interval;
 			}
 		}
 	}
 
-	public Projectile SpawnProjectile(Vector2 _offset)
+	public Hitbox SpawnHitbox(Vector2 _offset)
 	{
-		Projectile newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity, transform);
+		Hitbox newHitbox = Instantiate(projectilePrefab, transform.position, Quaternion.identity, transform);
 
 		if (requireMouseDirection)
 		{
 			Vector2 v = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
 			if (_offset != Vector2.right)
 				v = new Vector2(v.x * _offset.x - v.y * _offset.y, v.x * _offset.y + v.y * _offset.x);
-			newProjectile.SetDirection(v);
+			newHitbox.SetDirection(v);
 		}
 
 		if (positionOffset > 0)
-			newProjectile.transform.position += (Vector3)(positionOffset * newProjectile.GetDirection());
+			newHitbox.transform.position += (Vector3)(positionOffset * newHitbox.GetDirection());
 
-		return newProjectile;
+		return newHitbox;
 	}
 
-	public Projectile SpawnProjectile()
+	public Hitbox SpawnHitbox()
 	{
-		return SpawnProjectile(Vector2.right);
+		return SpawnHitbox(Vector2.right);
 	}
 
 	public void ResetWeaponTiming()
