@@ -48,15 +48,20 @@ public class ProjectileSpawner : MonoBehaviour
 
 	public Hitbox SpawnHitbox(Vector2 _offset)
 	{
-		Hitbox newHitbox = Instantiate(projectilePrefab, transform.position, Quaternion.identity, transform);
+		Vector2 direction = Vector2.zero;
+		Quaternion rotation = Quaternion.identity;
 
 		if (requireMouseDirection)
 		{
-			Vector2 v = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+			direction = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
 			if (_offset != Vector2.right)
-				v = new Vector2(v.x * _offset.x - v.y * _offset.y, v.x * _offset.y + v.y * _offset.x);
-			newHitbox.SetDirection(v);
+				direction = new Vector2(direction.x * _offset.x - direction.y * _offset.y, direction.x * _offset.y + direction.y * _offset.x);
+
+			rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 		}
+
+		Hitbox newHitbox = Instantiate(projectilePrefab, transform.position, rotation, transform);
+		newHitbox.SetDirection(direction);
 
 		if (positionOffset > 0)
 			newHitbox.transform.position += (Vector3)(positionOffset * newHitbox.GetDirection());
