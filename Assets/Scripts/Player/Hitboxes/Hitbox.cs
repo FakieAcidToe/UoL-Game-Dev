@@ -5,18 +5,21 @@ public class Hitbox : MonoBehaviour
 {
 	[Header("Base Hitbox Properties")]
 	[SerializeField, Tooltip("How long the projectile lasts"), Min(0)]
-	protected float lifetime = 2f;
+	float lifetime = 2f;
 	[SerializeField, Tooltip("Damage amount to deal on hit")]
 	protected int damage = 1;
 	[SerializeField, Tooltip("Knockback impulse strength applied on hit")]
 	protected float knockback = 0.5f;
 	[SerializeField, Tooltip("Hitstun duration applied on hit")]
 	protected float hitstun = 0.05f;
+	[SerializeField, Tooltip("How often hitEnemies list should be cleared to reenable them to be hit again\nNegative = Don't reenable"), Min(-1)]
+	float hitboxLockout = -1f;
 
 	protected Vector2 direction = Vector2.zero;
 	protected float lifetimeTimer = 0f;
 
 	protected List<EnemyHP> hitEnemies; // lockout
+	float lockoutTimer = 0f;
 
 	protected virtual void Awake()
 	{
@@ -50,6 +53,16 @@ public class Hitbox : MonoBehaviour
 	void Update()
 	{
 		lifetimeTimer += Time.deltaTime;
+
+		if (hitboxLockout >= 0) // clear lockout
+		{
+			lockoutTimer += Time.deltaTime;
+			if (lockoutTimer >= hitboxLockout)
+			{
+				lockoutTimer = 0;
+				hitEnemies.Clear();
+			}
+		}
 
 		if (lifetimeTimer >= lifetime) Destroy(gameObject);
 	}

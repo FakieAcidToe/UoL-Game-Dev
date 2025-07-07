@@ -46,12 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64d348c244ae5041bb822627e55913a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
   lifetime: 0.8
-  pierce: 3
   damage: 1
-  knockback: 0.5
-  hitstun: 0.05
+  knockback: 1
+  hitstun: 0.1
+  hitboxLockout: -1
+  speed: 2
+  pierce: 3
 --- !u!212 &8753086406733697629
 SpriteRenderer:
   m_ObjectHideFlags: 0

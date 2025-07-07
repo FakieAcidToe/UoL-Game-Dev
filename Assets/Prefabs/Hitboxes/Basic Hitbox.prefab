@@ -46,9 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 0.2
-  damage: 3
-  knockback: 1
-  hitstun: 0.1
+  damage: 1
+  knockback: 3
+  hitstun: 0.2
+  hitboxLockout: -1
 --- !u!212 &4783210439513417505
 SpriteRenderer:
   m_ObjectHideFlags: 0
