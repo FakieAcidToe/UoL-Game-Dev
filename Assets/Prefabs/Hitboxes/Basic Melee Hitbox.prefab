@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3863585465035722009}
   - component: {fileID: 4783210439513417505}
   - component: {fileID: 9210795996409522352}
+  - component: {fileID: 8664712736658080336}
   m_Layer: 0
   m_Name: Basic Melee Hitbox
   m_TagString: Untagged
@@ -137,3 +138,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0.05, y: 0}
   m_Size: {x: 0.78, y: 0.36}
   m_Direction: 1
+--- !u!114 &8664712736658080336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008409690302902217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976af034991af9a4296374e39c139e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  yOffset: -0.1
