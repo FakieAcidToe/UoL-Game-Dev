@@ -712,11 +712,12 @@ GameObject:
   m_Component:
   - component: {fileID: 780209779}
   - component: {fileID: 780209781}
+  - component: {fileID: 780209783}
   - component: {fileID: 780209780}
   - component: {fileID: 780209782}
   m_Layer: 0
   m_Name: Game Manager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -796,6 +797,20 @@ MonoBehaviour:
   cardTilt: 0
   tiltOffsetDist: 0
   selectedCardY: 0
+--- !u!114 &780209783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780209778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0b73d8f42c24478b99d137a5aacc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeCardsManager: {fileID: 780209780}
+  passiveCardsManager: {fileID: 780209782}
 --- !u!1 &820788977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,7 +1431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832130354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1944,6 +1959,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1945982175041140458, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
+        type: 3}
+      propertyPath: cardsManager
+      value: 
+      objectReference: {fileID: 780209783}
+    - target: {fileID: 1945982175041140458, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
+        type: 3}
+      propertyPath: passiveCardsManager
+      value: 
+      objectReference: {fileID: 780209780}
     - target: {fileID: 5878548590872061665, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
         type: 3}
       propertyPath: m_RootOrder

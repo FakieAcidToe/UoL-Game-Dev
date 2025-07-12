@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d43e0cb8b78269d43a286c5ffb85962d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - animationSet: {fileID: 11400000, guid: 8202c85ccffef5f499b5f2c14bff2036, type: 2}
+  - weaponCard: {fileID: 8370062548829726831, guid: d2018515c25723a46bd9842284dd56df,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

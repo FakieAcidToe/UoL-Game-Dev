@@ -69,6 +69,17 @@ public class CardsManager : MonoBehaviour
 		}
 	}
 
+	public void GenerateCardInHand(AbstractCard newCardPrefab)
+	{
+		AbstractCard newCard = Instantiate(newCardPrefab, cardCanvasTransform);
+
+		newCard.SetPlayerTransform(playerTransform);
+
+		cardsInHand.Add(newCard);
+
+		OrganizeHand();
+	}
+
 	public void GenerateCardInHand()
 	{
 		AbstractCard newCard = Instantiate(cardPrefab, cardCanvasTransform);

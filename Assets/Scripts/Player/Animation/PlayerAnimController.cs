@@ -60,4 +60,9 @@ public class PlayerAnimController : MonoBehaviour
 				spriteRenderer.sprite = frame ? animationSet.idleFront2 : animationSet.idleFront1;
 		}
 	}
+
+	public void SetAnimations(PlayerAnimationSet _animationSet)
+	{
+		animationSet = _animationSet;
+	}
 }
