@@ -18,15 +18,10 @@ public class Projectile : Hitbox
 		rb = GetComponent<Rigidbody2D>();
 	}
 
-	void OnTriggerEnter2D(Collider2D collision)
+	protected override void DamageEnemy(EnemyHP _enemy)
 	{
-		EnemyHP enemyHP = collision.gameObject.GetComponent<EnemyHP>();
-		if (enemyHP != null && !hitEnemies.Contains(enemyHP))
-		{
-			DamageEnemy(enemyHP);
-
-			if (pierce > -1 && --pierce < 0) Destroy(gameObject); // handle projectile piercing
-		}
+		base.DamageEnemy(_enemy);
+		if (pierce > -1 && --pierce < 0) Destroy(gameObject); // handle projectile piercing
 	}
 
 	void FixedUpdate()

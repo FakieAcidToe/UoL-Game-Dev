@@ -46,8 +46,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 2008409690302902218, guid: 8e868268ededcf24bbc041fe4f1c3056,
     type: 3}
   requireMouseDirection: 1
-  interval: 0.3
-  positionOffset: 0.2
+  interval: 0.5
+  positionOffset: 0.3
   projectileSettings:
   - timeOffset: 0
     angleOffset: 0

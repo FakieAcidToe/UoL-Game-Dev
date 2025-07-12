@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 48cd34679893c4b40960058a3391a069
+guid: 6b631bf7235c4c8409116ba82300b405
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2518847255476754800
-    second: fireProj_0
+      213: -5244192030381413718
+    second: slice_0
   - first:
-      213: 547596146909267853
-    second: fireProj_1
+      213: -5259613283866949143
+    second: slice_1
+  - first:
+      213: 352875822335397140
+    second: slice_2
+  - first:
+      213: -2236261274525165896
+    second: slice_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -117,43 +123,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fireProj_0
+      name: slice_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 18
-        height: 8
+        width: 88
+        height: 36
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09627dd34c14b0dd0800000000000000
-      internalID: -2518847255476754800
+      spriteID: aaa6e2f1223e837b0800000000000000
+      internalID: -5244192030381413718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fireProj_1
+      name: slice_1
       rect:
         serializedVersion: 2
-        x: 18
+        x: 88
         y: 0
-        width: 18
-        height: 8
+        width: 88
+        height: 36
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8746e85bc3799700800000000000000
-      internalID: 547596146909267853
+      spriteID: 9e94f2fb5991207b0800000000000000
+      internalID: -5259613283866949143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slice_2
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 88
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41d0028d0baa5e400800000000000000
+      internalID: 352875822335397140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slice_3
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 88
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b617f2183437f0e0800000000000000
+      internalID: -2236261274525165896
       vertices: []
       indices: 
       edges: []
