@@ -4,26 +4,34 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Hitbox : MonoBehaviour
 {
+	enum KnockbackTypes
+	{
+		Direction,
+		FromCenter
+	}
+
 	[Header("Base Hitbox Properties")]
 	[SerializeField, Tooltip("How long the hitbox lasts"), Min(0)]
 	float lifetime = 2f;
 	[SerializeField, Tooltip("Damage amount to deal on hit")]
-	protected int damage = 1;
+	int damage = 1;
+	[SerializeField, Tooltip("What direction to knock enemies")]
+	KnockbackTypes knockbackType = KnockbackTypes.Direction;
 	[SerializeField, Tooltip("Knockback impulse strength applied on hit")]
-	protected float knockback = 0.5f;
+	float knockback = 0.5f;
 	[SerializeField, Tooltip("Hitstun duration applied on hit")]
-	protected float hitstun = 0.05f;
+	float hitstun = 0.05f;
 	[SerializeField, Tooltip("How often hitEnemies list should be cleared to reenable them to be hit again\nNegative = Don't reenable"), Min(-1)]
 	float hitboxLockout = -1f;
 	[SerializeField, Tooltip("Time before hitbox becomes active (for melee hitbox startup animation sprite)"), Min(0)]
 	float hitboxDelay = 0f;
 
 	protected Vector2 direction = Vector2.zero;
-	protected float lifetimeTimer = 0f;
+	float lifetimeTimer = 0f;
 
 	Collider2D hitboxCollider;
 
-	protected List<EnemyHP> hitEnemies; // lockout
+	List<EnemyHP> hitEnemies; // lockout
 	float lockoutTimer = 0f;
 
 	protected virtual void Awake()
@@ -53,7 +61,19 @@ public class Hitbox : MonoBehaviour
 	protected virtual void DamageEnemy(EnemyHP _enemy)
 	{
 		_enemy.TakeDamage(damage); // damage enemy
-		_enemy.movement.ReceiveKnockback(direction.normalized * knockback, hitstun);
+
+		Vector2 knockbackDirection;
+		switch (knockbackType)
+		{
+			default:
+			case KnockbackTypes.Direction:
+				knockbackDirection = direction.normalized;
+				break;
+			case KnockbackTypes.FromCenter:
+				knockbackDirection = (_enemy.transform.position - transform.position).normalized;
+				break;
+		}
+		_enemy.movement.ReceiveKnockback(knockbackDirection * knockback, hitstun);
 		hitEnemies.Add(_enemy);
 	}
 
@@ -73,7 +93,10 @@ public class Hitbox : MonoBehaviour
 
 		if (lifetimeTimer >= hitboxDelay)
 			hitboxCollider.enabled = true;
+	}
 
+	void LateUpdate()
+	{
 		if (lifetimeTimer >= lifetime) Destroy(gameObject);
 	}
 }

@@ -16,7 +16,8 @@ public class ProjectileSpawner : MonoBehaviour
 	[SerializeField] bool requireMouseDirection = true;
 	[Tooltip("Time in seconds between each bullet"), SerializeField, Min(0)] float interval;
 	[Tooltip("Amount to displace bullet in its movement direction on spawn"), SerializeField, Min(0)] float positionOffset;
-	//[Tooltip("True: Projectile that moves relative to world\nFalse: Melee/Physical Hitbox that follows the weapon's position"), SerializeField] bool spawnInWorldSpace = true;
+	[Tooltip("False: Spawn hitbox at the same level as this object\nTrue: Spawn hitbox as a child of this object"), SerializeField] bool spawnAsChild = true;
+	[Tooltip("Rotate hitbox sprite to set direction?"), SerializeField] bool rotateHitboxSprite = true;
 	[SerializeField] ProjectileSettings[] projectileSettings;
 
 	Camera mainCamera;
@@ -51,16 +52,26 @@ public class ProjectileSpawner : MonoBehaviour
 		Vector2 direction = Vector2.zero;
 		Quaternion rotation = Quaternion.identity;
 
+		// set direction
 		if (requireMouseDirection)
 		{
 			direction = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
 			if (_offset != Vector2.right)
 				direction = new Vector2(direction.x * _offset.x - direction.y * _offset.y, direction.x * _offset.y + direction.y * _offset.x);
-
-			rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+		}
+		else
+		{
+			// attempt to inherit direction from gameobject
+			Hitbox hitbox = GetComponent<Hitbox>();
+			if (hitbox != null)
+				direction = hitbox.GetDirection();
 		}
 
-		Hitbox newHitbox = Instantiate(projectilePrefab, transform.position, rotation, transform);
+		// rotate hitbox sprite
+		if (rotateHitboxSprite && direction != Vector2.zero)
+			rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+
+		Hitbox newHitbox = Instantiate(projectilePrefab, transform.position, rotation, spawnAsChild ? transform : transform.parent);
 		newHitbox.SetDirection(direction);
 
 		if (positionOffset > 0)

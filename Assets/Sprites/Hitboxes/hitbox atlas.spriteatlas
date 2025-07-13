@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hitbox atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 48cd34679893c4b40960058a3391a069, type: 3}
+    - {fileID: 2800000, guid: 92703c3232a4768408a764af298dd07c, type: 3}
+    - {fileID: 2800000, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
+    - {fileID: 2800000, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -8628396261267585678, guid: 92703c3232a4768408a764af298dd07c, type: 3}
+  - {fileID: 5462819266852746524, guid: 92703c3232a4768408a764af298dd07c, type: 3}
+  - {fileID: 2917471503283674434, guid: 92703c3232a4768408a764af298dd07c, type: 3}
+  - {fileID: 1328008845775010993, guid: 92703c3232a4768408a764af298dd07c, type: 3}
+  - {fileID: 547596146909267853, guid: 48cd34679893c4b40960058a3391a069, type: 3}
+  - {fileID: -2518847255476754800, guid: 48cd34679893c4b40960058a3391a069, type: 3}
+  - {fileID: 352875822335397140, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
+  - {fileID: -2236261274525165896, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
+  - {fileID: -5244192030381413718, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
+  - {fileID: -5259613283866949143, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
+  - {fileID: -6422501012592605161, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: 878681015938561591, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: 2317394753787100833, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: 2803774155958069189, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: -2005799262018884646, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: -8440662175823351974, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: -5642300237224692405, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: 1725156345647952999, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: -1101083435371158206, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: -3980850205731890750, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: 174334694938175731, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: 5766896961468328319, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: 8596924707199611276, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: -4698759671428991287, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: -7037955082851558052, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  - {fileID: 7076207988569052100, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - flash_strip4_1
+  - flash_strip4_0
+  - flash_strip4_3
+  - flash_strip4_2
+  - fireProj_1
+  - fireProj_0
+  - slice_2
+  - slice_3
+  - slice_0
+  - slice_1
+  - stock_explosion_large_strip16_13
+  - stock_explosion_large_strip16_12
+  - stock_explosion_large_strip16_11
+  - stock_explosion_large_strip16_10
+  - stock_explosion_large_strip16_15
+  - stock_explosion_large_strip16_14
+  - stock_explosion_large_strip16_8
+  - stock_explosion_large_strip16_9
+  - stock_explosion_large_strip16_0
+  - stock_explosion_large_strip16_1
+  - stock_explosion_large_strip16_2
+  - stock_explosion_large_strip16_3
+  - stock_explosion_large_strip16_4
+  - stock_explosion_large_strip16_5
+  - stock_explosion_large_strip16_6
+  - stock_explosion_large_strip16_7
+  m_Tag: hitbox atlas
+  m_IsVariant: 0

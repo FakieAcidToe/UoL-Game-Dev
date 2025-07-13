@@ -26,6 +26,7 @@ public class Projectile : Hitbox
 
 	void FixedUpdate()
 	{
-		rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
+		if (speed != 0)
+			rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
 	}
 }
