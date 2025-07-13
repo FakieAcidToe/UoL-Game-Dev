@@ -18,6 +18,14 @@ public class EnemySpawner : MonoBehaviour
 		if (minRadius > maxRadius) minRadius = maxRadius;
 	}
 
+	void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.yellow;
+		Vector3 pos = playerTransform == null ? transform.position : playerTransform.position;
+		CircleGizmo.DrawCircle(pos, minRadius);
+		CircleGizmo.DrawCircle(pos, maxRadius);
+	}
+
 	public void ToggleSpawning()
 	{
 		isSpawning = !isSpawning;

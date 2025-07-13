@@ -718,8 +718,8 @@ MonoBehaviour:
   playerTransform: {fileID: 1165122525}
   enemyPrefab: {fileID: 4954856151488454189, guid: ca483a69779e3f4418e2c780be823fd5,
     type: 3}
-  minRadius: 1
-  maxRadius: 1.5
+  minRadius: 1.5
+  maxRadius: 2
   isSpawning: 1
   interval: 0.3
 --- !u!114 &780209782
