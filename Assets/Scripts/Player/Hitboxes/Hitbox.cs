@@ -7,7 +7,8 @@ public class Hitbox : MonoBehaviour
 	enum KnockbackTypes
 	{
 		Direction,
-		FromCenter
+		FromCenter,
+		FromParent
 	}
 
 	[Header("Base Hitbox Properties")]
@@ -25,6 +26,8 @@ public class Hitbox : MonoBehaviour
 	float hitboxLockout = -1f;
 	[SerializeField, Tooltip("Time before hitbox becomes active (for melee hitbox startup animation sprite)"), Min(0)]
 	float hitboxDelay = 0f;
+	[SerializeField, Tooltip("How many enemies the hitbox can hit before dying, -1 = infinite pierce"), Min(-1)]
+	int pierce = 0;
 
 	protected Vector2 direction = Vector2.zero;
 	float lifetimeTimer = 0f;
@@ -72,9 +75,14 @@ public class Hitbox : MonoBehaviour
 			case KnockbackTypes.FromCenter:
 				knockbackDirection = (_enemy.transform.position - transform.position).normalized;
 				break;
+			case KnockbackTypes.FromParent:
+				knockbackDirection = (_enemy.transform.position - transform.parent.position).normalized;
+				break;
 		}
 		_enemy.movement.ReceiveKnockback(knockbackDirection * knockback, hitstun);
 		hitEnemies.Add(_enemy);
+
+		if (pierce > -1 && --pierce < 0) Destroy(gameObject); // handle projectile piercing
 	}
 
 	void Update()

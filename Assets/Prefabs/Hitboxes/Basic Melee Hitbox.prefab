@@ -49,10 +49,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 0.2
   damage: 2
+  knockbackType: 0
   knockback: 3
   hitstun: 0.3
   hitboxLockout: -1
   hitboxDelay: 0.06
+  pierce: -1
 --- !u!114 &3863585465035722009
 MonoBehaviour:
   m_ObjectHideFlags: 0

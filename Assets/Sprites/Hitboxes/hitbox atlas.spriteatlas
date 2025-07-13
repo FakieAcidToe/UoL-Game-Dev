@@ -23,7 +23,7 @@ SpriteAtlas:
     platformSettings: []
     packingSettings:
       serializedVersion: 2
-      padding: 4
+      padding: 2
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 1
@@ -34,6 +34,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 92703c3232a4768408a764af298dd07c, type: 3}
     - {fileID: 2800000, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
     - {fileID: 2800000, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
+    - {fileID: 2800000, guid: 54886f060b2d2e04c948aa5110f90275, type: 3}
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -41,6 +42,10 @@ SpriteAtlas:
   - {fileID: 5462819266852746524, guid: 92703c3232a4768408a764af298dd07c, type: 3}
   - {fileID: 2917471503283674434, guid: 92703c3232a4768408a764af298dd07c, type: 3}
   - {fileID: 1328008845775010993, guid: 92703c3232a4768408a764af298dd07c, type: 3}
+  - {fileID: -7708223616722472632, guid: 54886f060b2d2e04c948aa5110f90275, type: 3}
+  - {fileID: 3237569389957321432, guid: 54886f060b2d2e04c948aa5110f90275, type: 3}
+  - {fileID: -5425654310980523753, guid: 54886f060b2d2e04c948aa5110f90275, type: 3}
+  - {fileID: -2305158975288842926, guid: 54886f060b2d2e04c948aa5110f90275, type: 3}
   - {fileID: 547596146909267853, guid: 48cd34679893c4b40960058a3391a069, type: 3}
   - {fileID: -2518847255476754800, guid: 48cd34679893c4b40960058a3391a069, type: 3}
   - {fileID: 352875822335397140, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
@@ -68,6 +73,10 @@ SpriteAtlas:
   - flash_strip4_0
   - flash_strip4_3
   - flash_strip4_2
+  - star_strip4_1
+  - star_strip4_0
+  - star_strip4_3
+  - star_strip4_2
   - fireProj_1
   - fireProj_0
   - slice_2

@@ -2,6 +2,15 @@
 
 public class ProjectileSpawner : MonoBehaviour
 {
+	enum DirectionProperty
+	{
+		ObjectToMouseDirection,
+		InheritFromSelfHitbox,
+		Vector2Right,
+		Random,
+		NoDirection
+	}
+
 	[System.Serializable]
 	struct ProjectileSettings
 	{
@@ -13,7 +22,7 @@ public class ProjectileSpawner : MonoBehaviour
 	}
 
 	[SerializeField] Hitbox projectilePrefab;
-	[SerializeField] bool requireMouseDirection = true;
+	[SerializeField] DirectionProperty directionType = DirectionProperty.ObjectToMouseDirection;
 	[Tooltip("Time in seconds between each bullet"), SerializeField, Min(0)] float interval;
 	[Tooltip("Amount to displace bullet in its movement direction on spawn"), SerializeField, Min(0)] float positionOffset;
 	[Tooltip("False: Spawn hitbox at the same level as this object\nTrue: Spawn hitbox as a child of this object"), SerializeField] bool spawnAsChild = true;
@@ -21,6 +30,7 @@ public class ProjectileSpawner : MonoBehaviour
 	[SerializeField] ProjectileSettings[] projectileSettings;
 
 	Camera mainCamera;
+	Vector2 hitboxDirectionThisTick;
 
 	void Awake()
 	{
@@ -35,6 +45,7 @@ public class ProjectileSpawner : MonoBehaviour
 	void Update()
 	{
 		float dt = Time.deltaTime;
+		hitboxDirectionThisTick = Vector2.zero;
 		for (int i = 0; i < projectileSettings.Length; ++i)
 		{
 			projectileSettings[i].timer += dt;
@@ -47,25 +58,51 @@ public class ProjectileSpawner : MonoBehaviour
 		}
 	}
 
+	void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.red;
+		ReCalculateAngleOffset();
+		float length = 10f;
+		for (int i = 0; i < projectileSettings.Length; ++i)
+		{
+			Gizmos.DrawLine((Vector2)transform.position, (Vector2)transform.position + projectileSettings[i].angle * length);
+			CircleGizmo.DrawCircle((Vector2)transform.position + projectileSettings[i].angle * length * (1 - projectileSettings[i].timeOffset), 0.2f, 8);
+		}
+	}
+
 	public Hitbox SpawnHitbox(Vector2 _offset)
 	{
-		Vector2 direction = Vector2.zero;
 		Quaternion rotation = Quaternion.identity;
 
 		// set direction
-		if (requireMouseDirection)
-		{
-			direction = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-			if (_offset != Vector2.right)
-				direction = new Vector2(direction.x * _offset.x - direction.y * _offset.y, direction.x * _offset.y + direction.y * _offset.x);
-		}
-		else
-		{
-			// attempt to inherit direction from gameobject
-			Hitbox hitbox = GetComponent<Hitbox>();
-			if (hitbox != null)
-				direction = hitbox.GetDirection();
-		}
+		if (hitboxDirectionThisTick == Vector2.zero)
+			switch (directionType)
+			{
+				case DirectionProperty.ObjectToMouseDirection:
+					hitboxDirectionThisTick = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+					break;
+				case DirectionProperty.InheritFromSelfHitbox:
+					// attempt to inherit direction from gameobject
+					Hitbox hitbox = GetComponent<Hitbox>();
+					if (hitbox != null)
+						hitboxDirectionThisTick = hitbox.GetDirection();
+					break;
+				case DirectionProperty.Vector2Right:
+					hitboxDirectionThisTick = Vector2.right;
+					break;
+				case DirectionProperty.Random:
+					hitboxDirectionThisTick = Random.insideUnitCircle.normalized;
+					break;
+				default:
+				case DirectionProperty.NoDirection:
+					break;
+			}
+
+		Vector2 direction = hitboxDirectionThisTick;
+
+		// adjust direction based on offset
+		if (_offset != Vector2.right)
+			direction = new Vector2(direction.x * _offset.x - direction.y * _offset.y, direction.x * _offset.y + direction.y * _offset.x);
 
 		// rotate hitbox sprite
 		if (rotateHitboxSprite && direction != Vector2.zero)
