@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329561c505576524c970b60879cbfb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasRandomColour: 1
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 1128719096262992095}

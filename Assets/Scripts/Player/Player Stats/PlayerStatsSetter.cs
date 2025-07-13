@@ -6,7 +6,7 @@ public class PlayerStatsSetter : MonoBehaviour
 	[SerializeField] PlayerStats playerStats;
 	PlayerAnimController animController;
 
-	[SerializeField, Tooltip("Null = Automatically find game manager by tag")] CardsManagerManager cardsManager;
+	[SerializeField, Tooltip("Null = Automatically find game manager by tag")] CardsManager cardsManager;
 
 	void Awake()
 	{
@@ -22,7 +22,7 @@ public class PlayerStatsSetter : MonoBehaviour
 		if (cardsManager == null)
 		{
 			GameObject manager = GameObject.FindGameObjectWithTag("GameController");
-			if (manager != null) cardsManager = manager.GetComponent<CardsManagerManager>();
+			if (manager != null) cardsManager = manager.GetComponent<CardsManager>();
 		}
 
 		if (cardsManager != null)

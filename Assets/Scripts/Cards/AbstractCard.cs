@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class AbstractCard : MonoBehaviour
 {
+	[Header("On Spawn Properties")]
+	[SerializeField] bool hasRandomColour = false;
+
 	[Header("Card Movement"), Tooltip("How fast to lerp to target position and angle"), SerializeField]
 	float lerpSpeed = 20f;
 	Vector3 targetPosition;
@@ -28,6 +31,8 @@ public class AbstractCard : MonoBehaviour
 
 	void Start()
 	{
+		if (hasRandomColour) SetColour(Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
+
 		OnPickup();
 	}
 
