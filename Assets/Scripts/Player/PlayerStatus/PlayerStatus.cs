@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -36,33 +34,33 @@ public class PlayerStatus : MonoBehaviour
 
     public void UpdateStat(string stat, int cost)
     {
-        if (stat == "ATK")
-        {
-            if (atkUpgrades < 30 && playerUpgradePoints >= cost)
+        if (playerUpgradePoints >= cost)
+            switch (stat)
             {
-                atkUpgrades++;
-                playerAtk += (atkUpgrades) * 10;
-                playerUpgradePoints -= cost;
+                case "ATK":
+                    if (atkUpgrades < 30)
+                    {
+                        atkUpgrades++;
+                        playerAtk += (atkUpgrades) * 10;
+                        playerUpgradePoints -= cost;
+                    }
+                    break;
+                case "HP":
+                    if (hpUpgrades < 30)
+                    {
+                        hpUpgrades++;
+                        playerHP += (hpUpgrades) * 100;
+                        playerUpgradePoints -= cost;
+                    }
+                    break;
+                case "CRIT":
+                    if (critUpgrades < 15)
+                    {
+                        critUpgrades++;
+                        playerCrit += 5;
+                        playerUpgradePoints -= cost;
+                    }
+                    break;
             }
-
-        }
-        else if (stat == "HP" && playerUpgradePoints >= cost)
-        {
-            if (hpUpgrades < 30)
-            {
-                hpUpgrades++;
-                playerHP += (hpUpgrades) * 100;
-                playerUpgradePoints -= cost;
-            }
-        }
-        else if (stat == "CRIT" && playerUpgradePoints >= cost)
-        {
-            if (critUpgrades < 15)
-            {
-                critUpgrades++;
-                playerCrit += 5;
-                playerUpgradePoints -= cost;
-            }
-        }
     }
 }

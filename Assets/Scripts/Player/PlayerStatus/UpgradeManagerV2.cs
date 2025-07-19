@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -45,39 +43,38 @@ public class UpgradeManagerV2 : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         if (displayTextBox != null)
         {
-            if (upgradeName == "ATK")
+            switch (upgradeName)
             {
-                displayTextBox.text = "ATK UP \nQuantity " + (30 - upgradeLVL);
+                case "ATK":
+                    displayTextBox.text = "ATK UP \nQuantity " + (30 - upgradeLVL);
+                    break;
+                case "HP":
+                    displayTextBox.text = "HP UP \nQuantity " + (30 - upgradeLVL);
+                    break;
+                case "CRIT":
+                    displayTextBox.text = "CRIT UP \nQuantity " + (15 - upgradeLVL);
+                    break;
             }
-            else if (upgradeName == "HP")
-            {
-                displayTextBox.text = "HP UP \nQuantity " + (30 - upgradeLVL);
-            }
-            else if (upgradeName == "CRIT")
-            {
-                displayTextBox.text = "CRIT UP \nQuantity " + (15 - upgradeLVL);
-            }
+
             displayTextBox.text += "\nCost " + upgradeCost + "\nPoints: " + PlayerStatus.Instance.playerUpgradePoints;
         }
     }
 
     public void UpdateUpgradeStatus()
     {
-        if (upgradeName == "ATK")
+        switch (upgradeName)
         {
-            upgradeLVL = PlayerStatus.Instance.atkUpgrades;
+            case "ATK":
+                upgradeLVL = PlayerStatus.Instance.atkUpgrades;
+                break;
+            case "HP":
+                upgradeLVL = PlayerStatus.Instance.hpUpgrades;
+                break;
+            case "CRIT":
+                upgradeLVL = PlayerStatus.Instance.critUpgrades;
+                break;
         }
-        else if (upgradeName == "HP")
-        {
-            upgradeLVL = PlayerStatus.Instance.hpUpgrades;
 
-        }
-        else if (upgradeName == "CRIT")
-        {
-            upgradeLVL = PlayerStatus.Instance.critUpgrades;
-
-        }
         upgradeCost = (upgradeLVL + 1) * 100;
     }
-
 }

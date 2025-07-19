@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UpgradeManager : MonoBehaviour
@@ -9,6 +7,7 @@ public class UpgradeManager : MonoBehaviour
     public Text TextBox;
     public int upgradeLVL;
     public int upgradeCost;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,19 +17,17 @@ public class UpgradeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (upgradeName == "ATK")
+        switch (upgradeName)
         {
-            upgradeLVL = PlayerStatus.Instance.atkUpgrades;
-        }
-        else if (upgradeName == "HP")
-        {
-            upgradeLVL = PlayerStatus.Instance.hpUpgrades;
-
-        }
-        else if (upgradeName == "CRIT")
-        {
-            upgradeLVL = PlayerStatus.Instance.critUpgrades;
-
+            case "ATK":
+                upgradeLVL = PlayerStatus.Instance.atkUpgrades;
+                break;
+            case "HP":
+                upgradeLVL = PlayerStatus.Instance.hpUpgrades;
+                break;
+            case "CRIT":
+                upgradeLVL = PlayerStatus.Instance.critUpgrades;
+                break;
         }
         upgradeCost = (upgradeLVL + 1) * 100;
 
