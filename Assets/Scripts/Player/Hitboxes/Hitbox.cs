@@ -28,6 +28,10 @@ public class Hitbox : MonoBehaviour
 	float hitboxDelay = 0f;
 	[SerializeField, Tooltip("How many enemies the hitbox can hit before dying, -1 = infinite pierce"), Min(-1)]
 	int pierce = 0;
+	[SerializeField, Tooltip("How long Screenshake lasts on hit"), Min(0)]
+	float screenshakeDuration = 0.06f;
+	[SerializeField, Tooltip("How powerful the Screenshake feels"), Min(0)]
+	float screenshakeMagnitude = 0.03f;
 
 	protected Vector2 direction = Vector2.zero;
 	float lifetimeTimer = 0f;
@@ -81,6 +85,9 @@ public class Hitbox : MonoBehaviour
 		}
 		_enemy.movement.ReceiveKnockback(knockbackDirection * knockback, hitstun);
 		hitEnemies.Add(_enemy);
+
+		// screenshake
+		ScreenShake.Instance.Shake(screenshakeDuration, screenshakeMagnitude);
 
 		if (pierce > -1 && --pierce < 0) Destroy(gameObject); // handle projectile piercing
 	}

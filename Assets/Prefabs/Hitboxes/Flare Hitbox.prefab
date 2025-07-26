@@ -56,8 +56,10 @@ MonoBehaviour:
   hitstun: 0
   hitboxLockout: -1
   hitboxDelay: 0.6
-  speed: 1.2
   pierce: -1
+  screenshakeDuration: 0
+  screenshakeMagnitude: 0
+  speed: 1.2
 --- !u!114 &8579368564918605070
 MonoBehaviour:
   m_ObjectHideFlags: 0
