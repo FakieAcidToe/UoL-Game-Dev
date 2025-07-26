@@ -29,7 +29,7 @@ public class AbstractCard : MonoBehaviour
 		shouldLerpRot = false;
 	}
 
-	void Start()
+	protected virtual void Start()
 	{
 		if (hasRandomColour) SetColour(Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
 
