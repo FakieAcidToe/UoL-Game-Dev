@@ -69,6 +69,9 @@ public class Hitbox : MonoBehaviour
 	{
 		_enemy.TakeDamage(damage); // damage enemy
 
+		// damage numbers
+		DamageNumberSpawner.Instance.SpawnDamageNumbers(damage, _enemy.transform.position);
+
 		Vector2 knockbackDirection;
 		switch (knockbackType)
 		{

@@ -17,6 +17,7 @@ public class EnemyHP : MonoBehaviour
 	public void TakeDamage(int damageAmount)
 	{
 		currentHP -= damageAmount;
+
 		if (currentHP <= 0)
 		{
 			currentHP = 0;

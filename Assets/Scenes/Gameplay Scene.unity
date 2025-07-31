@@ -1070,9 +1070,8 @@ GameObject:
   - component: {fileID: 780209779}
   - component: {fileID: 780209781}
   - component: {fileID: 780209783}
-  - component: {fileID: 780209780}
-  - component: {fileID: 780209782}
   - component: {fileID: 780209784}
+  - component: {fileID: 780209780}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: GameController
@@ -1090,7 +1089,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1081577027}
+  - {fileID: 1935136430}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1103,16 +1104,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 780209778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26ea0877e686b1546b277fdc6e74a152, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f8afe84a10d65d43ae37efadba1187c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardCanvasTransform: {fileID: 2113112839}
-  playerTransform: {fileID: 1165122525}
-  selectable: 1
-  xDistApart: 100
-  cardTilt: 10
-  tiltOffsetDist: 200
-  selectedCardY: 150
+  damageNumberPrefab: {fileID: 7027534988564919012, guid: b5b1878ed9458884f8da3f4043286313,
+    type: 3}
+  inflationMultiplier: 15
 --- !u!114 &780209781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1132,25 +1129,6 @@ MonoBehaviour:
   maxRadius: 2
   isSpawning: 1
   interval: 0.3
---- !u!114 &780209782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780209778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26ea0877e686b1546b277fdc6e74a152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardCanvasTransform: {fileID: 2096230687}
-  playerTransform: {fileID: 1165122525}
-  selectable: 0
-  xDistApart: -100
-  cardTilt: 0
-  tiltOffsetDist: 0
-  selectedCardY: 0
 --- !u!114 &780209783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,8 +1141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b0b73d8f42c24478b99d137a5aacc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeCards: {fileID: 780209780}
-  passiveCards: {fileID: 780209782}
+  activeCards: {fileID: 1081577028}
+  passiveCards: {fileID: 1935136429}
   cardPrefabs:
   - {fileID: 4094358817951472432, guid: ef17a03cfadc7894c88e0553bc726e64, type: 3}
   - {fileID: 6486074505633844031, guid: f7fa2afc49cdd084ea60c3e67f70669f, type: 3}
@@ -1525,6 +1503,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035733528}
   m_CullTransparentMesh: 0
+--- !u!1 &1081577026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1081577027}
+  - component: {fileID: 1081577028}
+  m_Layer: 0
+  m_Name: Active Cards Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1081577027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081577026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 780209779}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1081577028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081577026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ea0877e686b1546b277fdc6e74a152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardCanvasTransform: {fileID: 2113112839}
+  playerTransform: {fileID: 1165122525}
+  selectable: 1
+  xDistApart: 100
+  cardTilt: 10
+  tiltOffsetDist: 200
+  selectedCardY: 150
 --- !u!4 &1165122525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5878548590872061665, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
@@ -2427,8 +2455,8 @@ RectTransform:
   m_Children:
   - {fileID: 2096230687}
   - {fileID: 2113112839}
-  - {fileID: 1572338957}
   - {fileID: 1973530678}
+  - {fileID: 1572338957}
   - {fileID: 1363672575}
   - {fileID: 1941013519}
   - {fileID: 729324686}
@@ -2441,6 +2469,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1935136428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1935136430}
+  - component: {fileID: 1935136429}
+  m_Layer: 0
+  m_Name: Passve Cards Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1935136429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935136428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ea0877e686b1546b277fdc6e74a152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardCanvasTransform: {fileID: 2096230687}
+  playerTransform: {fileID: 1165122525}
+  selectable: 0
+  xDistApart: -100
+  cardTilt: 0
+  tiltOffsetDist: 0
+  selectedCardY: 0
+--- !u!4 &1935136430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935136428}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 780209779}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1941013518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,7 +2683,7 @@ RectTransform:
   - {fileID: 129882898}
   - {fileID: 1373926145}
   m_Father: {fileID: 1868665159}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2907,7 +2985,7 @@ PrefabInstance:
         type: 3}
       propertyPath: passiveCardsManager
       value: 
-      objectReference: {fileID: 780209780}
+      objectReference: {fileID: 0}
     - target: {fileID: 5878548590872061665, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
         type: 3}
       propertyPath: m_RootOrder
@@ -3010,7 +3088,7 @@ PrefabInstance:
     - target: {fileID: 6799518813038998896, guid: c9975e9b8fc800847856072b2c1139db,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6799518813038998896, guid: c9975e9b8fc800847856072b2c1139db,
         type: 3}
