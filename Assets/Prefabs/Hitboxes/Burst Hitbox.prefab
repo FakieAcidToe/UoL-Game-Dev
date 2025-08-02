@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2738254485007926805}
   - component: {fileID: -2650518410410255651}
   m_Layer: 0
-  m_Name: Rebound Hitbox
+  m_Name: Burst Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 0.96
-  damage: 0
+  damage: 5
   knockbackType: 2
-  knockback: 8
-  hitstun: 1
+  knockback: 3
+  hitstun: 0.5
   hitboxLockout: -1
   hitboxDelay: 0.12
   pierce: -1
