@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ActiveCard : AbstractCard
 {
-	[Header("Cooldowns"), SerializeField]
+	[Header("Cooldowns"), SerializeField, Min(0)]
 	float cooldownTime = 1f; // how long the cooldown is
 	float cooldown; // timer for cooldown
 	[SerializeField, Range(1, 255)] int cooldownAlpha = 64; // alpha colour of mask when in cooldown

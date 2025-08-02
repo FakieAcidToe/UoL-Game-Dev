@@ -96,16 +96,17 @@ public class ProjectileSpawner : MonoBehaviour
 		return Vector2.zero; // no enemy found
 	}
 
-	public Hitbox SpawnHitbox(Vector2 _offset)
+	public Hitbox SpawnHitbox(Vector2 _offset, Transform _hitboxSource = null)
 	{
 		Quaternion rotation = Quaternion.identity;
+		Transform source = _hitboxSource == null ? transform : _hitboxSource;
 
 		// set direction
 		if (hitboxDirectionThisTick == Vector2.zero)
 			switch (directionType)
 			{
 				case DirectionProperty.ObjectToMouseDirection:
-					hitboxDirectionThisTick = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+					hitboxDirectionThisTick = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - source.position).normalized;
 					break;
 				case DirectionProperty.InheritFromSelfHitbox:
 					// attempt to inherit direction from gameobject
@@ -138,7 +139,7 @@ public class ProjectileSpawner : MonoBehaviour
 		if (rotateHitboxSprite && direction != Vector2.zero)
 			rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 
-		Hitbox newHitbox = Instantiate(projectilePrefab, transform.position, rotation, spawnAsChild ? transform : transform.parent);
+		Hitbox newHitbox = Instantiate(projectilePrefab, source.position, rotation, spawnAsChild ? source : source.parent);
 		newHitbox.SetDirection(direction);
 
 		if (positionOffset > 0)
@@ -147,9 +148,9 @@ public class ProjectileSpawner : MonoBehaviour
 		return newHitbox;
 	}
 
-	public Hitbox SpawnHitbox()
+	public Hitbox SpawnHitbox(Transform _hitboxSource = null)
 	{
-		return SpawnHitbox(Vector2.right);
+		return SpawnHitbox(Vector2.right, _hitboxSource);
 	}
 
 	public void ResetWeaponTiming()
