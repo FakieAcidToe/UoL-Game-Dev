@@ -8,6 +8,7 @@ public class ProjectileSpawner : MonoBehaviour
 		InheritFromSelfHitbox,
 		Vector2Right,
 		Random,
+		NearestEnemy,
 		NoDirection
 	}
 
@@ -70,6 +71,31 @@ public class ProjectileSpawner : MonoBehaviour
 		}
 	}
 
+	Vector2 GetDirectionToClosestEnemy()
+	{
+		EnemyMovement[] enemies = FindObjectsOfType<EnemyMovement>();
+		Transform closest = null;
+		float minDistance = Mathf.Infinity;
+
+		foreach (EnemyMovement enemy in enemies)
+		{
+			float distance = Vector2.Distance(transform.position, enemy.transform.position);
+			if (distance < minDistance)
+			{
+				minDistance = distance;
+				closest = enemy.transform;
+			}
+		}
+
+		if (closest != null)
+		{
+			Vector2 dir = (closest.position - transform.position).normalized;
+			return dir;
+		}
+
+		return Vector2.zero; // no enemy found
+	}
+
 	public Hitbox SpawnHitbox(Vector2 _offset)
 	{
 		Quaternion rotation = Quaternion.identity;
@@ -92,6 +118,10 @@ public class ProjectileSpawner : MonoBehaviour
 					break;
 				case DirectionProperty.Random:
 					hitboxDirectionThisTick = Random.insideUnitCircle.normalized;
+					break;
+				case DirectionProperty.NearestEnemy:
+					hitboxDirectionThisTick = GetDirectionToClosestEnemy();
+					if (hitboxDirectionThisTick == Vector2.zero) goto case DirectionProperty.Random;
 					break;
 				default:
 				case DirectionProperty.NoDirection:
