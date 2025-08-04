@@ -38,7 +38,7 @@ public class Hitbox : MonoBehaviour
 
 	Collider2D hitboxCollider;
 
-	List<EnemyHP> hitEnemies; // lockout
+	protected List<EnemyHP> hitEnemies; // lockout
 	float lockoutTimer = 0f;
 
 	protected virtual void Awake()
@@ -53,9 +53,11 @@ public class Hitbox : MonoBehaviour
 		return direction;
 	}
 
-	public void SetDirection(Vector2 _direction)
+	public void SetDirection(Vector2 _direction, bool alsoSetQuaternion = false)
 	{
 		direction = _direction.normalized;
+
+		if (alsoSetQuaternion) transform.localRotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 	}
 
 	void OnTriggerEnter2D(Collider2D collision)

@@ -2,16 +2,6 @@
 
 public class ProjectileSpawner : MonoBehaviour
 {
-	enum DirectionProperty
-	{
-		ObjectToMouseDirection,
-		InheritFromSelfHitbox,
-		Vector2Right,
-		Random,
-		NearestEnemy,
-		NoDirection
-	}
-
 	[System.Serializable]
 	struct ProjectileSettings
 	{
@@ -25,7 +15,7 @@ public class ProjectileSpawner : MonoBehaviour
 	}
 
 	[SerializeField] Hitbox projectilePrefab;
-	[SerializeField] DirectionProperty directionType = DirectionProperty.ObjectToMouseDirection;
+	[SerializeField] DirectionProperties.DirectionProperty directionType = DirectionProperties.DirectionProperty.ObjectToMouseDirection;
 	[Tooltip("Time in seconds between each bullet"), SerializeField, Min(0)] float interval;
 	[Tooltip("Amount to displace bullet in its movement direction on spawn"), SerializeField, Min(0)] float positionOffset;
 	[Tooltip("False: Spawn hitbox at the same level as this object\nTrue: Spawn hitbox as a child of this object"), SerializeField] bool spawnAsChild = true;
@@ -77,31 +67,6 @@ public class ProjectileSpawner : MonoBehaviour
 		}
 	}
 
-	Vector2 GetDirectionToClosestEnemy()
-	{
-		EnemyMovement[] enemies = FindObjectsOfType<EnemyMovement>();
-		Transform closest = null;
-		float minDistance = Mathf.Infinity;
-
-		foreach (EnemyMovement enemy in enemies)
-		{
-			float distance = Vector2.Distance(transform.position, enemy.transform.position);
-			if (distance < minDistance)
-			{
-				minDistance = distance;
-				closest = enemy.transform;
-			}
-		}
-
-		if (closest != null)
-		{
-			Vector2 dir = (closest.position - transform.position).normalized;
-			return dir;
-		}
-
-		return Vector2.zero; // no enemy found
-	}
-
 	public Hitbox SpawnHitbox(Vector2 _offset, Transform _hitboxSource = null)
 	{
 		Quaternion rotation = Quaternion.identity;
@@ -109,31 +74,7 @@ public class ProjectileSpawner : MonoBehaviour
 
 		// set direction
 		if (hitboxDirectionThisTick == Vector2.zero)
-			switch (directionType)
-			{
-				case DirectionProperty.ObjectToMouseDirection:
-					hitboxDirectionThisTick = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - source.position).normalized;
-					break;
-				case DirectionProperty.InheritFromSelfHitbox:
-					// attempt to inherit direction from gameobject
-					Hitbox hitbox = GetComponent<Hitbox>();
-					if (hitbox != null)
-						hitboxDirectionThisTick = hitbox.GetDirection();
-					break;
-				case DirectionProperty.Vector2Right:
-					hitboxDirectionThisTick = Vector2.right;
-					break;
-				case DirectionProperty.Random:
-					hitboxDirectionThisTick = Random.insideUnitCircle.normalized;
-					break;
-				case DirectionProperty.NearestEnemy:
-					hitboxDirectionThisTick = GetDirectionToClosestEnemy();
-					if (hitboxDirectionThisTick == Vector2.zero) goto case DirectionProperty.Random;
-					break;
-				default:
-				case DirectionProperty.NoDirection:
-					break;
-			}
+			hitboxDirectionThisTick = DirectionProperties.GetDirectionFromProperty(directionType, source, gameObject);
 
 		Vector2 direction = hitboxDirectionThisTick;
 

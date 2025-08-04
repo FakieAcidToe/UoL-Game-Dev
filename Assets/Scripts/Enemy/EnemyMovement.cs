@@ -17,9 +17,12 @@ public class EnemyMovement : MonoBehaviour
 
 	float hitstun = 0; // time left in hitstun (cant move)
 
+	public EnemyHP enemyHP { get; private set; }
+
 	void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
+		enemyHP = GetComponent<EnemyHP>();
 	}
 
 	public void SetTarget(Transform _target)
