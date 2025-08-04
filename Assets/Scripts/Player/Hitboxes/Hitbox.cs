@@ -12,7 +12,7 @@ public class Hitbox : MonoBehaviour
 	}
 
 	[Header("Base Hitbox Properties")]
-	[SerializeField, Tooltip("How long the hitbox lasts"), Min(0)]
+	[SerializeField, Tooltip("How long the hitbox lasts\n0 = Infinity"), Min(0)]
 	float lifetime = 2f;
 	[SerializeField, Tooltip("Damage amount to deal on hit")]
 	int damage = 1;
@@ -116,6 +116,6 @@ public class Hitbox : MonoBehaviour
 
 	void LateUpdate()
 	{
-		if (lifetimeTimer >= lifetime) Destroy(gameObject);
+		if (lifetime > 0 && lifetimeTimer >= lifetime) Destroy(gameObject);
 	}
 }

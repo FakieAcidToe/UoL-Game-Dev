@@ -17,9 +17,11 @@ public class ProjectileSpawner : MonoBehaviour
 	{
 		[Range(0, 1)] public float timeOffset;
 		[Range(-180, 180)] public float angleOffset; // should call ReCalculateAngleOffset if changed
+		[Tooltip("0 = Infinity"), Min(0)] public uint spawnNumberOfTimes;
 
 		[HideInInspector] public float timer;
 		[HideInInspector] public Vector2 angle; // is handled by ReCalculateAngleOffset from angleOffset
+		[HideInInspector] public uint spawnedAmount;
 	}
 
 	[SerializeField] Hitbox projectilePrefab;
@@ -51,10 +53,14 @@ public class ProjectileSpawner : MonoBehaviour
 		{
 			projectileSettings[i].timer += dt;
 
-			if (projectileSettings[i].timer >= interval)
+			if (projectileSettings[i].timer >= interval &&
+				(projectileSettings[i].spawnNumberOfTimes == 0 || projectileSettings[i].spawnedAmount < projectileSettings[i].spawnNumberOfTimes))
 			{
 				SpawnHitbox(projectileSettings[i].angle);
 				projectileSettings[i].timer -= interval;
+
+				if (projectileSettings[i].spawnNumberOfTimes > 0)
+					++projectileSettings[i].spawnedAmount;
 			}
 		}
 	}
@@ -156,7 +162,10 @@ public class ProjectileSpawner : MonoBehaviour
 	public void ResetWeaponTiming()
 	{
 		for (int i = 0; i < projectileSettings.Length; ++i)
+		{
 			projectileSettings[i].timer = (1f - projectileSettings[i].timeOffset) * interval;
+			projectileSettings[i].spawnedAmount = 0;
+		}
 	}
 
 	public void ReCalculateAngleOffset()

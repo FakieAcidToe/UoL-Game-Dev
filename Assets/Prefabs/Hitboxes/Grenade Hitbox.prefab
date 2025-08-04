@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 344139207979480485}
   - component: {fileID: 618224113889834113}
   m_Layer: 0
-  m_Name: Flare Hitbox
+  m_Name: Grenade Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,6 +60,9 @@ MonoBehaviour:
   screenshakeDuration: 0
   screenshakeMagnitude: 0
   speed: 1.2
+  acceleration: -2
+  minSpeed: 0
+  maxSpeed: 1.2
 --- !u!114 &8579368564918605070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,5 +205,7 @@ MonoBehaviour:
   projectileSettings:
   - timeOffset: 1
     angleOffset: 0
+    spawnNumberOfTimes: 0
     timer: 0
     angle: {x: 0, y: 0}
+    spawnedAmount: 0

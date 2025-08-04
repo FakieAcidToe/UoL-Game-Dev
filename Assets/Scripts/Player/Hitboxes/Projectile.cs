@@ -6,6 +6,12 @@ public class Projectile : Hitbox
 	[Header("Projectile Properties")]
 	[SerializeField, Tooltip("Projectile movement speed")]
 	float speed = 1f;
+	[SerializeField, Tooltip("Speed increase")]
+	float acceleration = 0f;
+	[SerializeField]
+	float minSpeed = 0f;
+	[SerializeField]
+	float maxSpeed = 1f;
 
 	Rigidbody2D rb;
 
@@ -20,5 +26,12 @@ public class Projectile : Hitbox
 	{
 		if (speed != 0)
 			rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
+		speed = Mathf.Clamp(speed + acceleration * Time.fixedDeltaTime, minSpeed, maxSpeed);
+	}
+
+	void OnValidate()
+	{
+		minSpeed = Mathf.Min(minSpeed, speed);
+		maxSpeed = Mathf.Max(maxSpeed, speed);
 	}
 }
