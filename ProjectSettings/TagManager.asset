@@ -44,6 +44,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Damage Number Layer
+  - name: Foreground VFX
     uniqueID: 404596981
     locked: 0

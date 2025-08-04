@@ -60,7 +60,7 @@ public class Hitbox : MonoBehaviour
 		if (alsoSetQuaternion) transform.localRotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 	}
 
-	void OnTriggerEnter2D(Collider2D collision)
+	void OnTriggerStay2D(Collider2D collision)
 	{
 		EnemyHP enemyHP = collision.gameObject.GetComponent<EnemyHP>();
 		if (enemyHP != null && !hitEnemies.Contains(enemyHP))
@@ -102,7 +102,7 @@ public class Hitbox : MonoBehaviour
 	{
 		lifetimeTimer += Time.deltaTime;
 
-		if (hitboxLockout >= 0) // clear lockout
+		if (hitboxLockout >= 0f) // clear lockout
 		{
 			lockoutTimer += Time.deltaTime;
 			if (lockoutTimer >= hitboxLockout)
