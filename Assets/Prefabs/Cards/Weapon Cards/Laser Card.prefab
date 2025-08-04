@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1432041839921350215, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432041839921350215, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 138
+      objectReference: {fileID: 0}
     - target: {fileID: 2016296879091344824, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
       propertyPath: m_Pivot.x
@@ -116,6 +126,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Laser Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471839626423095944, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1098179606456428539, guid: 3bce474bca03baf44a687dfff371b2f0,
+        type: 3}
+    - target: {fileID: 3471839626423095944, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939684126474471152, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939684126474471152, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.85113686
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939684126474471152, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
