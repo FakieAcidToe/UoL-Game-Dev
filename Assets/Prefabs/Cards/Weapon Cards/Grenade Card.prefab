@@ -115,7 +115,28 @@ PrefabInstance:
     - target: {fileID: 2016296879091344831, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
       propertyPath: m_Name
-      value: Boomerang Card
+      value: Grenade Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471839626423095944, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8101326686158321518, guid: 3bce474bca03baf44a687dfff371b2f0,
+        type: 3}
+    - target: {fileID: 3939684126474471152, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.088510156
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939684126474471152, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.4811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939684126474471152, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.27129874
       objectReference: {fileID: 0}
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
