@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d935724d9c9abac40819882c0f9e02d0, type: 3}
   m_Name: girlAnimation
   m_EditorClassIdentifier: 
+  portrait: {fileID: 3033138102090863920, guid: d7d3a07bdafa3f64abb815ea151d8d81,
+    type: 3}
   idleSide1: {fileID: -6928365714507401850, guid: 0ac224bc6dcba824e8d039cef348d78e,
     type: 3}
   idleSide2: {fileID: 4166714165072006024, guid: 0ac224bc6dcba824e8d039cef348d78e,

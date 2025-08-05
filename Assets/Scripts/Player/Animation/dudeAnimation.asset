@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d935724d9c9abac40819882c0f9e02d0, type: 3}
   m_Name: dudeAnimation
   m_EditorClassIdentifier: 
+  portrait: {fileID: 1427229372021036683, guid: d7d3a07bdafa3f64abb815ea151d8d81,
+    type: 3}
   idleSide1: {fileID: -7657686558104425061, guid: 577fe13de699b3043a8c6b5cae956af0,
     type: 3}
   idleSide2: {fileID: 8872000701690470942, guid: 577fe13de699b3043a8c6b5cae956af0,

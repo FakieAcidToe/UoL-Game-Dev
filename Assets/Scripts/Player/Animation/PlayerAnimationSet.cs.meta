@@ -4,6 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - portrait: {fileID: 1427229372021036683, guid: d7d3a07bdafa3f64abb815ea151d8d81,
+      type: 3}
   - idleSide1: {fileID: -7657686558104425061, guid: 577fe13de699b3043a8c6b5cae956af0,
       type: 3}
   - idleSide2: {fileID: 8872000701690470942, guid: 577fe13de699b3043a8c6b5cae956af0,

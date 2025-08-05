@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthbarUI : MonoBehaviour
 {
@@ -60,6 +60,8 @@ public class HealthbarUI : MonoBehaviour
 
 	[SerializeField] FillBar[] fillBars;
 
+	[SerializeField] Image portrait;
+
 	void Awake()
 	{
 		foreach (FillBar bar in fillBars)
@@ -92,5 +94,10 @@ public class HealthbarUI : MonoBehaviour
 			bar.SetVisualHealth(health);
 			bar.UpdateMaskPosition(maxHealth);
 		}
+	}
+
+	public void SetPortraitSprite(Sprite newPortrait)
+	{
+		portrait.sprite = newPortrait;
 	}
 }

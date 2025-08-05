@@ -3,6 +3,9 @@
 [CreateAssetMenu(fileName = "PlayerAnimationSet", menuName = "ScriptableObjects/PlayerAnimationSet")]
 public class PlayerAnimationSet : ScriptableObject
 {
+	[Header("Healthbar Portrait")]
+	public Sprite portrait;
+
 	[Header("Idle")]
 	public Sprite idleSide1;
 	public Sprite idleSide2;
