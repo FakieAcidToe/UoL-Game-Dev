@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4414902199985050820}
   - component: {fileID: 305275532126891794}
-  - component: {fileID: 8579368564918605070}
   - component: {fileID: 7563352383832437542}
   - component: {fileID: 7043776457596897297}
   - component: {fileID: 8984819466651902537}
@@ -63,24 +62,8 @@ MonoBehaviour:
   acceleration: -2
   minSpeed: 0
   maxSpeed: 1.2
---- !u!114 &8579368564918605070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3551160453071141838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db46066c47b613a47b2b94352db28948, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 5462819266852746524, guid: 92703c3232a4768408a764af298dd07c, type: 3}
-  - {fileID: -8628396261267585678, guid: 92703c3232a4768408a764af298dd07c, type: 3}
-  - {fileID: 1328008845775010993, guid: 92703c3232a4768408a764af298dd07c, type: 3}
-  - {fileID: 2917471503283674434, guid: 92703c3232a4768408a764af298dd07c, type: 3}
-  animationSpeed: 0.06
+  richochetTimes: 0
+  richochetDirection: 4
 --- !u!212 &7563352383832437542
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -120,7 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5462819266852746524, guid: 92703c3232a4768408a764af298dd07c,
+  m_Sprite: {fileID: -6626722049221337207, guid: 5873ffa9634f4d247b46185276044efd,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -207,5 +190,5 @@ MonoBehaviour:
     angleOffset: 0
     spawnNumberOfTimes: 0
     timer: 0
-    angle: {x: 0, y: 0}
+    angle: {x: 1, y: 0}
     spawnedAmount: 0

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4012706307025819803}
   - component: {fileID: 4297380271570106258}
-  - component: {fileID: 1576866718067774785}
   - component: {fileID: 7069932210138316665}
   - component: {fileID: 1520838253900253705}
   - component: {fileID: 6359979041089329672}
@@ -58,24 +57,6 @@ MonoBehaviour:
   pierce: -1
   screenshakeDuration: 0
   screenshakeMagnitude: 0
---- !u!114 &1576866718067774785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4297380271570106257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db46066c47b613a47b2b94352db28948, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 3237569389957321432, guid: 54886f060b2d2e04c948aa5110f90275, type: 3}
-  - {fileID: -7708223616722472632, guid: 54886f060b2d2e04c948aa5110f90275, type: 3}
-  - {fileID: -2305158975288842926, guid: 54886f060b2d2e04c948aa5110f90275, type: 3}
-  - {fileID: -5425654310980523753, guid: 54886f060b2d2e04c948aa5110f90275, type: 3}
-  animationSpeed: 0.06
 --- !u!212 &7069932210138316665
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -115,7 +96,7 @@ SpriteRenderer:
   m_SortingLayerID: 1339795675
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 3237569389957321432, guid: 54886f060b2d2e04c948aa5110f90275,
+  m_Sprite: {fileID: -3876203325221454098, guid: 5873ffa9634f4d247b46185276044efd,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -142,7 +123,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.13
+  m_Radius: 0.14
 --- !u!114 &6359979041089329672
 MonoBehaviour:
   m_ObjectHideFlags: 0

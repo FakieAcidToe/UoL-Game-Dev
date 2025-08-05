@@ -45,11 +45,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1563830058664889961, guid: 4fd4100fed3b7db43bb47d054f377eda,
     type: 3}
-  requireMouseDirection: 1
-  interval: 0.3
+  directionType: 0
+  interval: 0.6
   positionOffset: 0.1
+  spawnAsChild: 1
+  rotateHitboxSprite: 1
   projectileSettings:
   - timeOffset: 0
     angleOffset: 0
+    spawnNumberOfTimes: 0
     timer: 0
-    angle: {x: 0, y: 0}
+    angle: {x: 1, y: 0}
+    spawnedAmount: 0
+  - timeOffset: 0.15
+    angleOffset: 0
+    spawnNumberOfTimes: 0
+    timer: 0
+    angle: {x: 1, y: 0}
+    spawnedAmount: 0
+  - timeOffset: 0.3
+    angleOffset: 0
+    spawnNumberOfTimes: 0
+    timer: 0
+    angle: {x: 1, y: 0}
+    spawnedAmount: 0

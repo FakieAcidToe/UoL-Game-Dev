@@ -35,6 +35,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
     - {fileID: 2800000, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
     - {fileID: 2800000, guid: 54886f060b2d2e04c948aa5110f90275, type: 3}
+    - {fileID: 2800000, guid: 5873ffa9634f4d247b46185276044efd, type: 3}
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -52,6 +53,11 @@ SpriteAtlas:
   - {fileID: -2236261274525165896, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
   - {fileID: -5244192030381413718, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
   - {fileID: -5259613283866949143, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
+  - {fileID: -749530319176698733, guid: 5873ffa9634f4d247b46185276044efd, type: 3}
+  - {fileID: -6626722049221337207, guid: 5873ffa9634f4d247b46185276044efd, type: 3}
+  - {fileID: 7072048049729909660, guid: 5873ffa9634f4d247b46185276044efd, type: 3}
+  - {fileID: -3876203325221454098, guid: 5873ffa9634f4d247b46185276044efd, type: 3}
+  - {fileID: 7793224350951224421, guid: 5873ffa9634f4d247b46185276044efd, type: 3}
   - {fileID: -6422501012592605161, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
   - {fileID: 878681015938561591, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
   - {fileID: 2317394753787100833, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
@@ -83,6 +89,11 @@ SpriteAtlas:
   - slice_3
   - slice_0
   - slice_1
+  - weaponProjectiles_0
+  - weaponProjectiles_1
+  - weaponProjectiles_2
+  - weaponProjectiles_3
+  - weaponProjectiles_4
   - stock_explosion_large_strip16_13
   - stock_explosion_large_strip16_12
   - stock_explosion_large_strip16_11
