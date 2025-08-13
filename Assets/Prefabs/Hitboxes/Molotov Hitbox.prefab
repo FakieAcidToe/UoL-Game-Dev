@@ -58,6 +58,7 @@ MonoBehaviour:
   pierce: -1
   screenshakeDuration: 0
   screenshakeMagnitude: 0
+  sfx: {fileID: 8300000, guid: f27a04d5641bb0e4b933a295fd6a926b, type: 3}
   speed: 1.2
   acceleration: -2
   minSpeed: 0
@@ -192,3 +193,4 @@ MonoBehaviour:
     timer: 0
     angle: {x: 1, y: 0}
     spawnedAmount: 0
+  sfx: {fileID: 0}

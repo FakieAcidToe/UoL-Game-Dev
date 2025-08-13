@@ -57,3 +57,4 @@ MonoBehaviour:
     timer: 0
     angle: {x: 0, y: 0}
     spawnedAmount: 0
+  sfx: {fileID: 8300000, guid: 4036b1747a82cbe4f91cd38beeefdb3d, type: 3}

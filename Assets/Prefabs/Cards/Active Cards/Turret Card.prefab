@@ -20,6 +20,7 @@ MonoBehaviour:
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 7577454623550021327}
   cooldownShadeImage: {fileID: 2504814324922271380}
+  sfx: {fileID: 8300000, guid: 90463c76b85f42246b7655f9b88201de, type: 3}
   turretPrefab: {fileID: 5230232308457773439, guid: 97524f4655d557f4eb28406f06c14053,
     type: 3}
 --- !u!1 &4313417069404728634
@@ -231,6 +232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3087560214471729256, guid: ef17a03cfadc7894c88e0553bc726e64,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6900150361077675449, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}

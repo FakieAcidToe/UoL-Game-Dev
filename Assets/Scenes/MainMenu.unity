@@ -835,6 +835,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 37553652312300926, guid: 06e161d3ba8d2ad43bbd8499fe87597a,
+        type: 3}
+      propertyPath: musicLoop
+      value: 
+      objectReference: {fileID: 8300000, guid: cc28a7fd8437b3540ab1ef837c51b3f8, type: 3}
+    - target: {fileID: 37553652312300926, guid: 06e161d3ba8d2ad43bbd8499fe87597a,
+        type: 3}
+      propertyPath: musicIntro
+      value: 
+      objectReference: {fileID: 8300000, guid: fada6b26bbebb36499db87ada7403456, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06e161d3ba8d2ad43bbd8499fe87597a, type: 3}
 --- !u!1 &1666483409

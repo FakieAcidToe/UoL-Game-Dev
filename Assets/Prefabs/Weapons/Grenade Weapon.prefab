@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 305275532126891794, guid: 10663ca3853578d4dbfec2ee7e299fa1,
     type: 3}
-  requireMouseDirection: 1
+  directionType: 0
   interval: 1
   positionOffset: 0.1
   spawnAsChild: 1
@@ -53,5 +53,8 @@ MonoBehaviour:
   projectileSettings:
   - timeOffset: 0
     angleOffset: 0
+    spawnNumberOfTimes: 0
     timer: 0
     angle: {x: 0, y: 0}
+    spawnedAmount: 0
+  sfx: {fileID: 8300000, guid: 4036b1747a82cbe4f91cd38beeefdb3d, type: 3}

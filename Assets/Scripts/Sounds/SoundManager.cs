@@ -3,6 +3,11 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
+	[Header("This Scene's Music Theme")]
+	[SerializeField] AudioClip musicIntro;
+	[SerializeField] AudioClip musicLoop;
+
+	[Header("Scene References")]
 	[SerializeField] AudioSource effectsSource;
 	[SerializeField] AudioSource musicSource;
 
@@ -18,8 +23,13 @@ public class SoundManager : MonoBehaviour
 		{
 			Instance = this;
 			DontDestroyOnLoad(gameObject);
+			Instance.PlayMusic(musicLoop, musicIntro);
 		}
-		else Destroy(gameObject);
+		else
+		{
+			Instance.PlayMusic(musicLoop, musicIntro);
+			Destroy(gameObject);
+		}
 	}
 
 	public void SetMusicVolume(float musicVolume)

@@ -32,6 +32,8 @@ public class Hitbox : MonoBehaviour
 	float screenshakeDuration = 0.06f;
 	[SerializeField, Tooltip("How powerful the Screenshake feels"), Min(0)]
 	float screenshakeMagnitude = 0.03f;
+	[SerializeField]
+	AudioClip sfx;
 
 	protected Vector2 direction = Vector2.zero;
 	float lifetimeTimer = 0f;
@@ -94,6 +96,10 @@ public class Hitbox : MonoBehaviour
 
 		// screenshake
 		ScreenShake.Instance.Shake(screenshakeDuration, screenshakeMagnitude);
+
+		// audio
+		if (sfx != null)
+			SoundManager.Instance.Play(sfx);
 
 		if (pierce > -1 && --pierce < 0) Destroy(gameObject); // handle projectile piercing
 	}

@@ -12,6 +12,9 @@ public class ActiveCard : AbstractCard
 	[SerializeField] Image cooldownShadeMask;
 	[SerializeField] Image cooldownShadeImage;
 
+	[Header("Audio")]
+	[SerializeField] protected AudioClip sfx;
+
 	protected override void Update()
 	{
 		base.Update();
@@ -37,6 +40,7 @@ public class ActiveCard : AbstractCard
 
 	public void TriggerCooldown()
 	{
+		if (sfx != null) SoundManager.Instance.Play(sfx);
 		cooldown = cooldownTime;
 	}
 

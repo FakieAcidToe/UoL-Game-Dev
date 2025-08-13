@@ -20,6 +20,7 @@ MonoBehaviour:
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 7577454623550021327}
   cooldownShadeImage: {fileID: 2504814324922271380}
+  sfx: {fileID: 8300000, guid: 9b4f5e53c3d3a4a4ea09ca6b94b82c4e, type: 3}
   dashSpeed: 8
   dashTime: 0.15
 --- !u!1 &4313417069404728634
@@ -231,6 +232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3087560214471729256, guid: ef17a03cfadc7894c88e0553bc726e64,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6900150361077675449, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}

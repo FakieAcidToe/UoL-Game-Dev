@@ -58,7 +58,13 @@ MonoBehaviour:
   pierce: -1
   screenshakeDuration: 0.06
   screenshakeMagnitude: 0.03
+  sfx: {fileID: 8300000, guid: f27a04d5641bb0e4b933a295fd6a926b, type: 3}
   speed: 0
+  acceleration: 0
+  minSpeed: 0
+  maxSpeed: 1
+  richochetTimes: 0
+  richochetDirection: 4
 --- !u!114 &8243664822321798988
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ public class ProjectileSpawner : MonoBehaviour
 	[Tooltip("False: Spawn hitbox at the same level as this object\nTrue: Spawn hitbox as a child of this object"), SerializeField] bool spawnAsChild = true;
 	[Tooltip("Rotate hitbox sprite to set direction?"), SerializeField] bool rotateHitboxSprite = true;
 	[SerializeField] ProjectileSettings[] projectileSettings;
+	[SerializeField] AudioClip sfx;
 
 	Camera mainCamera;
 	Vector2 hitboxDirectionThisTick;
@@ -39,6 +40,7 @@ public class ProjectileSpawner : MonoBehaviour
 	{
 		float dt = Time.deltaTime;
 		hitboxDirectionThisTick = Vector2.zero;
+		bool hasSFXThisFrame = false;
 		for (int i = 0; i < projectileSettings.Length; ++i)
 		{
 			projectileSettings[i].timer += dt;
@@ -46,6 +48,11 @@ public class ProjectileSpawner : MonoBehaviour
 			if (projectileSettings[i].timer >= interval &&
 				(projectileSettings[i].spawnNumberOfTimes == 0 || projectileSettings[i].spawnedAmount < projectileSettings[i].spawnNumberOfTimes))
 			{
+				if (sfx != null && !hasSFXThisFrame)
+				{
+					hasSFXThisFrame = true;
+					SoundManager.Instance.Play(sfx);
+				}
 				SpawnHitbox(projectileSettings[i].angle);
 				projectileSettings[i].timer -= interval;
 

@@ -135,5 +135,8 @@ MonoBehaviour:
   projectileSettings:
   - timeOffset: 0
     angleOffset: 0
+    spawnNumberOfTimes: 0
     timer: 0
     angle: {x: 0, y: 0}
+    spawnedAmount: 0
+  sfx: {fileID: 8300000, guid: b7fbb88037451194bb7207463e178292, type: 3}

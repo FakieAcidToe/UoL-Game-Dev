@@ -55,6 +55,9 @@ MonoBehaviour:
   hitboxLockout: -1
   hitboxDelay: 0.06
   pierce: -1
+  screenshakeDuration: 0.06
+  screenshakeMagnitude: 0.03
+  sfx: {fileID: 8300000, guid: f27a04d5641bb0e4b933a295fd6a926b, type: 3}
 --- !u!114 &3863585465035722009
 MonoBehaviour:
   m_ObjectHideFlags: 0
