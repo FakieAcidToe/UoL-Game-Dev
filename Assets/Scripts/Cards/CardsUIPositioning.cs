@@ -15,6 +15,9 @@ public class CardsUIPositioning : MonoBehaviour
 
 	[SerializeField] float selectedCardY = 150; // added yPos of selected card
 
+	[Header("Audio")]
+	[SerializeField] AudioClip cardSFX;
+
 	public List<AbstractCard> cardsInHand { private set; get; }
 
 	int selectedCard;
@@ -83,6 +86,8 @@ public class CardsUIPositioning : MonoBehaviour
 
 		cardsInHand.Add(newCard);
 
+		SoundManager.Instance.Play(cardSFX);
+
 		OrganizeHand();
 	}
 
@@ -135,6 +140,8 @@ public class CardsUIPositioning : MonoBehaviour
 			selectedCard = _cardNo;
 			OrganizeCard(oldCard);
 			OrganizeCard(selectedCard);
+
+			SoundManager.Instance.Play(cardSFX);
 		}
 	}
 }
