@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2008409690302902218}
   - component: {fileID: 4783210439513417505}
   - component: {fileID: -8513970368676562710}
-  - component: {fileID: -2738254485007926805}
   - component: {fileID: -2650518410410255651}
+  - component: {fileID: -2122959027443463454}
   m_Layer: 0
   m_Name: Burst Hitbox
   m_TagString: Untagged
@@ -125,7 +125,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
---- !u!114 &-2738254485007926805
+--- !u!114 &-2650518410410255651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2008409690302902217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bea8c578d3ad5b040a6866027adc4aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 976af034991af9a4296374e39c139e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  yOffset: -0.1
+--- !u!114 &-2122959027443463454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008409690302902217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db46066c47b613a47b2b94352db28948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
@@ -155,18 +169,4 @@ MonoBehaviour:
   - {fileID: -8440662175823351974, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
   - {fileID: -2005799262018884646, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
   animationSpeed: 0.06
-  spriteRenderer: {fileID: 0}
---- !u!114 &-2650518410410255651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008409690302902217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 976af034991af9a4296374e39c139e4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  yOffset: -0.1
+  shouldFlipX: 0

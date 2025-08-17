@@ -42,22 +42,48 @@ public class PlayerAnimController : MonoBehaviour
 		float x = mouseDirection.x;
 		float y = mouseDirection.y;
 
-		if (Mathf.Abs(x) > Mathf.Abs(y))
+		
+		if (movement.GetMovement().sqrMagnitude > 0) // walk
 		{
-			spriteRenderer.flipX = (x < 0);
+			// idle
+			if (Mathf.Abs(x) > Mathf.Abs(y))
+			{
+				spriteRenderer.flipX = x < 0;
 
-			// side
-			spriteRenderer.sprite = frame ? animationSet.idleSide2 : animationSet.idleSide1;
+				// side
+				spriteRenderer.sprite = frame ? animationSet.walkSide2 : animationSet.walkSide1;
 
+			}
+			else
+			{
+				spriteRenderer.flipX = false;
+
+				if (y > 0) // back
+					spriteRenderer.sprite = frame ? animationSet.walkBack2 : animationSet.walkBack1;
+				else // front
+					spriteRenderer.sprite = frame ? animationSet.walkFront2 : animationSet.walkFront1;
+			}
 		}
 		else
 		{
-			spriteRenderer.flipX = false;
+			// idle
+			if (Mathf.Abs(x) > Mathf.Abs(y))
+			{
+				spriteRenderer.flipX = x < 0;
 
-			if (y > 0) // back
-				spriteRenderer.sprite = frame ? animationSet.idleBack2 : animationSet.idleBack1;
-			else // front
-				spriteRenderer.sprite = frame ? animationSet.idleFront2 : animationSet.idleFront1;
+				// side
+				spriteRenderer.sprite = frame ? animationSet.idleSide2 : animationSet.idleSide1;
+
+			}
+			else
+			{
+				spriteRenderer.flipX = false;
+
+				if (y > 0) // back
+					spriteRenderer.sprite = frame ? animationSet.idleBack2 : animationSet.idleBack1;
+				else // front
+					spriteRenderer.sprite = frame ? animationSet.idleFront2 : animationSet.idleFront1;
+			}
 		}
 	}
 

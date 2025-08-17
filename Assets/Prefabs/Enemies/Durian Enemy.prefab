@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 7783242988435538206}
   - component: {fileID: 7783242988435538207}
   - component: {fileID: 7898805536319497245}
-  - component: {fileID: 7716560531285746694}
   - component: {fileID: 7783242988435538200}
   - component: {fileID: 7783242988435538202}
   - component: {fileID: 5087904376903038071}
   - component: {fileID: 3785773129676250887}
   - component: {fileID: 9171486090032111473}
+  - component: {fileID: 5281302990022265989}
   m_Layer: 0
   m_Name: Durian Enemy
   m_TagString: Untagged
@@ -66,23 +66,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 3
---- !u!114 &7716560531285746694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7783242988435538203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bea8c578d3ad5b040a6866027adc4aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 8804150189239928478, guid: de3f1a360b1f0f446b556c4600ed6326, type: 3}
-  - {fileID: -4461498682553354904, guid: de3f1a360b1f0f446b556c4600ed6326, type: 3}
-  animationSpeed: 0.3
-  spriteRenderer: {fileID: 7783242988435538200}
 --- !u!212 &7783242988435538200
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -212,3 +195,21 @@ MonoBehaviour:
     itemPrefab: {fileID: 7598856368783033891, guid: 36358f4a1ecfd074e83eebf0bee961ec,
       type: 3}
     dropRate: 50
+--- !u!114 &5281302990022265989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7783242988435538203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db46066c47b613a47b2b94352db28948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 8804150189239928478, guid: de3f1a360b1f0f446b556c4600ed6326, type: 3}
+  - {fileID: -4461498682553354904, guid: de3f1a360b1f0f446b556c4600ed6326, type: 3}
+  animationSpeed: 0.3
+  shouldFlipX: 1
+  facingRight: 0

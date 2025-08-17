@@ -65,4 +65,8 @@ public class EnemyMovement : MonoBehaviour
 	{
 		return hitstun > 0;
 	}
+	public Vector2 GetMovement()
+	{
+		return movement.normalized;
+	}
 }

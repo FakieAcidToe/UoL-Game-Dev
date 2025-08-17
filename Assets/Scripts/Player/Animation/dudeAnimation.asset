@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portrait: {fileID: 1427229372021036683, guid: d7d3a07bdafa3f64abb815ea151d8d81,
     type: 3}
-  idleSide1: {fileID: -7657686558104425061, guid: 577fe13de699b3043a8c6b5cae956af0,
+  idleSide1: {fileID: -7065880204043774816, guid: 577fe13de699b3043a8c6b5cae956af0,
     type: 3}
   idleSide2: {fileID: 8872000701690470942, guid: 577fe13de699b3043a8c6b5cae956af0,
     type: 3}
-  idleFront1: {fileID: -7065880204043774816, guid: 577fe13de699b3043a8c6b5cae956af0,
+  idleFront1: {fileID: 5057047508672074602, guid: 577fe13de699b3043a8c6b5cae956af0,
     type: 3}
   idleFront2: {fileID: -5744648313057964559, guid: 577fe13de699b3043a8c6b5cae956af0,
     type: 3}
@@ -26,12 +26,18 @@ MonoBehaviour:
     type: 3}
   idleBack2: {fileID: -3629926019360387177, guid: 577fe13de699b3043a8c6b5cae956af0,
     type: 3}
-  walkSide1: {fileID: 0}
-  walkSide2: {fileID: 0}
-  walkFront1: {fileID: 0}
-  walkFront2: {fileID: 0}
-  walkBack1: {fileID: 0}
-  walkBack2: {fileID: 0}
+  walkSide1: {fileID: 8903426549674124371, guid: 577fe13de699b3043a8c6b5cae956af0,
+    type: 3}
+  walkSide2: {fileID: -1683743616385222494, guid: 577fe13de699b3043a8c6b5cae956af0,
+    type: 3}
+  walkFront1: {fileID: -4636392860947417863, guid: 577fe13de699b3043a8c6b5cae956af0,
+    type: 3}
+  walkFront2: {fileID: -5356275755632699394, guid: 577fe13de699b3043a8c6b5cae956af0,
+    type: 3}
+  walkBack1: {fileID: 3273511390486375002, guid: 577fe13de699b3043a8c6b5cae956af0,
+    type: 3}
+  walkBack2: {fileID: 4047183818094980538, guid: 577fe13de699b3043a8c6b5cae956af0,
+    type: 3}
   attackSide1: {fileID: 0}
   attackSide2: {fileID: 0}
   attackFront1: {fileID: 0}

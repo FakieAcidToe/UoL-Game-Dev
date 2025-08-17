@@ -4,22 +4,40 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -7065880204043774816
-    second: dude_idle_front1
+    second: dude_idle_0
   - first:
       213: 8872000701690470942
-    second: dude_idle_side2
+    second: dude_idle_1
   - first:
       213: 5057047508672074602
-    second: dude_idle_front1
+    second: dude_idle_0
   - first:
       213: -5744648313057964559
-    second: dude_idle_front2
+    second: dude_idle_3
   - first:
       213: 580587813945240042
-    second: dude_idle_back1
+    second: dude_idle_4
   - first:
       213: -3629926019360387177
-    second: dude_idle_back2
+    second: dude_idle_5
+  - first:
+      213: 8903426549674124371
+    second: dude_idle_6
+  - first:
+      213: -1683743616385222494
+    second: dude_idle_7
+  - first:
+      213: -4636392860947417863
+    second: dude_idle_8
+  - first:
+      213: -5356275755632699394
+    second: dude_idle_9
+  - first:
+      213: 3273511390486375002
+    second: dude_idle_10
+  - first:
+      213: 4047183818094980538
+    second: dude_idle_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -129,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dude_idle_side1
+      name: dude_idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,7 +155,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -150,7 +168,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dude_idle_side2
+      name: dude_idle_1
       rect:
         serializedVersion: 2
         x: 32
@@ -158,7 +176,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,7 +189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dude_idle_front1
+      name: dude_idle_2
       rect:
         serializedVersion: 2
         x: 64
@@ -179,7 +197,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,7 +210,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dude_idle_front2
+      name: dude_idle_3
       rect:
         serializedVersion: 2
         x: 96
@@ -200,7 +218,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,7 +231,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dude_idle_back1
+      name: dude_idle_4
       rect:
         serializedVersion: 2
         x: 128
@@ -221,7 +239,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -234,7 +252,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dude_idle_back2
+      name: dude_idle_5
       rect:
         serializedVersion: 2
         x: 160
@@ -242,7 +260,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -250,6 +268,132 @@ TextureImporter:
       bones: []
       spriteID: 79f831f7489ef9dc0800000000000000
       internalID: -3629926019360387177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dude_idle_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354ab1946435f8b70800000000000000
+      internalID: 8903426549674124371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dude_idle_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8f68c0a1422a8e0800000000000000
+      internalID: -1683743616385222494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dude_idle_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f47214f14938afb0800000000000000
+      internalID: -4636392860947417863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dude_idle_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7d97a349faaa5b0800000000000000
+      internalID: -5356275755632699394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dude_idle_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5aa22e0449dd6d20800000000000000
+      internalID: 3273511390486375002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dude_idle_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abda24a5d3c7a2830800000000000000
+      internalID: 4047183818094980538
       vertices: []
       indices: 
       edges: []

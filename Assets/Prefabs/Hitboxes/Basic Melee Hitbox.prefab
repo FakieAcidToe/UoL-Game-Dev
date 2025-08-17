@@ -76,6 +76,7 @@ MonoBehaviour:
   - {fileID: 352875822335397140, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
   - {fileID: -2236261274525165896, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
   animationSpeed: 0.06
+  shouldFlipX: 0
 --- !u!212 &4783210439513417505
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -26,12 +26,18 @@ MonoBehaviour:
     type: 3}
   idleBack2: {fileID: 4434050394304850590, guid: 0ac224bc6dcba824e8d039cef348d78e,
     type: 3}
-  walkSide1: {fileID: 0}
-  walkSide2: {fileID: 0}
-  walkFront1: {fileID: 0}
-  walkFront2: {fileID: 0}
-  walkBack1: {fileID: 0}
-  walkBack2: {fileID: 0}
+  walkSide1: {fileID: -4812317335793293897, guid: 0ac224bc6dcba824e8d039cef348d78e,
+    type: 3}
+  walkSide2: {fileID: -2671361132265996203, guid: 0ac224bc6dcba824e8d039cef348d78e,
+    type: 3}
+  walkFront1: {fileID: -4739045705167798309, guid: 0ac224bc6dcba824e8d039cef348d78e,
+    type: 3}
+  walkFront2: {fileID: 842289484332136090, guid: 0ac224bc6dcba824e8d039cef348d78e,
+    type: 3}
+  walkBack1: {fileID: 728983947840762063, guid: 0ac224bc6dcba824e8d039cef348d78e,
+    type: 3}
+  walkBack2: {fileID: 3819912998789437526, guid: 0ac224bc6dcba824e8d039cef348d78e,
+    type: 3}
   attackSide1: {fileID: 0}
   attackSide2: {fileID: 0}
   attackFront1: {fileID: 0}

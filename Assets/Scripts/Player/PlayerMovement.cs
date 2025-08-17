@@ -27,4 +27,9 @@ public class PlayerMovement : MonoBehaviour
 		// move the player using physics
 		rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 	}
+
+	public Vector2 GetMovement()
+	{
+		return movement.normalized;
+	}
 }
