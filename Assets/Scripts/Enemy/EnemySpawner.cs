@@ -3,7 +3,7 @@
 public class EnemySpawner : MonoBehaviour
 {
 	[SerializeField] Transform playerTransform;
-	[SerializeField] EnemyMovement enemyPrefab;
+	[SerializeField] EnemyMovement[] enemyPrefabs; // grab random enemy from array to spawn
 
 	[Header("Distance around player to spawn enemies")]
 	[SerializeField, Min(0)] float minRadius = 10f;
@@ -55,13 +55,13 @@ public class EnemySpawner : MonoBehaviour
 		return SpawnEnemy(new Vector3(
 			playerTransform.position.x + Mathf.Cos(angle) * distance,
 			playerTransform.position.y + Mathf.Sin(angle) * distance,
-			playerTransform.position.z)
-			);
+			playerTransform.position.z),
+			enemyPrefabs[Mathf.FloorToInt(Random.value * enemyPrefabs.Length)]); // random enemy
 	}
 
-	public EnemyMovement SpawnEnemy(Vector3 _position)
+	public EnemyMovement SpawnEnemy(Vector3 _position, EnemyMovement enemy)
 	{
-		EnemyMovement newEnemy = Instantiate(enemyPrefab, _position, Quaternion.identity);
+		EnemyMovement newEnemy = Instantiate(enemy, _position, Quaternion.identity);
 		newEnemy.SetTarget(playerTransform);
 		return newEnemy;
 	}

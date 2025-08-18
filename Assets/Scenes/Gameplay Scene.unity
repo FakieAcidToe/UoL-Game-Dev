@@ -1881,8 +1881,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1165122525}
-  enemyPrefab: {fileID: 7783242988435538207, guid: 2e1aa6f26fcd4b040a2dd394a8c08107,
-    type: 3}
+  enemyPrefabs:
+  - {fileID: 7783242988435538207, guid: 2e1aa6f26fcd4b040a2dd394a8c08107, type: 3}
+  - {fileID: 7783242988435538207, guid: cc630efc21553c449a102fdfb83cc8d5, type: 3}
+  - {fileID: 7783242988435538207, guid: 26e4794af74bfba4ca3625b3bb79e6ad, type: 3}
   minRadius: 3
   maxRadius: 4
   isSpawning: 1
