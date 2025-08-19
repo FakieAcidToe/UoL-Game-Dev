@@ -28,13 +28,8 @@ MonoImporter:
       type: 3}
   - walkBack1: {fileID: 3273511390486375002, guid: 577fe13de699b3043a8c6b5cae956af0,
       type: 3}
-  - walkBack2: {instanceID: 0}
-  - attackSide1: {instanceID: 0}
-  - attackSide2: {instanceID: 0}
-  - attackFront1: {instanceID: 0}
-  - attackFront2: {instanceID: 0}
-  - attackBack1: {instanceID: 0}
-  - attackBack2: {instanceID: 0}
+  - walkBack2: {fileID: 4047183818094980538, guid: 577fe13de699b3043a8c6b5cae956af0,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

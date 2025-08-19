@@ -25,14 +25,4 @@ public class PlayerAnimationSet : ScriptableObject
 
 	public Sprite walkBack1;
 	public Sprite walkBack2;
-
-	[Header("Attack")]
-	public Sprite attackSide1;
-	public Sprite attackSide2;
-
-	public Sprite attackFront1;
-	public Sprite attackFront2;
-
-	public Sprite attackBack1;
-	public Sprite attackBack2;
 }
