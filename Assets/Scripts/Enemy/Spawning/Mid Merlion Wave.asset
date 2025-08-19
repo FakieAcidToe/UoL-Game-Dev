@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4bd3244c797ff4c94eed0822ffcc05, type: 3}
+  m_Name: Mid Merlion Wave
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 7783242988435538207, guid: de2759abe87884146a730c35846e957f, type: 3}
+  - {fileID: 7783242988435538207, guid: 2e1aa6f26fcd4b040a2dd394a8c08107, type: 3}
+  enemyWaveTime: 15
+  spawnInterval: 0.15
+  numIntervals: 0
+  waveType: 0
+  spawnNumber: 1
+  spawnInOrder: 0
+  minDist: 4
+  maxDist: 5
+  randomNegativeDist: 0
+  spawnLength: 0

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 9171486090032111473}
   - component: {fileID: 5281302990022265989}
   m_Layer: 0
-  m_Name: Snake Enemy
+  m_Name: Merlion Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
-  knockbackAdj: 1.1
-  hitstunAdj: 1.1
+  knockbackAdj: 1
+  hitstunAdj: 1
 --- !u!114 &7898805536319497245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705b37d76ee03d04cac4e7282032e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 4
 --- !u!212 &7783242988435538200
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5665439017586451948, guid: f3e9f57892deeb44d84492e1287b55b5,
+  m_Sprite: {fileID: -8442733395824414576, guid: 6fa56c5501e7ec44a8dc600612440ee0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -155,14 +155,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.28, y: 0.29}
+    oldSize: {x: 0.23, y: 0.32}
     newSize: {x: 0.09, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28, y: 0.29}
+  m_Size: {x: 0.23, y: 0.32}
   m_EdgeRadius: 0
 --- !u!114 &3785773129676250887
 MonoBehaviour:
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
-  yOffset: -0.13
+  yOffset: -0.14
 --- !u!114 &9171486090032111473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,8 +208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -5665439017586451948, guid: f3e9f57892deeb44d84492e1287b55b5, type: 3}
-  - {fileID: -8203255348304057741, guid: f3e9f57892deeb44d84492e1287b55b5, type: 3}
+  - {fileID: -8442733395824414576, guid: 6fa56c5501e7ec44a8dc600612440ee0, type: 3}
+  - {fileID: 4950053895585663063, guid: 6fa56c5501e7ec44a8dc600612440ee0, type: 3}
   animationSpeed: 0.3
   shouldFlipX: 1
   facingRight: 0

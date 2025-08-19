@@ -1884,7 +1884,7 @@ MonoBehaviour:
   spawnWaves:
   - {fileID: 11400000, guid: 06872b3bec33eaa45877ef9f98af9ae8, type: 2}
   - {fileID: 11400000, guid: 2b8642b1ada224e4886ea82fef43ec56, type: 2}
-  - {fileID: 11400000, guid: 06872b3bec33eaa45877ef9f98af9ae8, type: 2}
+  - {fileID: 11400000, guid: d916fb4be7974a04e9ba0e103d2e26e6, type: 2}
   - {fileID: 11400000, guid: be899782497c1964baf7212f24f0c4e2, type: 2}
   isSpawning: 1
   loopWaves: 1

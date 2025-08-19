@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.3
-  knockbackAdj: 0.9
+  knockbackAdj: 0.65
   hitstunAdj: 0.9
 --- !u!114 &7898805536319497245
 MonoBehaviour:
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
-  yOffset: -0.095
+  yOffset: -0.11
 --- !u!114 &9171486090032111473
 MonoBehaviour:
   m_ObjectHideFlags: 0
