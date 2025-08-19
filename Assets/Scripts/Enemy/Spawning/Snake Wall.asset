@@ -22,4 +22,5 @@ MonoBehaviour:
   spawnInOrder: 1
   minDist: 2.5
   maxDist: 2.5
+  randomNegativeDist: 1
   spawnLength: 12

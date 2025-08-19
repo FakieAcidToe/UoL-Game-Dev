@@ -1887,6 +1887,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 06872b3bec33eaa45877ef9f98af9ae8, type: 2}
   - {fileID: 11400000, guid: be899782497c1964baf7212f24f0c4e2, type: 2}
   isSpawning: 1
+  loopWaves: 1
 --- !u!114 &780209783
 MonoBehaviour:
   m_ObjectHideFlags: 0

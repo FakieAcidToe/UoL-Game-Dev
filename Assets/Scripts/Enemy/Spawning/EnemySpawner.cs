@@ -17,23 +17,7 @@ public class EnemySpawner : MonoBehaviour
 		Vector3 pos = playerTransform == null ? transform.position : playerTransform.position;
 
 		foreach (SpawnWave wave in spawnWaves)
-		{
-			switch (wave.waveType)
-			{
-				case SpawnWave.WaveType.Donut:
-					CircleGizmo.DrawCircle(pos, wave.minDist);
-					CircleGizmo.DrawCircle(pos, wave.maxDist);
-					break;
-				case SpawnWave.WaveType.HorizontalLine:
-					Gizmos.DrawWireCube(pos + new Vector3(0, (wave.minDist + wave.maxDist)/2), new Vector3(wave.spawnLength, wave.maxDist - wave.minDist));
-					Gizmos.DrawLine(pos + new Vector3(-wave.spawnLength/2, (wave.minDist + wave.maxDist) / 2), pos + new Vector3(wave.spawnLength / 2, (wave.minDist + wave.maxDist) / 2));
-					break;
-				case SpawnWave.WaveType.VerticalLine:
-					Gizmos.DrawWireCube(pos + new Vector3((wave.minDist + wave.maxDist)/2, 0), new Vector3(wave.maxDist - wave.minDist, wave.spawnLength));
-					Gizmos.DrawLine(pos + new Vector3((wave.minDist + wave.maxDist) / 2, -wave.spawnLength / 2), pos + new Vector3((wave.minDist + wave.maxDist) / 2, wave.spawnLength / 2));
-					break;
-			}
-		}
+			wave.OnDrawGizmosSelected(pos);
 	}
 
 	public void ToggleSpawning()

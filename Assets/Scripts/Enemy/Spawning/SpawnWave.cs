@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "SpawnWave", menuName = "ScriptableObjects/Enemy Spawn Wave")]
 public class SpawnWave : ScriptableObject
 {
-	public enum WaveType
+	enum WaveType
 	{
 		Donut,
 		HorizontalLine,
@@ -21,16 +19,48 @@ public class SpawnWave : ScriptableObject
 	[SerializeField, Tooltip("Number of intervals within this wave\n0 = Infinite"), Min(0)] int numIntervals = 0;
 
 	[Header("Spawn Location Properties")]
-	[SerializeField, Tooltip("What shape will the enemies spawn in?")] public WaveType waveType = WaveType.Donut;
+	[SerializeField, Tooltip("What shape will the enemies spawn in?")] WaveType waveType = WaveType.Donut;
 	[SerializeField, Min(0), Tooltip("Number of enemies to spawn per interval")] int spawnNumber = 1;
 	[SerializeField, Min(0), Tooltip("True: Spawn `spawnNumber` enemies uniformly\nFalse: Spawn randomly")] bool spawnInOrder = false;
-	[SerializeField, Tooltip("Random range that enemies spawn")] public float minDist = 10f;
-	[SerializeField, Tooltip("Random range that enemies spawn")] public float maxDist = 20f;
-	[SerializeField, Tooltip("Range that enemy intervals spawn for Line wave types")] public float spawnLength = 10f;
+	[SerializeField, Tooltip("Random range that enemies spawn")] float minDist = 10f;
+	[SerializeField, Tooltip("Random range that enemies spawn")] float maxDist = 20f;
+	[SerializeField, Tooltip("Randomly make `minDist` and `maxDist` negative when spawning")] bool randomNegativeDist = false;
+	[SerializeField, Tooltip("Range that enemy intervals spawn for Line wave types")] float spawnLength = 10f;
 
 	float spawnTimer = 0f;
 	float waveTimer = 0f;
 	int intervals = 0;
+
+	public void OnDrawGizmosSelected(Vector3 pos)
+	{
+		Gizmos.color = Color.yellow;
+
+		switch (waveType)
+		{
+			case WaveType.Donut:
+				CircleGizmo.DrawCircle(pos, minDist);
+				CircleGizmo.DrawCircle(pos, maxDist);
+				break;
+			case WaveType.HorizontalLine:
+				Gizmos.DrawWireCube(pos + new Vector3(0, (minDist + maxDist) / 2), new Vector3(spawnLength, maxDist - minDist));
+				Gizmos.DrawLine(pos + new Vector3(-spawnLength / 2, (minDist + maxDist) / 2), pos + new Vector3(spawnLength / 2, (minDist + maxDist) / 2));
+				if (randomNegativeDist)
+				{
+					Gizmos.DrawWireCube(pos + new Vector3(0, -(minDist + maxDist) / 2), new Vector3(spawnLength, maxDist - minDist));
+					Gizmos.DrawLine(pos + new Vector3(-spawnLength / 2, -(minDist + maxDist) / 2), pos + new Vector3(spawnLength / 2, -(minDist + maxDist) / 2));
+				}
+				break;
+			case WaveType.VerticalLine:
+				Gizmos.DrawWireCube(pos + new Vector3((minDist + maxDist) / 2, 0), new Vector3(maxDist - minDist, spawnLength));
+				Gizmos.DrawLine(pos + new Vector3((minDist + maxDist) / 2, -spawnLength / 2), pos + new Vector3((minDist + maxDist) / 2, spawnLength / 2));
+				if (randomNegativeDist)
+				{
+					Gizmos.DrawWireCube(pos + new Vector3(-(minDist + maxDist) / 2, 0), new Vector3(maxDist - minDist, spawnLength));
+					Gizmos.DrawLine(pos + new Vector3(-(minDist + maxDist) / 2, -spawnLength / 2), pos + new Vector3(-(minDist + maxDist) / 2, spawnLength / 2));
+				}
+				break;
+		}
+	}
 
 	public void Reset()
 	{
@@ -53,7 +83,7 @@ public class SpawnWave : ScriptableObject
 					for (int i = 0; i < spawnNumber; ++i)
 					{
 						float donutAngle = spawnInOrder ? (Mathf.PI * 2 * i) / spawnNumber : Random.Range(0f, Mathf.PI * 2); // random angle in radians
-						float donutDistance = Random.Range(minDist, maxDist); // random distance
+						float donutDistance = GetRandomDist();
 
 						SpawnEnemy(new Vector3(
 							playerTransform.position.x + Mathf.Cos(donutAngle) * donutDistance,
@@ -65,12 +95,13 @@ public class SpawnWave : ScriptableObject
 					break;
 
 				case WaveType.HorizontalLine:
+					float horizontalDist = GetRandomDist();
 					for (int i = 0; i < spawnNumber; ++i)
 					{
 						SpawnEnemy(new Vector3(
 							playerTransform.position.x +
 								(spawnInOrder ? spawnLength / spawnNumber * i - spawnLength / 2 : Random.Range(-spawnLength / 2, spawnLength / 2)),
-							playerTransform.position.y + Random.Range(minDist, maxDist),
+							playerTransform.position.y + horizontalDist,
 							playerTransform.position.z),
 							enemyPrefabs[Mathf.FloorToInt(Random.value * enemyPrefabs.Length)], // random enemy
 							playerTransform);
@@ -78,10 +109,11 @@ public class SpawnWave : ScriptableObject
 					break;
 
 				case WaveType.VerticalLine:
+					float verticalDist = GetRandomDist();
 					for (int i = 0; i < spawnNumber; ++i)
 					{
 						SpawnEnemy(new Vector3(
-							playerTransform.position.x + Random.Range(minDist, maxDist),
+							playerTransform.position.x + verticalDist,
 							playerTransform.position.y +
 								(spawnInOrder ? spawnLength / spawnNumber * i - spawnLength / 2 : Random.Range(-spawnLength / 2, spawnLength / 2)),
 							playerTransform.position.z),
@@ -110,5 +142,10 @@ public class SpawnWave : ScriptableObject
 		EnemyMovement newEnemy = Instantiate(enemy, _position, Quaternion.identity);
 		newEnemy.SetTarget(playerTransform);
 		return newEnemy;
+	}
+
+	float GetRandomDist()
+	{
+		return (randomNegativeDist && Random.value > 0.5f) ? Random.Range(-minDist, -maxDist) : Random.Range(minDist, maxDist); // random distance
 	}
 }
