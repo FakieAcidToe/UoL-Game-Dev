@@ -1881,14 +1881,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1165122525}
-  enemyPrefabs:
-  - {fileID: 7783242988435538207, guid: 2e1aa6f26fcd4b040a2dd394a8c08107, type: 3}
-  - {fileID: 7783242988435538207, guid: cc630efc21553c449a102fdfb83cc8d5, type: 3}
-  - {fileID: 7783242988435538207, guid: 26e4794af74bfba4ca3625b3bb79e6ad, type: 3}
-  minRadius: 3
-  maxRadius: 4
+  spawnWaves:
+  - {fileID: 11400000, guid: 06872b3bec33eaa45877ef9f98af9ae8, type: 2}
+  - {fileID: 11400000, guid: 2b8642b1ada224e4886ea82fef43ec56, type: 2}
+  - {fileID: 11400000, guid: 06872b3bec33eaa45877ef9f98af9ae8, type: 2}
+  - {fileID: 11400000, guid: be899782497c1964baf7212f24f0c4e2, type: 2}
   isSpawning: 1
-  interval: 0.3
 --- !u!114 &780209783
 MonoBehaviour:
   m_ObjectHideFlags: 0

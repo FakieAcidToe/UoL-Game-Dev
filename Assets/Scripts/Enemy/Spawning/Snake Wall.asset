@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4bd3244c797ff4c94eed0822ffcc05, type: 3}
+  m_Name: Snake Wall
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 7783242988435538207, guid: cc630efc21553c449a102fdfb83cc8d5, type: 3}
+  enemyWaveTime: 5
+  spawnInterval: 0
+  numIntervals: 1
+  waveType: 1
+  spawnNumber: 12
+  spawnInOrder: 1
+  minDist: 2.5
+  maxDist: 2.5
+  spawnLength: 12
