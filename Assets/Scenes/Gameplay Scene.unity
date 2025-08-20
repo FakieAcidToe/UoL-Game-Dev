@@ -5009,6 +5009,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1824070559113691870, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
+        type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 1572338958}
+    - target: {fileID: 1824070559113691870, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
+        type: 3}
+      propertyPath: onDamaged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824070559113691870, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
+        type: 3}
+      propertyPath: onDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824070559113691870, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
+        type: 3}
+      propertyPath: onDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 780209778}
+    - target: {fileID: 1824070559113691870, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
+        type: 3}
+      propertyPath: onDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1945982175041140458, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
         type: 3}
       propertyPath: healthbar

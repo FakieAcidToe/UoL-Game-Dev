@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -6,6 +7,10 @@ public class PlayerHP : MonoBehaviour
 	[SerializeField] int maxHp = 100;
 	int hp;
 	public HealthbarUI healthbar;
+
+	[Header("Unity Events")]
+	public UnityEvent onDamaged;
+	public UnityEvent onZeroHP;
 
 	public void SetHP(int _hp)
 	{
@@ -30,5 +35,8 @@ public class PlayerHP : MonoBehaviour
 	{
 		hp = Mathf.Clamp(hp - damage, 0, maxHp);
 		healthbar.SetHealth(hp);
+
+		onDamaged.Invoke();
+		if (hp <= 0) onZeroHP.Invoke();
 	}
 }
