@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1520838253900253705}
   - component: {fileID: 6359979041089329672}
   - component: {fileID: 7610019532295628798}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Star Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,6 +78,7 @@ MonoBehaviour:
   - {fileID: -5425654310980523753, guid: 54886f060b2d2e04c948aa5110f90275, type: 3}
   animationSpeed: 0.06
   shouldFlipX: 0
+  facingRight: 1
 --- !u!212 &7069932210138316665
 SpriteRenderer:
   m_ObjectHideFlags: 0

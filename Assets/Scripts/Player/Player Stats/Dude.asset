@@ -15,3 +15,4 @@ MonoBehaviour:
   animationSet: {fileID: 11400000, guid: 8202c85ccffef5f499b5f2c14bff2036, type: 2}
   weaponCard: {fileID: 8370062548829726831, guid: d2018515c25723a46bd9842284dd56df,
     type: 3}
+  maxHP: 100

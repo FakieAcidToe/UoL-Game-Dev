@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1130443072302962326}
   - component: {fileID: 5510890428799174212}
   - component: {fileID: -7689340470679268130}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Nail Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

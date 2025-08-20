@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7257531445725168211}
   - component: {fileID: 8775007173134690315}
   - component: {fileID: 122102909253533671}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Explosion Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,6 +96,7 @@ MonoBehaviour:
   - {fileID: -2005799262018884646, guid: 6b5a55be5e6a9424ebe172a643277129, type: 3}
   animationSpeed: 0.06
   shouldFlipX: 0
+  facingRight: 1
 --- !u!212 &7890596612291967332
 SpriteRenderer:
   m_ObjectHideFlags: 0

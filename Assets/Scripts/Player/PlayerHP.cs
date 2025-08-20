@@ -7,11 +7,6 @@ public class PlayerHP : MonoBehaviour
 	int hp;
 	public HealthbarUI healthbar;
 
-	void Awake()
-	{
-		hp = maxHp;
-	}
-
 	public void SetHP(int _hp)
 	{
 		hp = _hp;
@@ -21,13 +16,14 @@ public class PlayerHP : MonoBehaviour
 	public void SetMaxHP(int _maxHp)
 	{
 		maxHp = _maxHp;
-		healthbar.SetMaxHealth(hp, false);
+		healthbar.SetMaxHealth(maxHp, false);
 	}
 
 	void Start()
 	{
+		hp = maxHp;
 		healthbar.SetHealth(hp, false);
-		healthbar.SetMaxHealth(hp, false);
+		healthbar.SetMaxHealth(maxHp, false);
 	}
 
 	public void TakeDamage(int damage)

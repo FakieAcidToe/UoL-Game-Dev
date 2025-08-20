@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7872051279160869682}
   - component: {fileID: -7689340470679268130}
   - component: {fileID: 6084865035725879478}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DOT Flame Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

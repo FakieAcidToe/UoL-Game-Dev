@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3785773129676250887}
   - component: {fileID: 9171486090032111473}
   - component: {fileID: 5281302990022265989}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Merlion Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

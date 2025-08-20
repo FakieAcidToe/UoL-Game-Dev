@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1130443072302962326}
   - component: {fileID: 7872051279160869682}
   - component: {fileID: -7689340470679268130}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shotgun Pellet Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +82,7 @@ MonoBehaviour:
   - {fileID: 547596146909267853, guid: 48cd34679893c4b40960058a3391a069, type: 3}
   animationSpeed: 0.06
   shouldFlipX: 0
+  facingRight: 1
 --- !u!212 &8753086406733697629
 SpriteRenderer:
   m_ObjectHideFlags: 0

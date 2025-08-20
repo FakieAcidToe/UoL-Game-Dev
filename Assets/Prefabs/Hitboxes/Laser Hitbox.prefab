@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1716977901942833347}
   - component: {fileID: 2008409690302902218}
   - component: {fileID: 9210795996409522352}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Laser Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 5867052106007923333}
   - component: {fileID: 8326644349512557914}
   - component: {fileID: 1727264646958913535}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

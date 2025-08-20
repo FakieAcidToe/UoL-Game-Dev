@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8984819466651902537}
   - component: {fileID: 344139207979480485}
   - component: {fileID: 618224113889834113}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Molotov Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

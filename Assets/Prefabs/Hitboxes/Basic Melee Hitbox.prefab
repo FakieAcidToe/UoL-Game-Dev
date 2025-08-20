@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4783210439513417505}
   - component: {fileID: 9210795996409522352}
   - component: {fileID: 8664712736658080336}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Basic Melee Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,6 +77,7 @@ MonoBehaviour:
   - {fileID: -2236261274525165896, guid: 6b631bf7235c4c8409116ba82300b405, type: 3}
   animationSpeed: 0.06
   shouldFlipX: 0
+  facingRight: 1
 --- !u!212 &4783210439513417505
 SpriteRenderer:
   m_ObjectHideFlags: 0
