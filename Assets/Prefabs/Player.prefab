@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5878548590872061665}
   - component: {fileID: 1945982175041140458}
   - component: {fileID: 5878548590872061660}
+  - component: {fileID: 1824070559113691870}
   - component: {fileID: 5507590503026576861}
   - component: {fileID: 5878548590872061664}
   - component: {fileID: 5878548590872061666}
@@ -51,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 4873d59d29018c245944ad56d18dd696, type: 2}
   cardsManager: {fileID: 0}
+  healthbar: {fileID: 0}
 --- !u!114 &5878548590872061660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +66,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+--- !u!114 &1824070559113691870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878548590872061671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5982f7d1aef41947821a85ee613019a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5507590503026576861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +140,7 @@ SpriteRenderer:
   m_Size: {x: 0.09, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &5878548590872061666

@@ -8,4 +8,7 @@ public class PlayerStats : ScriptableObject
 
 	[Header("Starting Weapon Card")]
 	public WeaponCard weaponCard;
+
+	[Header("Stats")]
+	public int maxHP = 100;
 }
