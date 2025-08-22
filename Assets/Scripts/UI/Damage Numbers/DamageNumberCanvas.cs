@@ -24,4 +24,9 @@ public class DamageNumberCanvas : MonoBehaviour
 	{
 		text.text = damageNumber.ToString();
 	}
+
+	public void SetDamageNumberColour(Color color)
+	{
+		text.color = color;
+	}
 }

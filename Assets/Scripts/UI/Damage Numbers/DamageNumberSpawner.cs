@@ -12,9 +12,18 @@ public class DamageNumberSpawner : MonoBehaviour
 		else Destroy(this);
 	}
 
-	public void SpawnDamageNumbers(int damageNumber, Vector2 worldPosition)
+	public DamageNumberCanvas SpawnDamageNumbers(int damageNumber, Vector2 worldPosition)
 	{
 		DamageNumberCanvas damageNum = Instantiate(damageNumberPrefab, worldPosition, Quaternion.identity, transform);
 		damageNum.SetDamageNumberText(Mathf.FloorToInt(damageNumber * inflationMultiplier));
+		return damageNum;
+	}
+
+	public DamageNumberCanvas SpawnDamageNumbers(int damageNumber, Vector2 worldPosition, Color textColor)
+	{
+		DamageNumberCanvas damageNum = SpawnDamageNumbers(damageNumber, worldPosition);
+		damageNum.SetDamageNumberColour(textColor);
+
+		return damageNum;
 	}
 }

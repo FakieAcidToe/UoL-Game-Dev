@@ -15,6 +15,11 @@ public class EnemyHitbox : MonoBehaviour
 			if (playerHP != null)
 			{
 				playerHP.TakeDamage(damage);
+				DamageNumberSpawner.Instance.SpawnDamageNumbers(
+					damage,
+					Vector2.Lerp(transform.position, playerHP.transform.position, 0.5f),
+					Color.magenta);
+
 				attackTimer = tickRate;
 			}
 		}
