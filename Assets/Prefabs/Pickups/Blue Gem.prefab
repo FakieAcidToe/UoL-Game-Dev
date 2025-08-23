@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4794189500083782047}
   - component: {fileID: -640685701025299311}
   - component: {fileID: 6444575228234563289}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Blue Gem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
