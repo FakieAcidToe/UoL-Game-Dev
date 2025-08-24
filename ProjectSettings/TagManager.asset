@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG Environment
+    uniqueID: 2576864477
+    locked: 0
   - name: Background VFX
     uniqueID: 1339795675
     locked: 0
