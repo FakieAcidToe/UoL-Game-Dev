@@ -111,6 +111,12 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8479183794004956999, guid: 5c3867c3b605fca4aa797d05abc8b219,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2781704824089942119, guid: a0676eef260879e4783ae0cf011e3171,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c3867c3b605fca4aa797d05abc8b219, type: 3}
 --- !u!4 &2562547683791428479 stripped
@@ -186,6 +192,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bench Top RIght
       objectReference: {fileID: 0}
+    - target: {fileID: 8479183794004956999, guid: 5c3867c3b605fca4aa797d05abc8b219,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2781704824089942119, guid: a0676eef260879e4783ae0cf011e3171,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c3867c3b605fca4aa797d05abc8b219, type: 3}
 --- !u!4 &830509639201398227 stripped
@@ -270,7 +282,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2781704824089942119, guid: a0676eef260879e4783ae0cf011e3171,
+      objectReference: {fileID: 1708623607618900523, guid: a0676eef260879e4783ae0cf011e3171,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c3867c3b605fca4aa797d05abc8b219, type: 3}
@@ -361,7 +373,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2781704824089942119, guid: a0676eef260879e4783ae0cf011e3171,
+      objectReference: {fileID: 1708623607618900523, guid: a0676eef260879e4783ae0cf011e3171,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c3867c3b605fca4aa797d05abc8b219, type: 3}
