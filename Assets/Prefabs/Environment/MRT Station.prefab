@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  repeatDistance: {x: 0.1, y: 0}
+  repeatDistance: {x: 0.5, y: 0}
 --- !u!212 &2529477649044670924
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  repeatDistance: {x: 0.06, y: 0}
+  repeatDistance: {x: 0.54, y: 0}
 --- !u!212 &5739721097927729412
 SpriteRenderer:
   m_ObjectHideFlags: 0

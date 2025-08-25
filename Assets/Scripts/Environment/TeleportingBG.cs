@@ -20,11 +20,11 @@ public class TeleportingBG : MonoBehaviour
 	void Update()
 	{
 		// if target moved forward past repeatDistance relative to this object
-		if (repeatDistance.x > 0 && Mathf.Abs(target.position.x - transform.position.x) >= repeatDistance.x)
+		if (repeatDistance.x > 0 && Mathf.Abs(target.position.x - transform.position.x) > repeatDistance.x/2)
 			// move object forward to repeat
 			transform.position += Vector3.right * repeatDistance.x * Mathf.Sign(target.position.x - transform.position.x);
 
-		if (repeatDistance.y > 0 && Mathf.Abs(target.position.y - transform.position.y) >= repeatDistance.y)
+		if (repeatDistance.y > 0 && Mathf.Abs(target.position.y - transform.position.y) > repeatDistance.y/2)
 			transform.position += Vector3.up * repeatDistance.y * Mathf.Sign(target.position.y - transform.position.y);
 	}
 }
