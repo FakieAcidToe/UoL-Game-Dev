@@ -902,6 +902,8 @@ MonoBehaviour:
   experience: 0
   level: 1
   experienceCap: 0
+  experienceBar: {fileID: 0}
+  levelText: {fileID: 0}
   levelRanges:
   - startLevel: 1
     endLevel: 2
@@ -1070,7 +1072,12 @@ MonoBehaviour:
   experience: 0
   level: 1
   experienceCap: 0
+  experienceBar: {fileID: 0}
+  levelText: {fileID: 0}
   levelRanges:
+  - startLevel: 1
+    endLevel: 2
+    experienceCapIncrease: 100
   - startLevel: 0
     endLevel: 0
     experienceCapIncrease: 0

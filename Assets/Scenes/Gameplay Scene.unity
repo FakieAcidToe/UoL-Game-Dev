@@ -12905,26 +12905,6 @@ PrefabInstance:
       propertyPath: experienceBar
       value: 
       objectReference: {fileID: 1334767584}
-    - target: {fileID: 6113324937176258736, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
-        type: 3}
-      propertyPath: levelRanges.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113324937176258736, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
-        type: 3}
-      propertyPath: levelRanges.Array.data[0].endLevel
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113324937176258736, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
-        type: 3}
-      propertyPath: levelRanges.Array.data[0].startLevel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113324937176258736, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
-        type: 3}
-      propertyPath: levelRanges.Array.data[0].experienceCapIncrease
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 942102350538153317, guid: 9a030eb4bfb74a04fb71357cd1cefcf5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9a030eb4bfb74a04fb71357cd1cefcf5, type: 3}
