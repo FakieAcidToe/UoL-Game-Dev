@@ -1220,9 +1220,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAtk: 10
-  atkUpgrades: 0
+  ATKUpgrades: 0
+  basePlayerAtk: 10
   playerHP: 100
   hpUpgrades: 0
+  basePlayerHP: 100
   playerCrit: 10
   critUpgrades: 0
-  playerUpgradePoints: 1000
+  playerSPD: 1
+  spdUpgrades: 0
+  playerPUR: 1
+  purUpgrades: 0
+  playerAS: 1
+  asUpgrades: 0
+  playerDef: 10
+  defUpgrades: 0
+  basePlayerDef: 10
+  playerCD: 0
+  cdUpgrades: 0
+  playerEXP: 1
+  expUpgrades: 0
+  playerPoint: 1
+  pointUpgrades: 0
+  playerUpgradePoints: 100000

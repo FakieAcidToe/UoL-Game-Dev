@@ -5,8 +5,10 @@ using UnityEngine.UI;
 public class UpgradeManagerV2 : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public string upgradeName;
-    public int upgradeLVL;
-    public int upgradeCost;
+    public int baseUpgradeCost;
+    public int currentUpgradeCost;
+    public int maxUpgradeCount;
+    public float upgradeAmount;
 
     public Text displayTextBox;
     private Coroutine resetCoroutine;
@@ -25,7 +27,7 @@ public class UpgradeManagerV2 : MonoBehaviour, IPointerEnterHandler, IPointerExi
     }
     public void UpgradeStat()
     {
-        PlayerStatus.Instance.UpdateStat(upgradeName, upgradeCost);
+        PlayerStatus.Instance.UpdateStat(upgradeName, currentUpgradeCost, maxUpgradeCount, upgradeAmount);
         UpdateUpgradeStatus();
         UpdateDisplay();
     }
@@ -45,36 +47,47 @@ public class UpgradeManagerV2 : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             switch (upgradeName)
             {
-                case "ATK":
-                    displayTextBox.text = "ATK UP \nQuantity " + (30 - upgradeLVL);
-                    break;
                 case "HP":
-                    displayTextBox.text = "HP UP \nQuantity " + (30 - upgradeLVL);
+                    displayTextBox.text = "HP UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    break;
+                case "ATK":
+                    displayTextBox.text = "ATK UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
                     break;
                 case "CRIT":
-                    displayTextBox.text = "CRIT UP \nQuantity " + (15 - upgradeLVL);
+                    displayTextBox.text = "CRIT UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    break;
+                case "SPD":
+                    displayTextBox.text = "MOVESPEED UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    break;
+                case "PICKUP":
+                    displayTextBox.text = "PICK UP RANGE \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    break;
+                case "ATKSPD":
+                    displayTextBox.text = "ATTACK SPEED \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    break;
+                case "DEF":
+                    displayTextBox.text = "DEF UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    break;
+                case "CD":
+                    displayTextBox.text = "SKILL COOLDOWN \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    break;
+                case "EXP":
+                    displayTextBox.text = "EXP GAIN \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    break;
+                case "POINT":
+                    displayTextBox.text = "POINT GAIN \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
                     break;
             }
 
-            displayTextBox.text += "\nCost " + upgradeCost + "\nPoints: " + PlayerStatus.Instance.playerUpgradePoints;
+            displayTextBox.text += "\nCost " + currentUpgradeCost + "\nPoints: " + PlayerStatus.Instance.playerUpgradePoints;
         }
     }
 
     public void UpdateUpgradeStatus()
     {
-        switch (upgradeName)
+        if (currentUpgradeCost < PlayerStatus.Instance.getUpgradePoints())
         {
-            case "ATK":
-                upgradeLVL = PlayerStatus.Instance.atkUpgrades;
-                break;
-            case "HP":
-                upgradeLVL = PlayerStatus.Instance.hpUpgrades;
-                break;
-            case "CRIT":
-                upgradeLVL = PlayerStatus.Instance.critUpgrades;
-                break;
+            currentUpgradeCost = (PlayerStatus.Instance.getUpgrades(upgradeName) + 1) * baseUpgradeCost;
         }
-
-        upgradeCost = (upgradeLVL + 1) * 100;
     }
 }
