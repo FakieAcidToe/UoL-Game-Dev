@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8afbc6efad26f42bb880218516b619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.3
+  moveSpeed: 0.35
   knockbackAdj: 0.65
   hitstunAdj: 0.9
 --- !u!114 &7898805536319497245
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705b37d76ee03d04cac4e7282032e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 9
+  maxHP: 10
 --- !u!212 &7783242988435538200
 SpriteRenderer:
   m_ObjectHideFlags: 0

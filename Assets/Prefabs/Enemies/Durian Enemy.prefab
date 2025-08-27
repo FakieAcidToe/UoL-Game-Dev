@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8afbc6efad26f42bb880218516b619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.9
+  moveSpeed: 0.8
   knockbackAdj: 1
   hitstunAdj: 1
 --- !u!114 &7898805536319497245

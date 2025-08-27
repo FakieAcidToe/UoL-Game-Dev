@@ -46,7 +46,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1563830058664889961, guid: fb7f7ef58b6979146999802f787c0cee,
     type: 3}
   directionType: 0
-  interval: 0.8
+  interval: 1.1
   positionOffset: 0.1
   spawnAsChild: 1
   rotateHitboxSprite: 1
@@ -81,3 +81,4 @@ MonoBehaviour:
     timer: 0
     angle: {x: 0.9612617, y: 0.27563736}
     spawnedAmount: 0
+  sfx: {fileID: 0}

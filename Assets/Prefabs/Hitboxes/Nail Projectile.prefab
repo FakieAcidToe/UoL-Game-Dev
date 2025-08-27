@@ -50,7 +50,7 @@ MonoBehaviour:
   lifetime: 1.2
   damage: 1
   knockbackType: 0
-  knockback: 1
+  knockback: 0.5
   hitstun: 0.1
   hitboxLockout: -1
   hitboxDelay: 0

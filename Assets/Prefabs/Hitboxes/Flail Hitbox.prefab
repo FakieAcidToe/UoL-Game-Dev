@@ -151,6 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c92d848a65a2c43847d35c7c9d01c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinSpeed: 360
+  spinSpeed: 300
   targetMagnitude: 0.6
   magSpeed: 1

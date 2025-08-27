@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64d348c244ae5041bb822627e55913a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 0.2
+  lifetime: 0.25
   damage: 1
   knockbackType: 0
-  knockback: 2
+  knockback: 1
   hitstun: 0.1
   hitboxLockout: -1
   hitboxDelay: 0
@@ -59,10 +59,10 @@ MonoBehaviour:
   screenshakeDuration: 0.01
   screenshakeMagnitude: 0.03
   sfx: {fileID: 8300000, guid: f27a04d5641bb0e4b933a295fd6a926b, type: 3}
-  speed: 5
+  speed: 4
   acceleration: 0
   minSpeed: 0
-  maxSpeed: 5
+  maxSpeed: 4
   richochetTimes: 0
   richochetDirection: 4
 --- !u!114 &7394720495606068341

@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 0.1
-  damage: 2
+  damage: 1
   knockbackType: 0
-  knockback: 3
+  knockback: 2
   hitstun: 0.3
   hitboxLockout: -1
   hitboxDelay: 0

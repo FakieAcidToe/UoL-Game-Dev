@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageNumberPrefab: {fileID: 7027534988564919012, guid: b5b1878ed9458884f8da3f4043286313,
     type: 3}
-  inflationMultiplier: 15
+  inflationMultiplier: 1
 --- !u!114 &780209781
 MonoBehaviour:
   m_ObjectHideFlags: 0
