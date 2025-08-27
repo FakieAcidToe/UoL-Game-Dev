@@ -20,7 +20,7 @@ MonoBehaviour:
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 7577454623550021327}
   cooldownShadeImage: {fileID: 2504814324922271380}
-  sfx: {fileID: 8300000, guid: 9b4f5e53c3d3a4a4ea09ca6b94b82c4e, type: 3}
+  sfx: {fileID: 8300000, guid: b277647c7691a6f4b8c8542bbba613e4, type: 3}
   dashSpeed: 8
   dashTime: 0.15
 --- !u!1 &4313417069404728634
