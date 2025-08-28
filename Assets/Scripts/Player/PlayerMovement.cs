@@ -13,6 +13,12 @@ public class PlayerMovement : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 	}
 
+	void Start()
+	{
+		if (PlayerStatus.Instance != null)
+			moveSpeed *= PlayerStatus.Instance.playerSPD;
+	}
+
 	void Update()
 	{
 		movement.x = Input.GetAxisRaw("Horizontal");

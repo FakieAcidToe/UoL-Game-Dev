@@ -47,6 +47,7 @@ MonoBehaviour:
     type: 3}
   directionType: 3
   interval: 6
+  affectedByAttackSpeedUpgrade: 0
   positionOffset: 0
   spawnAsChild: 1
   rotateHitboxSprite: 0

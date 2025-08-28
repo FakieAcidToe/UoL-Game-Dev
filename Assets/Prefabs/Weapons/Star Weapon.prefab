@@ -47,27 +47,39 @@ MonoBehaviour:
     type: 3}
   directionType: 3
   interval: 6
+  affectedByAttackSpeedUpgrade: 0
   positionOffset: 0
   spawnAsChild: 1
   rotateHitboxSprite: 0
   projectileSettings:
   - timeOffset: 0
     angleOffset: 0
+    spawnNumberOfTimes: 0
     timer: 0
     angle: {x: 1, y: 0}
+    spawnedAmount: 0
   - timeOffset: 0
     angleOffset: 72
+    spawnNumberOfTimes: 0
     timer: 0
     angle: {x: 0.30901697, y: 0.95105654}
+    spawnedAmount: 0
   - timeOffset: 0
     angleOffset: -72
+    spawnNumberOfTimes: 0
     timer: 0
     angle: {x: 0.30901697, y: -0.95105654}
+    spawnedAmount: 0
   - timeOffset: 0
     angleOffset: 144
+    spawnNumberOfTimes: 0
     timer: 0
     angle: {x: -0.80901706, y: 0.5877852}
+    spawnedAmount: 0
   - timeOffset: 0
     angleOffset: -144
+    spawnNumberOfTimes: 0
     timer: 0
     angle: {x: -0.80901706, y: -0.5877852}
+    spawnedAmount: 0
+  sfx: {fileID: 0}

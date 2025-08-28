@@ -5,6 +5,7 @@ public class HitboxSpinner : MonoBehaviour
 	Vector2 startPosition;
 
 	[SerializeField] float spinSpeed = 360f;
+	[SerializeField] bool affectedByAttackSpeedUpgrade = true;
 	float angle;
 
 	[SerializeField] float targetMagnitude = 0.5f;
@@ -20,6 +21,9 @@ public class HitboxSpinner : MonoBehaviour
 		angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
 		magnitude = startPosition.magnitude;
+
+		if (affectedByAttackSpeedUpgrade && PlayerStatus.Instance != null)
+			spinSpeed *= PlayerStatus.Instance.playerAS;
 	}
 
 	void Update()

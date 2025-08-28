@@ -17,6 +17,7 @@ public class ProjectileSpawner : MonoBehaviour
 	[SerializeField] Hitbox projectilePrefab;
 	[SerializeField] DirectionProperties.DirectionProperty directionType = DirectionProperties.DirectionProperty.ObjectToMouseDirection;
 	[Tooltip("Time in seconds between each bullet"), SerializeField, Min(0)] float interval;
+	[SerializeField] bool affectedByAttackSpeedUpgrade = true;
 	[Tooltip("Amount to displace bullet in its movement direction on spawn"), SerializeField, Min(0)] float positionOffset;
 	[Tooltip("False: Spawn hitbox at the same level as this object\nTrue: Spawn hitbox as a child of this object"), SerializeField] bool spawnAsChild = true;
 	[Tooltip("Rotate hitbox sprite to set direction?"), SerializeField] bool rotateHitboxSprite = true;
@@ -29,6 +30,9 @@ public class ProjectileSpawner : MonoBehaviour
 	void Awake()
 	{
 		mainCamera = Camera.main;
+
+		if (affectedByAttackSpeedUpgrade && PlayerStatus.Instance != null && PlayerStatus.Instance.playerAS > 0)
+			interval /= PlayerStatus.Instance.playerAS;
 
 		ResetWeaponTiming();
 

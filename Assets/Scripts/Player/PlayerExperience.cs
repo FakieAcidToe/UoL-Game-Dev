@@ -1,74 +1,84 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerExperience : MonoBehaviour
 {
-    // Player Experience and Level
-    [Header("Experience/Level")]
-    public int experience = 0;
-    public int level = 1;
-    public int experienceCap;
+	// Player Experience and Level
+	[Header("Experience/Level")]
+	[SerializeField] int experience = 0;
+	[SerializeField] int level = 1;
+	[SerializeField] int experienceCap;
 
-    [Header("UI")]
-    public Image experienceBar;
-    public Text levelText;
+	[Header("UI")]
+	[SerializeField] Image experienceBar;
+	[SerializeField] Text levelText;
 
-    // Class to define level range and the corresponding experience cap increase
-    [System.Serializable]
-    public class LevelRange
-    {
-        public int startLevel;
-        public int endLevel;
-        public int experienceCapIncrease;
-    }
+	// Class to define level range and the corresponding experience cap increase
+	[System.Serializable]
+	class LevelRange
+	{
+		public int startLevel;
+		public int endLevel;
+		public int experienceCapIncrease;
+	}
 
-    public List<LevelRange> levelRanges;
+	[SerializeField] List<LevelRange> levelRanges;
 
-    void Start()
-    {
-        // Initialise experienceCap as the first experience cap
-        experienceCap = levelRanges[0].experienceCapIncrease;
-        UpdateExperienceBar();
-        UpdateLevelText();
-    }
+	float expMultiplier = 1; // for PlayerStatus.Instance.playerEXP
 
-    public void IncreaseExperience(int amount)
-    {
-        experience += amount;
-        LevelUpChecker();
-        UpdateExperienceBar();
-    }
+	void Start()
+	{
+		// Initialise experienceCap as the first experience cap
+		experienceCap = levelRanges[0].experienceCapIncrease;
+		UpdateExperienceBar();
+		UpdateLevelText();
 
-    void LevelUpChecker()
-    {
-        if (experience > experienceCap)
-        {
-            level++;
-            experience = experienceCap;
+		if (PlayerStatus.Instance != null)
+			expMultiplier *= PlayerStatus.Instance.playerEXP;
+	}
 
-            int experienceCapIncrease = 0;
-            foreach (LevelRange range in levelRanges)
-            {
-                if (level >= range.startLevel && level <= range.endLevel)
-                {
-                    experienceCapIncrease = range.experienceCapIncrease;
-                    break;
-                }
-            }
-            experienceCap += experienceCapIncrease;
-            UpdateLevelText();
-        }
-    }
+	public void IncreaseExperience(int amount)
+	{
+		experience += amount;
+		LevelUpChecker();
+		UpdateExperienceBar();
+	}
 
-    void UpdateExperienceBar()
-    {
-        experienceBar.fillAmount = (float)experience / experienceCap;
-    }
+	void LevelUpChecker()
+	{
+		if (experience > GetScaledExpCap())
+		{
+			level++;
+			experience = 0;
+			//experience = experienceCap;
 
-    void UpdateLevelText()
-    {
-        levelText.text = "LV " + level.ToString();
-    }
+			int experienceCapIncrease = 0;
+			foreach (LevelRange range in levelRanges)
+			{
+				if (level >= range.startLevel && level <= range.endLevel)
+				{
+					experienceCapIncrease = range.experienceCapIncrease;
+					break;
+				}
+			}
+			experienceCap += experienceCapIncrease;
+			UpdateLevelText();
+		}
+	}
+
+	int GetScaledExpCap()
+	{
+		return Mathf.CeilToInt(experienceCap / expMultiplier);
+	}
+
+	void UpdateExperienceBar()
+	{
+		experienceBar.fillAmount = (float)experience / GetScaledExpCap();
+	}
+
+	void UpdateLevelText()
+	{
+		levelText.text = "LV " + level.ToString();
+	}
 }

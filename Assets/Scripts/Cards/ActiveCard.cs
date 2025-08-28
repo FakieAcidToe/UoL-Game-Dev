@@ -15,6 +15,14 @@ public class ActiveCard : AbstractCard
 	[Header("Audio")]
 	[SerializeField] protected AudioClip sfx;
 
+	protected override void Start()
+	{
+		if (PlayerStatus.Instance != null)
+			cooldownTime *= 1 - PlayerStatus.Instance.playerCD;
+
+		base.Start();
+	}
+
 	protected override void Update()
 	{
 		base.Update();
