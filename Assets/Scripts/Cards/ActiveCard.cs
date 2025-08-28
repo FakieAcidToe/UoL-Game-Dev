@@ -54,6 +54,6 @@ public class ActiveCard : AbstractCard
 
 	public bool CanBeUsed()
 	{
-		return cooldown <= 0;
+		return cooldown <= 0 && Time.timeScale > 0;
 	}
 }
