@@ -17,6 +17,8 @@ public class EventOnDirectionPress : MonoBehaviour
 
 	void Update()
 	{
+		if (Time.timeScale <= 0) return;
+
 		Vector2 movement;
 		movement.x = Input.GetAxisRaw("Horizontal");
 		movement.y = Input.GetAxisRaw("Vertical");

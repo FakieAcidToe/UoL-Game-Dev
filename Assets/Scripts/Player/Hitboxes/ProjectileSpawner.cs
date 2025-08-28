@@ -42,6 +42,8 @@ public class ProjectileSpawner : MonoBehaviour
 
 	void Update()
 	{
+		if (Time.timeScale <= 0) return;
+
 		float dt = Time.deltaTime;
 		hitboxDirectionThisTick = Vector2.zero;
 		bool hasSFXThisFrame = false;

@@ -38,6 +38,8 @@ public class ScreenShake : MonoBehaviour
 
 		while (elapsed < duration)
 		{
+			while (Time.timeScale <= 0) yield return null;
+
 			float x = Random.Range(-1f, 1f) * magnitude;
 			float y = Random.Range(-1f, 1f) * magnitude;
 

@@ -38,6 +38,8 @@ public class PlayerAnimController : MonoBehaviour
 
 	void UpdateSprite()
 	{
+		if (Time.timeScale <= 0) return;
+
 		Vector2 mouseDirection = (mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
 		float x = mouseDirection.x;
 		float y = mouseDirection.y;
