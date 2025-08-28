@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8463317118469369560}
   - component: {fileID: 731094615218871084}
   m_Layer: 0
-  m_Name: Basic Shot Weapon
+  m_Name: Basic Shot Weapon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

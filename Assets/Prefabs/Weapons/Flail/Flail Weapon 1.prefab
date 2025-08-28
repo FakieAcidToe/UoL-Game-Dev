@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4357307003266712881}
   - component: {fileID: 7275050371752738990}
   m_Layer: 0
-  m_Name: Flail Weapon
+  m_Name: Flail Weapon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

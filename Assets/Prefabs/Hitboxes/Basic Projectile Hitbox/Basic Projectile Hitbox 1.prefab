@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7872051279160869682}
   - component: {fileID: -7689340470679268130}
   m_Layer: 11
-  m_Name: Basic Projectile Hitbox
+  m_Name: Basic Projectile Hitbox 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

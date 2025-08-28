@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6359979041089329672}
   - component: {fileID: 7610019532295628798}
   m_Layer: 11
-  m_Name: Flail Hitbox
+  m_Name: Flail Hitbox 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class ProjectileSpawner : MonoBehaviour
 	[SerializeField] ProjectileSettings[] projectileSettings;
 	[SerializeField] AudioClip sfx;
 
+	List<Hitbox> limitedHitboxes; // hitboxes that are spawned with a spawn limit
+
 	Camera mainCamera;
 	Vector2 hitboxDirectionThisTick;
 
@@ -38,6 +41,13 @@ public class ProjectileSpawner : MonoBehaviour
 
 		ReCalculateAngleOffset();
 
+		// only instantiate limitedHitboxes if theres a need to
+		foreach (ProjectileSettings setting in projectileSettings)
+			if (setting.spawnNumberOfTimes > 0)
+			{
+				limitedHitboxes = new List<Hitbox>();
+				break;
+			}
 	}
 
 	void Update()
@@ -59,11 +69,14 @@ public class ProjectileSpawner : MonoBehaviour
 					hasSFXThisFrame = true;
 					SoundManager.Instance.Play(sfx);
 				}
-				SpawnHitbox(projectileSettings[i].angle);
+				Hitbox hbox = SpawnHitbox(projectileSettings[i].angle);
 				projectileSettings[i].timer -= interval;
 
 				if (projectileSettings[i].spawnNumberOfTimes > 0)
+				{
 					++projectileSettings[i].spawnedAmount;
+					limitedHitboxes.Add(hbox);
+				}
 			}
 		}
 	}
@@ -126,5 +139,13 @@ public class ProjectileSpawner : MonoBehaviour
 	{
 		for (int i = 0; i < projectileSettings.Length; ++i)
 			projectileSettings[i].angle = new Vector2(Mathf.Cos(projectileSettings[i].angleOffset * Mathf.Deg2Rad), Mathf.Sin(projectileSettings[i].angleOffset * Mathf.Deg2Rad));
+	}
+
+	void OnDestroy()
+	{
+		if (limitedHitboxes != null)
+			foreach (Hitbox hbox in limitedHitboxes)
+				if (hbox != null && hbox.gameObject != null)
+					Destroy(hbox.gameObject);
 	}
 }
