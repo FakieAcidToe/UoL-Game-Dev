@@ -182,7 +182,7 @@ PrefabInstance:
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
       propertyPath: upgradeBlurbs.Array.data[2]
-      value: Faster attack rate
+      value: Faster fire rate
       objectReference: {fileID: 0}
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}

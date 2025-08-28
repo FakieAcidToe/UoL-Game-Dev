@@ -17,6 +17,7 @@ MonoBehaviour:
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 3939684126474471152}
+  blurb: 
   weaponPrefabs:
   - {fileID: 731094615218871084, guid: 7a341be536b575b4fb4e5a1da26cae28, type: 3}
   - {fileID: 5342486905583505011, guid: b5c757154f0ef6e4fba6db7e02ffd667, type: 3}
@@ -26,7 +27,7 @@ MonoBehaviour:
   - An arm cannon that fires 3 shots at a time
   - Faster bullet speed
   - Increased bullet damage
-  - Faster attack rate
+  - Faster fire rate
 --- !u!1001 &7188649741508570853
 PrefabInstance:
   m_ObjectHideFlags: 0

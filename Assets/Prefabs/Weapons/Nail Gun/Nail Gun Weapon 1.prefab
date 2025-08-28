@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8463317118469369560}
   - component: {fileID: 731094615218871084}
   m_Layer: 0
-  m_Name: Nail Gun Weapon
+  m_Name: Nail Gun Weapon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1563830058664889961, guid: 67a3daec8469a9a4dbd58fed0dacfe61,
     type: 3}
   directionType: 0
-  interval: 0.35
+  interval: 0.5
+  affectedByAttackSpeedUpgrade: 1
   positionOffset: 0.1
   spawnAsChild: 1
   rotateHitboxSprite: 1
