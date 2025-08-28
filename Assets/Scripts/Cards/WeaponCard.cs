@@ -6,7 +6,7 @@ public class WeaponCard : AbstractCard
 
 	ProjectileSpawner spawnedWeapon;
 
-	protected override void OnPickup()
+	public override void OnPickup()
 	{
 		spawnedWeapon = Instantiate(weaponPrefab, playerObj);
 	}

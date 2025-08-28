@@ -32,8 +32,6 @@ public class AbstractCard : MonoBehaviour
 	protected virtual void Start()
 	{
 		if (hasRandomColour) SetColour(Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
-
-		OnPickup();
 	}
 
 	protected virtual void Update()
@@ -63,9 +61,9 @@ public class AbstractCard : MonoBehaviour
 		}
 	}
 
-	protected virtual void OnPickup()
+	public virtual void OnPickup()
 	{
-		return;
+
 	}
 
 	public void DestroySelf()

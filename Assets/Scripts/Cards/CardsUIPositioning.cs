@@ -88,6 +88,23 @@ public class CardsUIPositioning : MonoBehaviour
 
 		SoundManager.Instance.Play(cardSFX);
 
+		newCard.OnPickup();
+
+		OrganizeHand();
+	}
+
+	public void ReceiveCardInHand(AbstractCard newCard)
+	{
+		newCard.transform.SetParent(cardCanvasTransform);
+
+		newCard.SetPlayerTransform(playerTransform);
+
+		cardsInHand.Add(newCard);
+
+		SoundManager.Instance.Play(cardSFX);
+
+		newCard.OnPickup();
+
 		OrganizeHand();
 	}
 

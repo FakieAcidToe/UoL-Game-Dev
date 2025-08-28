@@ -12,12 +12,12 @@ public class DashCard : ActiveCard
 	Vector2 dashDirection;
 	Camera mainCamera;
 
-	protected override void Start()
+	public override void OnPickup()
 	{
 		playerRB = playerObj.GetComponent<Rigidbody2D>();
 		mainCamera = Camera.main;
 
-		base.Start();
+		base.OnPickup();
 	}
 
 	public override void UseCardEffect()

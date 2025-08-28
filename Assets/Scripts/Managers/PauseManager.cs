@@ -24,15 +24,21 @@ public class PauseManager : MonoBehaviour
 
 	public void Resume()
 	{
-		pauseMenuUI.SetActive(false);
-		Time.timeScale = 1f;
-		isPaused = false;
+		if (Time.timeScale == 0f)
+		{
+			pauseMenuUI.SetActive(false);
+			Time.timeScale = 1f;
+			isPaused = false;
+		}
 	}
 
 	public void Pause()
 	{
-		pauseMenuUI.SetActive(true);
-		Time.timeScale = 0f;
-		isPaused = true;
+		if (Time.timeScale == 1f)
+		{
+			pauseMenuUI.SetActive(true);
+			Time.timeScale = 0f;
+			isPaused = true;
+		}
 	}
 }

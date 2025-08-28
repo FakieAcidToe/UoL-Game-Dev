@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PlayerExperience : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerExperience : MonoBehaviour
 	[Header("UI")]
 	[SerializeField] Image experienceBar;
 	[SerializeField] Text levelText;
+
+	[Header("Events")]
+	[SerializeField] UnityEvent onLevelUp;
 
 	// Class to define level range and the corresponding experience cap increase
 	[System.Serializable]
@@ -64,6 +68,8 @@ public class PlayerExperience : MonoBehaviour
 			}
 			experienceCap += experienceCapIncrease;
 			UpdateLevelText();
+
+			onLevelUp.Invoke();
 		}
 	}
 
