@@ -140,7 +140,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
+      propertyPath: cardId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
       propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 485393375777045000, guid: f0c78c86c0ee89f43b44baeb4dbb476c,
+        type: 3}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: weaponPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: weaponPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 485393375777045000, guid: f0c78c86c0ee89f43b44baeb4dbb476c,
         type: 3}

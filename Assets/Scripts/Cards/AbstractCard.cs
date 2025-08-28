@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class AbstractCard : MonoBehaviour
 {
+	[SerializeField] uint cardId = 0;
+
 	[Header("On Spawn Properties")]
 	[SerializeField] bool hasRandomColour = false;
 
@@ -20,6 +22,7 @@ public class AbstractCard : MonoBehaviour
 	Image backgroundImage;
 	
 	protected Transform playerObj;
+	int dupeTimes = 0; // number of copies of the same card
 
 	void Awake()
 	{
@@ -61,12 +64,12 @@ public class AbstractCard : MonoBehaviour
 		}
 	}
 
-	public virtual void OnPickup()
+	public virtual void OnPickup(int _dupeTimes)
 	{
-
+		dupeTimes = _dupeTimes;
 	}
 
-	public void DestroySelf()
+	public virtual void DestroySelf()
 	{
 		// idealy do a 'use' animation before destroying
 		Destroy(gameObject);
@@ -93,5 +96,20 @@ public class AbstractCard : MonoBehaviour
 	{
 		targetAngle = _z;
 		shouldLerpRot = true;
+	}
+
+	public uint GetID()
+	{
+		return cardId;
+	}
+
+	public int GetDupeTimes()
+	{
+		return dupeTimes;
+	}
+
+	public virtual int GetMaxDupeTimes()
+	{
+		return 1;
 	}
 }

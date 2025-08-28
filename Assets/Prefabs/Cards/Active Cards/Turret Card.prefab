@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362ee6d3dbbf0f649886c8d246503295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardId: 13
   hasRandomColour: 0
   lerpSpeed: 20
   lerpLeeway: 0.01

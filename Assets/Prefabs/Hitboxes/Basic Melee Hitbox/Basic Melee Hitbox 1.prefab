@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9210795996409522352}
   - component: {fileID: 8664712736658080336}
   m_Layer: 11
-  m_Name: Basic Melee Hitbox
+  m_Name: Basic Melee Hitbox 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

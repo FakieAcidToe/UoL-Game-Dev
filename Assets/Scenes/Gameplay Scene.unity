@@ -9871,6 +9871,8 @@ MonoBehaviour:
   - {fileID: 7976142645815946100, guid: 0cdecb83c30f7b04f9f524951c14d97f, type: 3}
   - {fileID: 8370062548829726831, guid: 0bf758cd2f427c947a029b76a68b1ce4, type: 3}
   - {fileID: 7249698860160045105, guid: f30a3f74a16181449a7446940001dcca, type: 3}
+  maxNumOfWeapons: 3
+  noActivateableDupes: 1
   levelUpScreen: {fileID: 2104068458}
   cardPositions:
   - {fileID: 2112370397}

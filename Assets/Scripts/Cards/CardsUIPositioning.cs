@@ -81,37 +81,42 @@ public class CardsUIPositioning : MonoBehaviour
 	public void GenerateCardInHand(AbstractCard newCardPrefab)
 	{
 		AbstractCard newCard = Instantiate(newCardPrefab, cardCanvasTransform);
-
-		newCard.SetPlayerTransform(playerTransform);
-
-		cardsInHand.Add(newCard);
-
-		SoundManager.Instance.Play(cardSFX);
-
-		newCard.OnPickup();
-
-		OrganizeHand();
+		InitCard(newCard);
 	}
 
 	public void ReceiveCardInHand(AbstractCard newCard)
 	{
 		newCard.transform.SetParent(cardCanvasTransform);
+		InitCard(newCard);
+	}
 
+	void InitCard(AbstractCard newCard)
+	{
 		newCard.SetPlayerTransform(playerTransform);
 
-		cardsInHand.Add(newCard);
 
 		SoundManager.Instance.Play(cardSFX);
 
-		newCard.OnPickup();
+		int dupeTimes = 1;
+		for (int i = 0; i < cardsInHand.Count; ++i)
+			if (newCard.GetID() == cardsInHand[i].GetID()) // duplicate card
+			{
+				dupeTimes += cardsInHand[i].GetDupeTimes();
+				RemoveCard(cardsInHand[i]);
+				break;
+			}
+
+		newCard.OnPickup(dupeTimes);
+
+		cardsInHand.Add(newCard);
 
 		OrganizeHand();
 	}
 
 	public void RemoveCard(int _index)
 	{
-		if (selectedCard >= 0 && selectedCard < cardsInHand.Count)
-			RemoveCard(cardsInHand[selectedCard]);
+		if (_index >= 0 && _index < cardsInHand.Count)
+			RemoveCard(cardsInHand[_index]);
 	}
 
 	public void RemoveCard(AbstractCard _card)

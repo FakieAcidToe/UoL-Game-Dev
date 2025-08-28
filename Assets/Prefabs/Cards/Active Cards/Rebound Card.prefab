@@ -16,6 +16,7 @@ MonoBehaviour:
     type: 3}
   directionType: 5
   interval: 0
+  affectedByAttackSpeedUpgrade: 1
   positionOffset: 0
   spawnAsChild: 1
   rotateHitboxSprite: 0
@@ -33,6 +34,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50cd6e8f9c34cd147bc5f44503ddc34f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardId: 12
   hasRandomColour: 0
   lerpSpeed: 20
   lerpLeeway: 0.01
