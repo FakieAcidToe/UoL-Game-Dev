@@ -156,6 +156,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
+      propertyPath: upgradeBlurbs.Array.data[0]
+      value: A flail with a spiky ball on a chain that circles around you
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[1]
+      value: Faster ball speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[2]
+      value: Increased ball damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[3]
+      value: Increased knockback
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
       propertyPath: weaponPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 7275050371752738990, guid: eab8b361504b0d041a028aab79a6a44d,

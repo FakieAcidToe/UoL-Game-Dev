@@ -39,6 +39,7 @@ MonoBehaviour:
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 3368482249581896717}
+  blurb: High damage explosion
   cooldownTime: 8
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 7577454623550021327}

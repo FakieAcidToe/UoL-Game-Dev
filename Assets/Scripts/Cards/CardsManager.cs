@@ -52,6 +52,9 @@ public class CardsManager : MonoBehaviour
 
 		for (int i = 0; i < cardPositions.Length; ++i)
 		{
+			Text textBlurb = cardPositions[i].GetComponentInChildren<Text>();
+			textBlurb.text = "";
+
 			AbstractCard randomCard = PickRandomCard(cardPool);
 			if (randomCard != null)
 			{
@@ -60,6 +63,16 @@ public class CardsManager : MonoBehaviour
 				cardButton.enabled = true;
 				int index = i;
 				cardButton.onClick.AddListener(() => CardSelected(index));
+
+				// set text blurb
+				WeaponCard potentialWeaponCard = randomCard.GetComponent<WeaponCard>();
+				if (potentialWeaponCard != null)
+				{
+					AbstractCard ownedCard = PlayerOwnsPassiveCard(randomCard.GetID());
+					textBlurb.text = potentialWeaponCard.GetBlurb(ownedCard == null ? 0 : ownedCard.GetDupeTimes());
+				}
+				else
+					textBlurb.text = randomCard.GetBlurb();
 			}
 		}
 	}
@@ -111,14 +124,10 @@ public class CardsManager : MonoBehaviour
 			{
 				if (card is WeaponCard)
 				{
-					if (numOfWeaponsOwned < maxNumOfWeapons)
+					AbstractCard ownedCard = PlayerOwnsPassiveCard(card.GetID());
+					if ((numOfWeaponsOwned < maxNumOfWeapons && ownedCard == null) ||
+						(ownedCard != null && ownedCard.GetDupeTimes() < ownedCard.GetMaxDupeTimes()))
 						cardPool.Add(card);
-					else
-					{
-						AbstractCard ownedCard = PlayerOwnsPassiveCard(card.GetID());
-						if (ownedCard != null && ownedCard.GetDupeTimes() < ownedCard.GetMaxDupeTimes())
-							cardPool.Add(card);
-					}
 				}
 				else if (card is ActiveCard)
 				{

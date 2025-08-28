@@ -17,6 +17,7 @@ MonoBehaviour:
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 3368482249581896717}
+  blurb: Place a turret that attacks for you
   cooldownTime: 10
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 7577454623550021327}

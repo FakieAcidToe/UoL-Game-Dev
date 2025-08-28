@@ -20,7 +20,10 @@ public class AbstractCard : MonoBehaviour
 
 	[Header("GameObject References"), SerializeField]
 	Image backgroundImage;
-	
+
+	[Header("Card Text"), SerializeField, TextArea]
+	string blurb;
+
 	protected Transform playerObj;
 	int dupeTimes = 0; // number of copies of the same card
 
@@ -111,5 +114,10 @@ public class AbstractCard : MonoBehaviour
 	public virtual int GetMaxDupeTimes()
 	{
 		return 1;
+	}
+
+	public virtual string GetBlurb()
+	{
+		return blurb;
 	}
 }

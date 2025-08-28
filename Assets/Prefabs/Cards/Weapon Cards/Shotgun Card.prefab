@@ -171,6 +171,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
+      propertyPath: upgradeBlurbs.Array.data[0]
+      value: A shotgun that shoots 5 spread projectiles at once
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[1]
+      value: Increased pellet lifetime
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[2]
+      value: Increased pellet knockback
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[3]
+      value: Increased pellet damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
       propertyPath: weaponPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 1651542478744740460, guid: 0cb614ef83761a0419078fbb1cef9565,

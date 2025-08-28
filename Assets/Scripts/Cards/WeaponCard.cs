@@ -3,6 +3,7 @@
 public class WeaponCard : AbstractCard
 {
 	[SerializeField] ProjectileSpawner[] weaponPrefabs;
+	[SerializeField, TextArea] string[] upgradeBlurbs;
 
 	ProjectileSpawner spawnedWeapon;
 
@@ -27,5 +28,12 @@ public class WeaponCard : AbstractCard
 	public override int GetMaxDupeTimes()
 	{
 		return weaponPrefabs.Length;
+	}
+
+	public string GetBlurb(int i)
+	{
+		if (i >= 0 && i < upgradeBlurbs.Length)
+			return upgradeBlurbs[i];
+		return "";
 	}
 }

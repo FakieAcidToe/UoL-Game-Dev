@@ -22,6 +22,11 @@ MonoBehaviour:
   - {fileID: 5342486905583505011, guid: b5c757154f0ef6e4fba6db7e02ffd667, type: 3}
   - {fileID: 5342486905583505011, guid: daec22e5ebf63f74685da463df4178a5, type: 3}
   - {fileID: 5342486905583505011, guid: 843c2b3a4aca4ae4f91132f39b190b33, type: 3}
+  upgradeBlurbs:
+  - An arm cannon that fires 3 shots at a time
+  - Faster bullet speed
+  - Increased bullet damage
+  - Faster attack rate
 --- !u!1001 &7188649741508570853
 PrefabInstance:
   m_ObjectHideFlags: 0

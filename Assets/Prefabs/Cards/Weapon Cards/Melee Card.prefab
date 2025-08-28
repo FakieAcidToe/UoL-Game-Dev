@@ -156,6 +156,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
+      propertyPath: upgradeBlurbs.Array.data[0]
+      value: A classic shiny short-ranged sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[1]
+      value: Increased slicing damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[2]
+      value: Increased slicing damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[3]
+      value: 'Dual wield the sword
+
+        Also attack in the opposite direction'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
       propertyPath: weaponPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 5325455727520352164, guid: 653680288ba8af6478c5761eb21f0ff8,

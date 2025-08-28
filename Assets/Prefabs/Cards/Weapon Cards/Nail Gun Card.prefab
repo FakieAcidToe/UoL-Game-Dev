@@ -166,8 +166,33 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
+      propertyPath: upgradeBlurbs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
       propertyPath: weaponPrefabs.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[0]
+      value: A nail gun that fires nails that richochets off enemies
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
+        type: 3}
+      propertyPath: upgradeBlurbs.Array.data[3]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
