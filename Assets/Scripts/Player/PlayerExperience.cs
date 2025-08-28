@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerExperience : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class PlayerExperience : MonoBehaviour
     public int experience = 0;
     public int level = 1;
     public int experienceCap;
+
+    [Header("UI")]
+    public Image experienceBar;
+    public Text levelText;
 
     // Class to define level range and the corresponding experience cap increase
     [System.Serializable]
@@ -25,12 +30,15 @@ public class PlayerExperience : MonoBehaviour
     {
         // Initialise experienceCap as the first experience cap
         experienceCap = levelRanges[0].experienceCapIncrease;
+        UpdateExperienceBar();
+        UpdateLevelText();
     }
 
     public void IncreaseExperience(int amount)
     {
         experience += amount;
         LevelUpChecker();
+        UpdateExperienceBar();
     }
 
     void LevelUpChecker()
@@ -50,6 +58,17 @@ public class PlayerExperience : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+            UpdateLevelText();
         }
+    }
+
+    void UpdateExperienceBar()
+    {
+        experienceBar.fillAmount = (float)experience / experienceCap;
+    }
+
+    void UpdateLevelText()
+    {
+        levelText.text = "LV " + level.ToString();
     }
 }

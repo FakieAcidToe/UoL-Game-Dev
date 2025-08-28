@@ -1,15 +1,41 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ExperienceGem : MonoBehaviour, ICollectible
 {
-    public int experienceGranted;
+	[Header("XP Stats")]
+	[SerializeField] int experienceGranted;
 
-    public void Collect()
+	[Header("Easing")]
+	[SerializeField] float collectionTime = 0.5f;
+	Coroutine collectionCoroutine;
+
+	public void Collect()
     {
         PlayerExperience player = FindObjectOfType<PlayerExperience>();
-        player.IncreaseExperience(experienceGranted);
-        Destroy(gameObject);
-    }
+		if (player != null) Collect(player);
+	}
+
+	public void Collect(PlayerExperience player)
+	{
+		if (collectionCoroutine == null)
+			collectionCoroutine = StartCoroutine(CollectCoroutine(player));
+	}
+
+	IEnumerator CollectCoroutine(PlayerExperience player)
+	{
+		float currentTime = 0;
+		Vector2 startPos = transform.position;
+		while (currentTime < collectionTime)
+		{
+			currentTime += Time.deltaTime;
+			transform.position = new Vector2(
+				EaseUtils.Interpolate(currentTime / collectionTime, startPos.x, player.transform.position.x, EaseUtils.EaseInSine),
+				EaseUtils.Interpolate(currentTime / collectionTime, startPos.y, player.transform.position.y, EaseUtils.EaseInSine));
+			yield return null;
+		}
+
+		player.IncreaseExperience(experienceGranted);
+		Destroy(gameObject);
+	}
 }

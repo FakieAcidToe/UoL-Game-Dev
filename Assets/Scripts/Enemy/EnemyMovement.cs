@@ -44,7 +44,7 @@ public class EnemyMovement : MonoBehaviour
 			else movement = target.position - transform.position;
 
 			// normalize diagonal movement
-			if (movement.sqrMagnitude > 1) movement.Normalize();
+			if (movement.sqrMagnitude > 0) movement.Normalize();
 		}
 	}
 
