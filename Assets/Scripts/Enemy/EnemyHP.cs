@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(EnemyMovement))]
 public class EnemyHP : MonoBehaviour
 {
 	int currentHP;
 	[SerializeField] int maxHP = 3;
+	[SerializeField] UnityEvent onDeath;
 
 	public EnemyMovement movement { get; private set; }
 
@@ -27,6 +29,7 @@ public class EnemyHP : MonoBehaviour
 
 	public void Die()
 	{
+		onDeath.Invoke();
 		Destroy(gameObject);
 	}
 }
