@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3624399096924234221
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 485393375777045000, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: interval
+      value: 1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 485393375777045000, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 6573670578442548937, guid: 0441317c4bdc3ab42b02da470b0fcb5a,
+        type: 3}
+    - target: {fileID: 485393375777045000, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: projectileSettings.Array.data[0].angle.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784999009695535100, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784999009695535100, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784999009695535100, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784999009695535100, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784999009695535100, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784999009695535100, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784999009695535100, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784999009695535100, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784999009695535100, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784999009695535100, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784999009695535100, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784999009695535103, guid: 160749ba0842d7f478a4ba08b90ab432,
+        type: 3}
+      propertyPath: m_Name
+      value: Molotov Weapon 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 160749ba0842d7f478a4ba08b90ab432, type: 3}
