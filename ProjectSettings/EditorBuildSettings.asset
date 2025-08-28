@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UpgradeMenu.unity
     guid: dcf11feaec05c2c4da104395ac2b4d1b
+  - enabled: 1
+    path: Assets/Scenes/Charselect.unity
+    guid: 907cbcc048f303f479b8b2771ef90fb4
   m_configObjects: {}

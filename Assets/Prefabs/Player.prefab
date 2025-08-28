@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70662ee2ba59fed4ebf5f7536a6c26ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: 4873d59d29018c245944ad56d18dd696, type: 2}
+  playerEquipment: {fileID: 11400000, guid: 4873d59d29018c245944ad56d18dd696, type: 2}
   cardsManager: {fileID: 0}
   healthbar: {fileID: 0}
 --- !u!114 &5878548590872061660

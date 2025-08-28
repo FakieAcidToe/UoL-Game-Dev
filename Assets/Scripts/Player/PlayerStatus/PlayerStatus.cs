@@ -3,6 +3,8 @@
 public class PlayerStatus : MonoBehaviour
 {
     public static PlayerStatus Instance;
+    public PlayerEquipment selectedCharacter;
+
     public int playerAtk = 10;
     public int ATKUpgrades = 0;
     public int basePlayerAtk = 10;
@@ -36,24 +38,17 @@ public class PlayerStatus : MonoBehaviour
 
     public int playerUpgradePoints = 10000;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void UpdateStat(string stat, int cost, int maxLevel, float amount)

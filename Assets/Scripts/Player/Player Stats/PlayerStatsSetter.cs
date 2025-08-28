@@ -3,7 +3,7 @@
 [RequireComponent(typeof(PlayerAnimController))]
 public class PlayerStatsSetter : MonoBehaviour
 {
-	[SerializeField] PlayerStats playerStats;
+	[SerializeField] PlayerEquipment playerEquipment;
 	PlayerAnimController animController;
 	PlayerHP playerHP;
 
@@ -12,21 +12,29 @@ public class PlayerStatsSetter : MonoBehaviour
 
 	void Awake()
 	{
-		if (playerStats != null)
+		if (PlayerStatus.Instance != null)
+		{
+			playerEquipment = PlayerStatus.Instance.selectedCharacter;
+
+			if (PlayerStatus.Instance.selectedCharacter != null)
+			{
+				// hp
+				playerHP = GetComponent<PlayerHP>();
+				if (healthbar != null)
+				{
+					playerHP.healthbar = healthbar;
+					playerHP.SetMaxHP(PlayerStatus.Instance.playerHP);
+					playerHP.SetHP(PlayerStatus.Instance.playerHP);
+				}
+			}
+		}
+
+		if (playerEquipment != null)
 		{
 			// animation
 			animController = GetComponent<PlayerAnimController>();
-			if (playerStats.animationSet != null)
-				animController.SetAnimations(playerStats.animationSet);
-
-			// hp
-			playerHP = GetComponent<PlayerHP>();
-			if (healthbar != null)
-			{
-				playerHP.healthbar = healthbar;
-				playerHP.SetMaxHP(playerStats.maxHP);
-				playerHP.SetHP(playerStats.maxHP);
-			}
+			if (playerEquipment.animationSet != null)
+				animController.SetAnimations(playerEquipment.animationSet);
 		}
 	}
 
@@ -45,10 +53,10 @@ public class PlayerStatsSetter : MonoBehaviour
 		}
 
 		if (cardsManager != null)
-			cardsManager.GenerateCardInHand(playerStats.weaponCard);
+			cardsManager.GenerateCardInHand(playerEquipment.weaponCard);
 
 		if (healthbar != null)
-			healthbar.SetPortraitSprite(playerStats.animationSet.portrait);
+			healthbar.SetPortraitSprite(playerEquipment.animationSet.portrait);
 	}
 
 	void OnValidate()
