@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 5
-  damage: 1
+  damage: 10
   knockbackType: 0
   knockback: 0
   hitstun: 0
@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 8753086406733697629}
   yOffset: 0
+  applyEveryFrame: 1
 --- !u!114 &6084865035725879478
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -46,11 +46,9 @@ MonoBehaviour:
   selectedCharacter: {fileID: 11400000, guid: 4873d59d29018c245944ad56d18dd696, type: 2}
   playerDMGB: 1
   dmgbUpgrades: 0
-  playerDMG: 1
-  ATKUpgrades: 0
-  playerHP: 100
+  playerHP: 1000
   hpUpgrades: 0
-  basePlayerHP: 100
+  basePlayerHP: 1000
   playerCrit: 0.1
   critUpgrades: 0
   playerSPD: 1

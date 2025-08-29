@@ -9950,7 +9950,7 @@ MonoBehaviour:
   - {fileID: 8370062548829726831, guid: 0bf758cd2f427c947a029b76a68b1ce4, type: 3}
   - {fileID: 7249698860160045105, guid: f30a3f74a16181449a7446940001dcca, type: 3}
   maxNumOfWeapons: 3
-  noActivateableDupes: 1
+  maxNumOfActivatables: 3
   levelUpScreen: {fileID: 2104068458}
   cardPositions:
   - {fileID: 2112370397}
@@ -11759,7 +11759,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -10
+          m_IntArgument: -100
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13293,7 +13293,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
+          m_IntArgument: 100
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14032,11 +14032,6 @@ PrefabInstance:
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 1572338958}
-    - target: {fileID: 1824070559113691870, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
-        type: 3}
-      propertyPath: onDamaged.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1824070559113691870, guid: 9a030eb4bfb74a04fb71357cd1cefcf5,
         type: 3}
       propertyPath: onDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

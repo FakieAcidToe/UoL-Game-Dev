@@ -5,11 +5,8 @@ public class PlayerStatus : MonoBehaviour
 	public static PlayerStatus Instance;
 	public PlayerEquipment selectedCharacter;
 
-	public float playerDMGB = 1;
+	public float playerDMGB = 1; // note: not implemented yet
 	public int dmgbUpgrades = 0;
-
-	public float playerDMG = 1; // note: not implemented yet
-	public int ATKUpgrades = 0;
 	
 	public int playerHP = 100;
 	public int hpUpgrades= 0;
@@ -64,7 +61,7 @@ public class PlayerStatus : MonoBehaviour
 		switch (stat)
 		{
 			case "ATK":
-				return ATKUpgrades;
+				return dmgbUpgrades;
 			case "HP":
 				return hpUpgrades;
 			case "CRIT":

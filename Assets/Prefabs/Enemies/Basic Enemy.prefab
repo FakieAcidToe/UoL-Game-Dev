@@ -64,7 +64,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705b37d76ee03d04cac4e7282032e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 3
+  maxHP: 30
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &4954856151488454186
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -176,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
   yOffset: -0.065
+  applyEveryFrame: 1
 --- !u!1001 &4964851847745092042
 PrefabInstance:
   m_ObjectHideFlags: 0

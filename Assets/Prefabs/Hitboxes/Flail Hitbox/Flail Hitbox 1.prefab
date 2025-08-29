@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 0
-  damage: 1
+  damage: 10
   knockbackType: 2
   knockback: 2
   hitstun: 0.1
@@ -139,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
   yOffset: -0.1
+  applyEveryFrame: 1
 --- !u!114 &7610019532295628798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,5 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinSpeed: 300
+  affectedByAttackSpeedUpgrade: 1
   targetMagnitude: 0.6
   magSpeed: 1
