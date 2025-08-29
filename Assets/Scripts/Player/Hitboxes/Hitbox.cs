@@ -15,7 +15,9 @@ public class Hitbox : MonoBehaviour
 	[SerializeField, Tooltip("How long the hitbox lasts\n0 = Infinity"), Min(0)]
 	float lifetime = 2f;
 	[SerializeField, Tooltip("Damage amount to deal on hit")]
-	int damage = 1;
+	int damage = 10;
+	[SerializeField, Min(1), Tooltip("Amount to multiply damage when landing critical hits")]
+	float critDamageMult = 2;
 	[SerializeField, Tooltip("What direction to knock enemies")]
 	KnockbackTypes knockbackType = KnockbackTypes.Direction;
 	[SerializeField, Tooltip("Knockback impulse strength applied on hit")]
@@ -71,11 +73,23 @@ public class Hitbox : MonoBehaviour
 
 	protected virtual void DamageEnemy(EnemyHP _enemy)
 	{
-		_enemy.TakeDamage(damage); // damage enemy
+		float increasedDamage = damage;
+		bool hasCrit = false;
+		if (PlayerStatus.Instance != null)
+		{
+			increasedDamage *= PlayerStatus.Instance.playerDMGB;
+			if (critDamageMult > 1 && Random.value < PlayerStatus.Instance.playerCrit)
+			{
+				increasedDamage *= critDamageMult;
+				hasCrit = true;
+			}
+		}
+
+		_enemy.TakeDamage(Mathf.FloorToInt(increasedDamage)); // damage enemy
 
 		// damage numbers
-		if (damage > 0)
-			DamageNumberSpawner.Instance.SpawnDamageNumbers(damage, _enemy.transform.position);
+		if (increasedDamage > 0)
+			DamageNumberSpawner.Instance.SpawnDamageNumbers(Mathf.FloorToInt(increasedDamage), _enemy.transform.position, hasCrit ? Color.cyan : Color.red);
 
 		Vector2 knockbackDirection;
 		switch (knockbackType)
