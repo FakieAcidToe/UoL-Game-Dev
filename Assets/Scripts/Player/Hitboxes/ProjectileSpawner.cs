@@ -148,4 +148,9 @@ public class ProjectileSpawner : MonoBehaviour
 				if (hbox != null && hbox.gameObject != null)
 					Destroy(hbox.gameObject);
 	}
+
+	public Vector2 GetHitboxDirectionThisTick()
+	{
+		return hitboxDirectionThisTick;
+	}
 }
