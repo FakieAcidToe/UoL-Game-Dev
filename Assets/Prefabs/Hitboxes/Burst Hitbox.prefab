@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 0.96
   damage: 50
+  critDamageMult: 2
   knockbackType: 2
   knockback: 3
   hitstun: 0.5

@@ -12,7 +12,7 @@ public class PlayerStatus : MonoBehaviour
 	public int hpUpgrades= 0;
 	public int basePlayerHP = 100;
 
-	public float playerCrit = 0.1f; // note: not implemented yet
+	public float playerCrit = 0.1f;
 	public int critUpgrades = 0;
 
 	public float playerSPD = 1;
