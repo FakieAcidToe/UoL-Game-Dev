@@ -2553,13 +2553,55 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 2b8642b1ada224e4886ea82fef43ec56, type: 2}
     - {fileID: 11400000, guid: d916fb4be7974a04e9ba0e103d2e26e6, type: 2}
   - name: Wave 4 (Miniboss)
+    hpBuff: 50
+    movementBuff: 0
+    damageBuff: 0
+    spawnWaveSet:
+    - {fileID: 11400000, guid: f02c90457f31fb546b79140616199bfb, type: 2}
+    - {fileID: 11400000, guid: 4d5490168556229498748807d343951a, type: 2}
+  - name: Wave 5
+    hpBuff: 80
+    movementBuff: 0.2
+    damageBuff: 20
+    spawnWaveSet:
+    - {fileID: 11400000, guid: 06872b3bec33eaa45877ef9f98af9ae8, type: 2}
+    - {fileID: 11400000, guid: d916fb4be7974a04e9ba0e103d2e26e6, type: 2}
+    - {fileID: 11400000, guid: 2b8642b1ada224e4886ea82fef43ec56, type: 2}
+  - name: Wave 6
+    hpBuff: 110
+    movementBuff: 0.2
+    damageBuff: 20
+    spawnWaveSet:
+    - {fileID: 11400000, guid: be899782497c1964baf7212f24f0c4e2, type: 2}
+    - {fileID: 11400000, guid: d916fb4be7974a04e9ba0e103d2e26e6, type: 2}
+    - {fileID: 11400000, guid: be899782497c1964baf7212f24f0c4e2, type: 2}
+    - {fileID: 11400000, guid: 06872b3bec33eaa45877ef9f98af9ae8, type: 2}
+  - name: Wave 7
+    hpBuff: 160
+    movementBuff: 0.5
+    damageBuff: 30
+    spawnWaveSet:
+    - {fileID: 11400000, guid: 2b8642b1ada224e4886ea82fef43ec56, type: 2}
+    - {fileID: 11400000, guid: d916fb4be7974a04e9ba0e103d2e26e6, type: 2}
+    - {fileID: 11400000, guid: 2b8642b1ada224e4886ea82fef43ec56, type: 2}
+    - {fileID: 11400000, guid: d916fb4be7974a04e9ba0e103d2e26e6, type: 2}
+    - {fileID: 11400000, guid: 06872b3bec33eaa45877ef9f98af9ae8, type: 2}
+    - {fileID: 11400000, guid: be899782497c1964baf7212f24f0c4e2, type: 2}
+  - name: Wave 8 (Boss)
+    hpBuff: 160
+    movementBuff: 0.5
+    damageBuff: 30
+    spawnWaveSet:
+    - {fileID: 11400000, guid: f02c90457f31fb546b79140616199bfb, type: 2}
+    - {fileID: 11400000, guid: 4d5490168556229498748807d343951a, type: 2}
+  - name: Empty
     hpBuff: 0
     movementBuff: 0
     damageBuff: 0
     spawnWaveSet: []
   isSpawning: 1
-  stage1: {fileID: 284280615012058782, guid: 33ef53ca498fa5a428ccf8263ef500a0, type: 3}
-  stage2: {fileID: 5826831415742488167, guid: 729014c4f7206054d8cbc9a8f5674809, type: 3}
+  stage1: {fileID: 5826831415742488167, guid: 729014c4f7206054d8cbc9a8f5674809, type: 3}
+  stage2: {fileID: 284280615012058782, guid: 33ef53ca498fa5a428ccf8263ef500a0, type: 3}
   changeStageAtWave: 4
   loopWaves: 1
 --- !u!114 &780209782

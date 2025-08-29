@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c4bd3244c797ff4c94eed0822ffcc05, type: 3}
-  m_Name: Easy Durian Wave
+  m_Name: Miniboss Dragon
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 7783242988435538207, guid: 2e1aa6f26fcd4b040a2dd394a8c08107, type: 3}
-  enemyWaveTime: 15
-  spawnInterval: 0.5
-  numIntervals: 0
+  - {fileID: 7783242988435538207, guid: b80d90c3c2d23ca408e835a1a065413f, type: 3}
+  enemyWaveTime: 1
+  spawnInterval: 0
+  numIntervals: 1
   waveType: 0
   spawnNumber: 1
   spawnInOrder: 0
   minDist: 4
-  maxDist: 5
+  maxDist: 4
   randomNegativeDist: 0
   spawnLength: 0

@@ -162,17 +162,23 @@ PrefabInstance:
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
       propertyPath: upgradeBlurbs.Array.data[1]
-      value: Faster ball speed
+      value: 'Faster ball speed
+
+        +1 ball'
       objectReference: {fileID: 0}
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
       propertyPath: upgradeBlurbs.Array.data[2]
-      value: Increased ball damage
+      value: 'Increased ball damage
+
+        +1 ball'
       objectReference: {fileID: 0}
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}
       propertyPath: upgradeBlurbs.Array.data[3]
-      value: Increased knockback
+      value: 'Increased knockback
+
+        +1 ball'
       objectReference: {fileID: 0}
     - target: {fileID: 4990450910173457316, guid: ee341593e0e360d41a2e5c98c7d73436,
         type: 3}

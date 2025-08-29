@@ -68,6 +68,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8333040053774217220, guid: 372937b0df4dcc24e8f38213c14ca12e,
         type: 3}
+    - target: {fileID: 7275050371752738990, guid: eab8b361504b0d041a028aab79a6a44d,
+        type: 3}
+      propertyPath: projectileSettings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275050371752738990, guid: eab8b361504b0d041a028aab79a6a44d,
+        type: 3}
+      propertyPath: projectileSettings.Array.data[1].angle.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275050371752738990, guid: eab8b361504b0d041a028aab79a6a44d,
+        type: 3}
+      propertyPath: projectileSettings.Array.data[1].angleOffset
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275050371752738990, guid: eab8b361504b0d041a028aab79a6a44d,
+        type: 3}
+      propertyPath: projectileSettings.Array.data[1].spawnNumberOfTimes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8567863884059395023, guid: eab8b361504b0d041a028aab79a6a44d,
         type: 3}
       propertyPath: m_Name

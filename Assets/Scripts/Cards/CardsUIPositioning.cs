@@ -40,7 +40,7 @@ public class CardsUIPositioning : MonoBehaviour
 
 	void Update()
 	{
-		if (!selectable && Time.timeScale <= 0) return;
+		if (!selectable || Time.timeScale <= 0) return;
 
 		if (cardsInHand.Count > 0)
 		{
