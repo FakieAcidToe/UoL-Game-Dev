@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362ee6d3dbbf0f649886c8d246503295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardId: 13
   hasRandomColour: 0
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 3368482249581896717}
+  blurb: Place a turret that attacks for you
   cooldownTime: 10
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 7577454623550021327}
@@ -88,7 +90,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0

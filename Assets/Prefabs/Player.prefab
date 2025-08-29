@@ -50,7 +50,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,7 +89,7 @@ TextMesh:
   m_FontSize: 32
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -551,7 +551,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -590,7 +590,7 @@ TextMesh:
   m_FontSize: 32
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -741,7 +741,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -780,7 +780,7 @@ TextMesh:
   m_FontSize: 32
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -797,7 +797,6 @@ GameObject:
   - component: {fileID: 5878548590872061660}
   - component: {fileID: 1824070559113691870}
   - component: {fileID: 5507590503026576861}
-  - component: {fileID: 942102350538153317}
   - component: {fileID: 5878548590872061664}
   - component: {fileID: 5878548590872061666}
   - component: {fileID: 5878548590872061667}
@@ -837,7 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70662ee2ba59fed4ebf5f7536a6c26ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: 4873d59d29018c245944ad56d18dd696, type: 2}
+  playerEquipment: {fileID: 11400000, guid: 4873d59d29018c245944ad56d18dd696, type: 2}
   cardsManager: {fileID: 0}
   healthbar: {fileID: 0}
 --- !u!114 &5878548590872061660
@@ -887,30 +886,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationSet: {fileID: 11400000, guid: 8202c85ccffef5f499b5f2c14bff2036, type: 2}
   idleSpeed: 0.25
---- !u!114 &942102350538153317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5878548590872061671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aef4b5150a8aa94099814898d91c089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  experience: 0
-  level: 1
-  experienceCap: 0
-  experienceBar: {fileID: 0}
-  levelText: {fileID: 0}
-  levelRanges:
-  - startLevel: 1
-    endLevel: 2
-    experienceCapIncrease: 100
-  - startLevel: 0
-    endLevel: 0
-    experienceCapIncrease: 0
 --- !u!212 &5878548590872061664
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1074,6 +1049,9 @@ MonoBehaviour:
   experienceCap: 0
   experienceBar: {fileID: 0}
   levelText: {fileID: 0}
+  onLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
   levelRanges:
   - startLevel: 1
     endLevel: 2
@@ -1159,7 +1137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1198,7 +1176,7 @@ TextMesh:
   m_FontSize: 32
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080

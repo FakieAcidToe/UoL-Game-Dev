@@ -12,17 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252cccf3e5e34554282ba6c5d252fcf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardId: 11
   hasRandomColour: 0
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 3368482249581896717}
+  blurb: 
   cooldownTime: 1
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 7577454623550021327}
   cooldownShadeImage: {fileID: 2504814324922271380}
   sfx: {fileID: 8300000, guid: 453df701e29d809449d97cf3aadd943f, type: 3}
-  dashSpeed: 8
-  dashTime: 0.15
+  dashUpgrades:
+  - dashSpeed: 8
+    dashTime: 0.15
+    upgradeBlurb: Quick dash in any direction
+  - dashSpeed: 12
+    dashTime: 0.1
+    upgradeBlurb: Faster dash speed
 --- !u!1 &4313417069404728634
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +95,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
     m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0

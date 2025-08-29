@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour
 {
@@ -17,11 +18,14 @@ public class ProjectileSpawner : MonoBehaviour
 	[SerializeField] Hitbox projectilePrefab;
 	[SerializeField] DirectionProperties.DirectionProperty directionType = DirectionProperties.DirectionProperty.ObjectToMouseDirection;
 	[Tooltip("Time in seconds between each bullet"), SerializeField, Min(0)] float interval;
+	[SerializeField] bool affectedByAttackSpeedUpgrade = true;
 	[Tooltip("Amount to displace bullet in its movement direction on spawn"), SerializeField, Min(0)] float positionOffset;
 	[Tooltip("False: Spawn hitbox at the same level as this object\nTrue: Spawn hitbox as a child of this object"), SerializeField] bool spawnAsChild = true;
 	[Tooltip("Rotate hitbox sprite to set direction?"), SerializeField] bool rotateHitboxSprite = true;
 	[SerializeField] ProjectileSettings[] projectileSettings;
 	[SerializeField] AudioClip sfx;
+
+	List<Hitbox> limitedHitboxes; // hitboxes that are spawned with a spawn limit
 
 	Camera mainCamera;
 	Vector2 hitboxDirectionThisTick;
@@ -30,14 +34,26 @@ public class ProjectileSpawner : MonoBehaviour
 	{
 		mainCamera = Camera.main;
 
+		if (affectedByAttackSpeedUpgrade && PlayerStatus.Instance != null && PlayerStatus.Instance.playerAS > 0)
+			interval /= PlayerStatus.Instance.playerAS;
+
 		ResetWeaponTiming();
 
 		ReCalculateAngleOffset();
 
+		// only instantiate limitedHitboxes if theres a need to
+		foreach (ProjectileSettings setting in projectileSettings)
+			if (setting.spawnNumberOfTimes > 0)
+			{
+				limitedHitboxes = new List<Hitbox>();
+				break;
+			}
 	}
 
 	void Update()
 	{
+		if (Time.timeScale <= 0) return;
+
 		float dt = Time.deltaTime;
 		hitboxDirectionThisTick = Vector2.zero;
 		bool hasSFXThisFrame = false;
@@ -53,11 +69,14 @@ public class ProjectileSpawner : MonoBehaviour
 					hasSFXThisFrame = true;
 					SoundManager.Instance.Play(sfx);
 				}
-				SpawnHitbox(projectileSettings[i].angle);
+				Hitbox hbox = SpawnHitbox(projectileSettings[i].angle);
 				projectileSettings[i].timer -= interval;
 
 				if (projectileSettings[i].spawnNumberOfTimes > 0)
+				{
 					++projectileSettings[i].spawnedAmount;
+					limitedHitboxes.Add(hbox);
+				}
 			}
 		}
 	}
@@ -120,5 +139,13 @@ public class ProjectileSpawner : MonoBehaviour
 	{
 		for (int i = 0; i < projectileSettings.Length; ++i)
 			projectileSettings[i].angle = new Vector2(Mathf.Cos(projectileSettings[i].angleOffset * Mathf.Deg2Rad), Mathf.Sin(projectileSettings[i].angleOffset * Mathf.Deg2Rad));
+	}
+
+	void OnDestroy()
+	{
+		if (limitedHitboxes != null)
+			foreach (Hitbox hbox in limitedHitboxes)
+				if (hbox != null && hbox.gameObject != null)
+					Destroy(hbox.gameObject);
 	}
 }

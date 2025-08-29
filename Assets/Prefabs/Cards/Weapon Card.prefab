@@ -12,12 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dcaa403b053b6d449b8c23a35b4ab6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardId: 2
   hasRandomColour: 0
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 3939684126474471152}
-  weaponPrefab: {fileID: 731094615218871084, guid: 7a341be536b575b4fb4e5a1da26cae28,
-    type: 3}
+  blurb: 
+  weaponPrefabs:
+  - {fileID: 731094615218871084, guid: 7a341be536b575b4fb4e5a1da26cae28, type: 3}
+  - {fileID: 5342486905583505011, guid: b5c757154f0ef6e4fba6db7e02ffd667, type: 3}
+  - {fileID: 5342486905583505011, guid: daec22e5ebf63f74685da463df4178a5, type: 3}
+  - {fileID: 5342486905583505011, guid: 843c2b3a4aca4ae4f91132f39b190b33, type: 3}
+  upgradeBlurbs:
+  - An arm cannon that fires 3 shots at a time
+  - Faster bullet speed
+  - Increased bullet damage
+  - Faster fire rate
 --- !u!1001 &7188649741508570853
 PrefabInstance:
   m_ObjectHideFlags: 0
