@@ -1,35 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &4405956687595094537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281618190729987906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362ee6d3dbbf0f649886c8d246503295, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardId: 13
-  hasRandomColour: 0
-  lerpSpeed: 20
-  lerpLeeway: 0.01
-  backgroundImage: {fileID: 3368482249581896717}
-  blurb: 
-  cooldownTime: 10
-  cooldownAlpha: 64
-  cooldownShadeMask: {fileID: 7577454623550021327}
-  cooldownShadeImage: {fileID: 2504814324922271380}
-  sfx: {fileID: 8300000, guid: 90463c76b85f42246b7655f9b88201de, type: 3}
-  turretPrefab:
-  - {fileID: 5230232308457773439, guid: 97524f4655d557f4eb28406f06c14053, type: 3}
-  - {fileID: 4023850081327194034, guid: 87de24011006e5049b62f44ee2b0467a, type: 3}
-  upgradeBlurbs:
-  - Place a turret that attacks for you
-  - Turret fires nails that richochets off enemies
---- !u!1 &4313417069404728634
+--- !u!1 &2556416833338303338
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8724104909066722049}
-  - component: {fileID: 1261909949412526878}
-  - component: {fileID: 3008562540100171866}
+  - component: {fileID: 6944631839750889499}
+  - component: {fileID: 4759274819982823971}
+  - component: {fileID: 5459779392769937909}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -47,40 +18,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &8724104909066722049
+--- !u!224 &6944631839750889499
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4313417069404728634}
+  m_GameObject: {fileID: 2556416833338303338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1561029968505518011}
-  m_RootOrder: 0
+  m_Father: {fileID: 7021056524417848669}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 120, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1261909949412526878
+--- !u!222 &4759274819982823971
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4313417069404728634}
+  m_GameObject: {fileID: 2556416833338303338}
   m_CullTransparentMesh: 0
---- !u!114 &3008562540100171866
+--- !u!114 &5459779392769937909
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4313417069404728634}
+  m_GameObject: {fileID: 2556416833338303338}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -95,7 +66,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
-    m_FontSize: 28
+    m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -106,8 +77,35 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TURRET
---- !u!1001 &2383887220214662354
+  m_Text: HEAL
+--- !u!114 &-3002574491512890618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8587990146452825508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2aa5438acebf8948b249fd7f9289d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardId: 14
+  hasRandomColour: 0
+  lerpSpeed: 20
+  lerpLeeway: 0.01
+  backgroundImage: {fileID: 6519357434511116011}
+  blurb: 
+  cooldownTime: 12
+  cooldownAlpha: 64
+  cooldownShadeMask: {fileID: 2156853809086266409}
+  cooldownShadeImage: {fileID: 6198301717194515570}
+  sfx: {fileID: 0}
+  healAmount: 1900000032000000
+  upgradeBlurbs:
+  - Heal 25 HP
+  - Heal 50 HP
+--- !u!1001 &6184406568669472308
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -117,22 +115,22 @@ PrefabInstance:
     - target: {fileID: 1128719096262992095, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.8784314
+      value: 0.26600006
       objectReference: {fileID: 0}
     - target: {fileID: 1128719096262992095, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.1843137
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1128719096262992095, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.4288528
+      value: 0.14900002
       objectReference: {fileID: 0}
     - target: {fileID: 2521389668810015632, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}
       propertyPath: m_Name
-      value: Turret Card
+      value: Heal Card
       objectReference: {fileID: 0}
     - target: {fileID: 2521389668810015639, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}
@@ -239,30 +237,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3087560214471729256, guid: ef17a03cfadc7894c88e0553bc726e64,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6900150361077675449, guid: ef17a03cfadc7894c88e0553bc726e64,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4094358817951472432, guid: ef17a03cfadc7894c88e0553bc726e64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ef17a03cfadc7894c88e0553bc726e64, type: 3}
---- !u!1 &281618190729987906 stripped
+--- !u!1 &8587990146452825508 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2521389668810015632, guid: ef17a03cfadc7894c88e0553bc726e64,
     type: 3}
-  m_PrefabInstance: {fileID: 2383887220214662354}
+  m_PrefabInstance: {fileID: 6184406568669472308}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3368482249581896717 stripped
+--- !u!114 &6519357434511116011 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1128719096262992095, guid: ef17a03cfadc7894c88e0553bc726e64,
     type: 3}
-  m_PrefabInstance: {fileID: 2383887220214662354}
+  m_PrefabInstance: {fileID: 6184406568669472308}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -270,17 +258,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &1561029968505518011 stripped
+--- !u!224 &7021056524417848669 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3800088896486749033, guid: ef17a03cfadc7894c88e0553bc726e64,
     type: 3}
-  m_PrefabInstance: {fileID: 2383887220214662354}
+  m_PrefabInstance: {fileID: 6184406568669472308}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7577454623550021327 stripped
+--- !u!114 &2156853809086266409 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5205530181152414237, guid: ef17a03cfadc7894c88e0553bc726e64,
     type: 3}
-  m_PrefabInstance: {fileID: 2383887220214662354}
+  m_PrefabInstance: {fileID: 6184406568669472308}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -288,11 +276,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2504814324922271380 stripped
+--- !u!114 &6198301717194515570 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 276874140637479494, guid: ef17a03cfadc7894c88e0553bc726e64,
     type: 3}
-  m_PrefabInstance: {fileID: 2383887220214662354}
+  m_PrefabInstance: {fileID: 6184406568669472308}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
