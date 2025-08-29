@@ -30,8 +30,9 @@ public class WeaponCard : AbstractCard
 		return weaponPrefabs.Length;
 	}
 
-	public string GetBlurb(int i)
+	public override string GetBlurb()
 	{
+		int i = GetDupeTimes();
 		if (i >= 0 && i < upgradeBlurbs.Length)
 			return upgradeBlurbs[i];
 		return "";

@@ -13,7 +13,7 @@ public class CardsManager : MonoBehaviour
 
 	[Header("Level Up Screen")]
 	[SerializeField, Min(0)] int maxNumOfWeapons = 3;
-	[SerializeField] bool noActivateableDupes = true;
+	[SerializeField, Min(0)] int maxNumOfActivatables = 3;
 	[SerializeField] GameObject levelUpScreen;
 	[SerializeField] GameObject[] cardPositions;
 	bool isLevelUpScreenShowing = false;
@@ -65,14 +65,8 @@ public class CardsManager : MonoBehaviour
 				cardButton.onClick.AddListener(() => CardSelected(index));
 
 				// set text blurb
-				WeaponCard potentialWeaponCard = randomCard.GetComponent<WeaponCard>();
-				if (potentialWeaponCard != null)
-				{
-					AbstractCard ownedCard = PlayerOwnsPassiveCard(randomCard.GetID());
-					textBlurb.text = potentialWeaponCard.GetBlurb(ownedCard == null ? 0 : ownedCard.GetDupeTimes());
-				}
-				else
-					textBlurb.text = randomCard.GetBlurb();
+				AbstractCard ownedCard = PlayerOwnsCard(randomCard.GetID());
+				textBlurb.text = ownedCard == null ? randomCard.GetBlurb() : ownedCard.GetBlurb();
 			}
 		}
 	}
@@ -116,9 +110,13 @@ public class CardsManager : MonoBehaviour
 		if (cardPrefabs.Length > 0)
 		{
 			int numOfWeaponsOwned = 0;
-			foreach (AbstractCard card in passiveCards.cardsInHand)
+			int numOfActivatablesOwned = 0;
+			foreach (AbstractCard card in passiveCards.cardsInHand) // passives only
 				if (card is WeaponCard)
 					++numOfWeaponsOwned;
+			foreach (AbstractCard card in activeCards.cardsInHand) // actives only
+				if (card is ActiveCard)
+					++numOfActivatablesOwned;
 
 			foreach (AbstractCard card in cardPrefabs)
 			{
@@ -131,13 +129,23 @@ public class CardsManager : MonoBehaviour
 				}
 				else if (card is ActiveCard)
 				{
-					if (!noActivateableDupes || PlayerOwnsActiveCard(card.GetID()) == null)
+					AbstractCard ownedCard = PlayerOwnsActiveCard(card.GetID());
+					if ((numOfActivatablesOwned < maxNumOfActivatables && ownedCard == null) ||
+						(ownedCard != null && ownedCard.GetDupeTimes() < ownedCard.GetMaxDupeTimes()))
 						cardPool.Add(card);
 				}
 			}
-
 		}
 		return cardPool;
+	}
+
+	AbstractCard PlayerOwnsCard(uint id)
+	{
+		AbstractCard card = PlayerOwnsActiveCard(id);
+		if (card != null) return card;
+		card = PlayerOwnsPassiveCard(id);
+		if (card != null) return card;
+		return null;
 	}
 
 	AbstractCard PlayerOwnsActiveCard(uint id)

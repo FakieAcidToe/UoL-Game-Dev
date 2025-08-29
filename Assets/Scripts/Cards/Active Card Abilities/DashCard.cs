@@ -2,9 +2,17 @@
 
 public class DashCard : ActiveCard
 {
+	[System.Serializable]
+	struct DashProperties
+	{
+		[Min(0)] public float dashSpeed; // = 8f;
+		[Min(0)] public float dashTime; // = 0.15f;
+		[TextArea] public string upgradeBlurb;
+	}
+
 	[Header("Dash Card Properties")]
-	[SerializeField, Min(0)] float dashSpeed = 8f;
-	[SerializeField, Min(0)] float dashTime = 0.15f;
+	[SerializeField] DashProperties[] dashUpgrades;
+
 	float dashTimer = 0f;
 	bool dashing = false;
 	Rigidbody2D playerRB;
@@ -43,10 +51,28 @@ public class DashCard : ActiveCard
 		if (dashing)
 		{
 			dashTimer += Time.fixedDeltaTime;
-			playerRB.MovePosition(playerRB.position + dashDirection * dashSpeed * Time.fixedDeltaTime);
+			playerRB.MovePosition(playerRB.position + dashDirection * GetCurrentDash().dashSpeed * Time.fixedDeltaTime);
 
-			if (dashTimer >= dashTime)
+			if (dashTimer >= GetCurrentDash().dashTime)
 				dashing = false;
 		}
+	}
+
+	DashProperties GetCurrentDash()
+	{
+		return dashUpgrades[Mathf.Clamp(GetDupeTimes() - 1, 0, dashUpgrades.Length - 1)];
+	}
+
+	public override int GetMaxDupeTimes()
+	{
+		return dashUpgrades.Length;
+	}
+
+	public override string GetBlurb()
+	{
+		int i = GetDupeTimes();
+		if (i >= 0 && i < dashUpgrades.Length)
+			return dashUpgrades[i].upgradeBlurb;
+		return "";
 	}
 }
