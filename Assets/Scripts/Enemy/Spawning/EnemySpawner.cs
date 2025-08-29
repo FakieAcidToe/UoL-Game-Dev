@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
-	[System.Serializable]
+	[Serializable]
 	class SpawnWaveSet
 	{
 		public string name;
@@ -16,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
 
 	[SerializeField] Transform playerTransform;
 	[SerializeField] Text timerText;
+	[SerializeField] Image stageChangeCover;
 
 	[Header("Spawning properties")]
 	[SerializeField] SpawnWaveSet[] spawnWavesPerMinute;
@@ -71,10 +73,7 @@ public class EnemySpawner : MonoBehaviour
 		{
 			waveNumber = 0;
 			if (currentMinute == changeStageAtWave) // change stage
-			{
-				Destroy(currentStage);
-				currentStage = Instantiate(stage2, playerTransform.position, Quaternion.identity);
-			}
+				StartCoroutine(ChangeStageCoroutine());
 		}
 
 		if (isSpawning && waveNumber < currentSpawnWaveSet.spawnWaveSet.Length)
@@ -94,5 +93,35 @@ public class EnemySpawner : MonoBehaviour
 	{
 		timer += time;
 		timerText.text = TimeSpan.FromSeconds(timer).ToString("mm\\:ss");
+	}
+
+	IEnumerator ChangeStageCoroutine()
+	{
+		yield return FadeStageCover(0, 1, 0.3f);
+
+		Destroy(currentStage);
+		currentStage = Instantiate(stage2, playerTransform.position, Quaternion.identity);
+
+		yield return FadeStageCover(1, 0, 0.3f);
+	}
+
+	IEnumerator FadeStageCover(float startAlpha, float endAlpha, float fadeDuration)
+	{
+		float timeElapsed = 0f;
+
+		Color color = stageChangeCover.color;
+		color.a = startAlpha;
+		stageChangeCover.color = color;
+
+		while (timeElapsed < fadeDuration)
+		{
+			timeElapsed += Time.deltaTime;
+			color.a = Mathf.Lerp(startAlpha, endAlpha, timeElapsed / fadeDuration);
+			stageChangeCover.color = color;
+			yield return null;
+		}
+
+		color.a = endAlpha;
+		stageChangeCover.color = color;
 	}
 }
