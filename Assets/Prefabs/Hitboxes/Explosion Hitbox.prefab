@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2650518410410255651}
   - component: {fileID: -2122959027443463454}
   m_Layer: 11
-  m_Name: Burst Hitbox
+  m_Name: Explosion Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2008409690302902217}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -51,8 +51,8 @@ MonoBehaviour:
   damage: 50
   critDamageMult: 2
   knockbackType: 2
-  knockback: 3
-  hitstun: 0.5
+  knockback: 8
+  hitstun: 1
   hitboxLockout: -1
   hitboxDelay: 0.12
   pierce: -1

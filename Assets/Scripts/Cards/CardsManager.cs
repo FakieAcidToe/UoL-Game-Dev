@@ -50,12 +50,14 @@ public class CardsManager : MonoBehaviour
 		Time.timeScale = 0f;
 		levelUpScreen.SetActive(true);
 
+		List<uint> pickedCards = new List<uint>();
+
 		for (int i = 0; i < cardPositions.Length; ++i)
 		{
 			Text textBlurb = cardPositions[i].GetComponentInChildren<Text>();
 			textBlurb.text = "";
 
-			AbstractCard randomCard = PickRandomCard(cardPool);
+			AbstractCard randomCard = PickRandomCard(cardPool, pickedCards);
 			if (randomCard != null)
 			{
 				AbstractCard newCard = Instantiate(randomCard, cardPositions[i].transform);
@@ -67,6 +69,8 @@ public class CardsManager : MonoBehaviour
 				// set text blurb
 				AbstractCard ownedCard = PlayerOwnsCard(randomCard.GetID());
 				textBlurb.text = ownedCard == null ? randomCard.GetBlurb() : ownedCard.GetBlurb();
+
+				pickedCards.Add(randomCard.GetID());
 			}
 		}
 	}
@@ -96,10 +100,15 @@ public class CardsManager : MonoBehaviour
 		levelUpScreen.SetActive(false);
 	}
 
-	AbstractCard PickRandomCard(List<AbstractCard> cardPool)
+	AbstractCard PickRandomCard(List<AbstractCard> cardPool, List<uint> IDsToReject = null)
 	{
-		if (cardPool.Count > 0)
-			return cardPool[Random.Range(0, cardPool.Count)];
+		List < AbstractCard > cardPool2 = new List < AbstractCard >();
+		foreach (AbstractCard card in cardPool)
+			if (IDsToReject == null || !IDsToReject.Contains(card.GetID()))
+				cardPool2.Add(card);
+
+		if (cardPool2.Count > 0)
+			return cardPool2[Random.Range(0, cardPool2.Count)];
 		return null;
 	}
 

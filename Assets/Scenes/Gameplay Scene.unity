@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 339074112}
   - component: {fileID: 339074111}
   m_Layer: 5
-  m_Name: Rebound Card
+  m_Name: Star Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2185,7 +2185,7 @@ GameObject:
   - component: {fileID: 670046008}
   - component: {fileID: 670046007}
   m_Layer: 5
-  m_Name: Burst Card
+  m_Name: Explos Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2372,7 +2372,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ReboundCard
+  m_Text: Star Card
 --- !u!222 &692153021
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2719,10 +2719,12 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 06872b3bec33eaa45877ef9f98af9ae8, type: 2}
     - {fileID: 11400000, guid: be899782497c1964baf7212f24f0c4e2, type: 2}
   - name: Wave 8 (Boss)
-    hpBuff: 160
-    movementBuff: 0.5
-    damageBuff: 30
+    hpBuff: 0
+    movementBuff: 0
+    damageBuff: 0
     spawnWaveSet:
+    - {fileID: 11400000, guid: d23794c17532382479b9ea87e3fc31f8, type: 2}
+    - {fileID: 11400000, guid: f02c90457f31fb546b79140616199bfb, type: 2}
     - {fileID: 11400000, guid: f02c90457f31fb546b79140616199bfb, type: 2}
     - {fileID: 11400000, guid: 4d5490168556229498748807d343951a, type: 2}
   - name: Empty
@@ -2769,19 +2771,19 @@ MonoBehaviour:
   - {fileID: 7249698860160045105, guid: f2902f39ca74c114497f1573ee008dcc, type: 3}
   - {fileID: 3340651454937074149, guid: 4e1c643fcfdb22547816b980b4034b69, type: 3}
   - {fileID: 4405956687595094537, guid: 20a88308e8d9cdb4085c0ee660afe9f9, type: 3}
-  - {fileID: -3497439930548860033, guid: c30d7082cb6943143834d24fc9ea4b55, type: 3}
   - {fileID: -3497439930548860033, guid: 3550ac8619bf0dc4bac23c6610d0db71, type: 3}
   - {fileID: 9130085440542051445, guid: 371e7014fc6dc004f8f5427bdce8ca62, type: 3}
   - {fileID: 7976142645815946100, guid: 0cdecb83c30f7b04f9f524951c14d97f, type: 3}
   - {fileID: 8370062548829726831, guid: 0bf758cd2f427c947a029b76a68b1ce4, type: 3}
   - {fileID: 7249698860160045105, guid: f30a3f74a16181449a7446940001dcca, type: 3}
   - {fileID: -3002574491512890618, guid: 181e4d11fbc59a144b986453140a558c, type: 3}
+  - {fileID: -3497439930548860033, guid: c30d7082cb6943143834d24fc9ea4b55, type: 3}
   maxNumOfWeapons: 3
   maxNumOfActivatables: 3
   levelUpScreen: {fileID: 2104068458}
   cardPositions:
-  - {fileID: 2112370397}
   - {fileID: 1079039459}
+  - {fileID: 2112370397}
   - {fileID: 1508513539}
 --- !u!114 &780209784
 MonoBehaviour:
@@ -6635,7 +6637,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Burst Card
+  m_Text: Explos Card
 --- !u!222 &2061643664
 CanvasRenderer:
   m_ObjectHideFlags: 0

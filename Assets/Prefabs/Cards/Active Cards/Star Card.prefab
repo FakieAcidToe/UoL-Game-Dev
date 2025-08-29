@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf26c8279999094ea1b41cea7804cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2008409690302902218, guid: 9d20d982493e41c4781ea29b4f2a571e,
+  projectilePrefab: {fileID: 4297380271570106258, guid: 0e021fb87df192249ba554de44cc7f18,
     type: 3}
   directionType: 5
   interval: 0
@@ -39,12 +39,15 @@ MonoBehaviour:
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 3368482249581896717}
-  blurb: High knockback explosion
+  blurb: 'Spawn a stunning stars that cicles around you
+
+    These stars can only
+    hit 15 times each'
   cooldownTime: 8
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 7577454623550021327}
   cooldownShadeImage: {fileID: 2504814324922271380}
-  sfx: {fileID: 8300000, guid: 9a7b557f6aa8cb74c83fe822a9c0a888, type: 3}
+  sfx: {fileID: 0}
 --- !u!1 &4313417069404728634
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +114,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
-    m_FontSize: 24
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -122,7 +125,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: REBOUND
+  m_Text: STAR
 --- !u!1001 &2383887220214662354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -138,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 1128719096262992095, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.1843137
+      value: 0.8111261
       objectReference: {fileID: 0}
     - target: {fileID: 1128719096262992095, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}
@@ -148,7 +151,7 @@ PrefabInstance:
     - target: {fileID: 2521389668810015632, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}
       propertyPath: m_Name
-      value: Rebound Card
+      value: Star Card
       objectReference: {fileID: 0}
     - target: {fileID: 2521389668810015639, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}

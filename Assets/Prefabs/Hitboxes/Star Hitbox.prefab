@@ -48,14 +48,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e92fa1556620e7489eb49035f68856a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 6
-  damage: 10
+  lifetime: 0
+  damage: 20
+  critDamageMult: 2
   knockbackType: 2
-  knockback: 2
-  hitstun: 0.1
+  knockback: 1
+  hitstun: 3
   hitboxLockout: 0.5
   hitboxDelay: 0.06
-  pierce: 8
+  pierce: 15
   screenshakeDuration: 0
   screenshakeMagnitude: 0
   sfx: {fileID: 8300000, guid: f27a04d5641bb0e4b933a295fd6a926b, type: 3}
@@ -158,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976af034991af9a4296374e39c139e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 7069932210138316665}
   yOffset: -0.1
   applyEveryFrame: 1
 --- !u!114 &7610019532295628798
@@ -173,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c92d848a65a2c43847d35c7c9d01c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinSpeed: 360
+  spinSpeed: 240
   affectedByAttackSpeedUpgrade: 1
   targetMagnitude: 0.6
   magSpeed: 1

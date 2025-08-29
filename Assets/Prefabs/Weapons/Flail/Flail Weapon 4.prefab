@@ -66,12 +66,12 @@ PrefabInstance:
         type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 8333040053774217220, guid: 96ef8099bf3ba9c448c42fde1bb10b91,
+      objectReference: {fileID: 2093361553842429988, guid: bfbe26b1c9548dc449fa569dce4845bf,
         type: 3}
     - target: {fileID: 7275050371752738990, guid: eab8b361504b0d041a028aab79a6a44d,
         type: 3}
       propertyPath: projectileSettings.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7275050371752738990, guid: eab8b361504b0d041a028aab79a6a44d,
         type: 3}
@@ -91,12 +91,12 @@ PrefabInstance:
     - target: {fileID: 7275050371752738990, guid: eab8b361504b0d041a028aab79a6a44d,
         type: 3}
       propertyPath: projectileSettings.Array.data[1].angleOffset
-      value: 90
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7275050371752738990, guid: eab8b361504b0d041a028aab79a6a44d,
         type: 3}
       propertyPath: projectileSettings.Array.data[2].angleOffset
-      value: 180
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 7275050371752738990, guid: eab8b361504b0d041a028aab79a6a44d,
         type: 3}
