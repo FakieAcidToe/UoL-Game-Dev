@@ -15,18 +15,18 @@ public class DisplayStat : MonoBehaviour
 	[SerializeField] Text pointText;
 	[SerializeField] Text currentPointText;
 
-	void Update()
-	{
-		hpText.text = string.Format("{0,-12}: {1}", "HP", PlayerStatus.Instance.playerHP);
-		atkText.text = string.Format("{0,-12}: {1}", "Attack", PlayerStatus.Instance.playerAtk);
-		defText.text = string.Format("{0,-12}: {1}", "Defense", PlayerStatus.Instance.playerDef);
-		critText.text = string.Format("{0,-12}: {1}", "CRIT Rate", PlayerStatus.Instance.playerCrit + "%");       
-		spdText.text = string.Format("{0,-12}: {1}", "Movespeed", (PlayerStatus.Instance.playerSPD * 100)+ "%");
-		purText.text = string.Format("{0,-12}: {1}", "Pick Up Range", (PlayerStatus.Instance.playerPUR * 100) + "%");
-		atkspdText.text = string.Format("{0,-12}: {1}", "Attack Speed", (PlayerStatus.Instance.playerAS * 100) + "%");
-		cooldownText.text = string.Format("{0,-12}: {1}", "Cooldown", ((100 - (PlayerStatus.Instance.playerCD * 100)) + "%"));
-		expText.text = string.Format("{0,-12}: {1}", "EXP rate", (int)(PlayerStatus.Instance.playerEXP * 100) + "%");
-		pointText.text = string.Format("{0,-12}: {1}", "Point rate", (int)(PlayerStatus.Instance.playerPoint * 100) + "%");
-		currentPointText.text = string.Format("{0,-12}: {1}", "UP Points", PlayerStatus.Instance.playerUpgradePoints);
-	}
+    void Update()
+    {
+        hpText.text = PlayerStatus.Instance.playerHP.ToString();
+        atkText.text = (Mathf.RoundToInt(PlayerStatus.Instance.playerDMG * 100) + "%");
+        defText.text = (Mathf.RoundToInt(PlayerStatus.Instance.playerDef * 100) + "%");
+        critText.text = (Mathf.RoundToInt(PlayerStatus.Instance.playerCrit) + "%");
+        spdText.text = (Mathf.RoundToInt(PlayerStatus.Instance.playerSPD * 100) + "%");
+        purText.text =(Mathf.RoundToInt(PlayerStatus.Instance.playerPUR * 100) + "%");
+        atkspdText.text = (Mathf.RoundToInt(PlayerStatus.Instance.playerAS * 100) + "%");
+        cooldownText.text = (Mathf.RoundToInt(100 - (PlayerStatus.Instance.playerCD * 100)) + "%");
+        expText.text = (Mathf.RoundToInt(PlayerStatus.Instance.playerEXP * 100) + "%");
+        pointText.text = (Mathf.RoundToInt(PlayerStatus.Instance.playerPoint * 100) + "%");
+        currentPointText.text = PlayerStatus.Instance.playerUpgradePoints.ToString();
+    }
 }

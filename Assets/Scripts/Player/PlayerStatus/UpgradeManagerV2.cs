@@ -51,7 +51,7 @@ public class UpgradeManagerV2 : MonoBehaviour, IPointerEnterHandler, IPointerExi
                     displayTextBox.text = "HP UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
                     break;
                 case "ATK":
-                    displayTextBox.text = "ATK UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    displayTextBox.text = "DAMAGE BONUS \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
                     break;
                 case "CRIT":
                     displayTextBox.text = "CRIT UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
@@ -60,26 +60,34 @@ public class UpgradeManagerV2 : MonoBehaviour, IPointerEnterHandler, IPointerExi
                     displayTextBox.text = "MOVESPEED UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
                     break;
                 case "PICKUP":
-                    displayTextBox.text = "PICK UP RANGE \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    displayTextBox.text = "PICK UP RANGE UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
                     break;
                 case "ATKSPD":
-                    displayTextBox.text = "ATTACK SPEED \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    displayTextBox.text = "ATTACK SPEED UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
                     break;
                 case "DEF":
-                    displayTextBox.text = "DEF UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    displayTextBox.text = "DAMAGE REDUCTION \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
                     break;
                 case "CD":
-                    displayTextBox.text = "SKILL COOLDOWN \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    displayTextBox.text = "SKILL COOLDOWN REDUCTION \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
                     break;
                 case "EXP":
-                    displayTextBox.text = "EXP GAIN \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    displayTextBox.text = "EXP GAIN UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
                     break;
                 case "POINT":
-                    displayTextBox.text = "POINT GAIN \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
+                    displayTextBox.text = "POINT GAIN UP \nQuantity " + (maxUpgradeCount - PlayerStatus.Instance.getUpgrades(upgradeName));
                     break;
             }
 
-            displayTextBox.text += "\nCost " + currentUpgradeCost + "\nPoints: " + PlayerStatus.Instance.playerUpgradePoints;
+            if (PlayerStatus.Instance.getUpgrades(upgradeName) == maxUpgradeCount)
+            {
+                displayTextBox.text += "\nOut of stock";
+            }
+            else
+            {
+                displayTextBox.text += "\nCost " + currentUpgradeCost;// + "\nPoints: " + PlayerStatus.Instance.playerUpgradePoints;
+            }
+            
         }
     }
 
