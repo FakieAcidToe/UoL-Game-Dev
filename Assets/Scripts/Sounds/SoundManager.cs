@@ -52,6 +52,27 @@ public class SoundManager : MonoBehaviour
 		audioMixer.SetFloat(exposedName, dB);
 	}
 
+	public float GetMusicVolume()
+	{
+		return GetMixerVolume(musicSource.outputAudioMixerGroup.audioMixer, "Music Volume");
+	}
+
+	public float GetSfxVolume()
+	{
+		return GetMixerVolume(effectsSource.outputAudioMixerGroup.audioMixer, "SFX Volume");
+	}
+
+	float GetMixerVolume(AudioMixer audioMixer, string exposedName)
+	{
+		if (audioMixer.GetFloat(exposedName, out float dB))
+		{
+			float linear = Mathf.Pow(10, dB / 20f);
+			float sliderValue = Mathf.Lerp(0, 100, Mathf.InverseLerp(0.0001f, 1f, linear));
+			return sliderValue;
+		}
+		return 100f;
+	}
+
 	void Update()
 	{
 		if (bgmInIntro && !musicSource.isPlaying)
