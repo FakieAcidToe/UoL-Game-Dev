@@ -71,7 +71,7 @@ public class CardsManager : MonoBehaviour
 		}
 	}
 
-	void CardSelected(int index)
+	public void CardSelected(int index)
 	{
 		if (!isLevelUpScreenShowing) return;
 
