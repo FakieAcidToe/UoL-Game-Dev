@@ -2,19 +2,18 @@
 
 public class PlayerStatus : MonoBehaviour
 {
-    public static PlayerStatus Instance;
+	public static PlayerStatus Instance;
 	public PlayerEquipment selectedCharacter;
 
-	public float playerDMG = 1;
-    public int ATKUpgrades = 0;
-    
+	public float playerDMG = 1; // note: not implemented yet
+	public int ATKUpgrades = 0;
+	
+	public int playerHP = 100;
+	public int hpUpgrades= 0;
+	public int basePlayerHP = 100;
 
-    public int playerHP = 100;
-    public int hpUpgrades= 0;
-    public int basePlayerHP = 100;
-
-    public float playerCrit = 0.1f;
-    public int critUpgrades = 0;
+	public float playerCrit = 0.1f; // note: not implemented yet
+	public int critUpgrades = 0;
 
 	public float playerSPD = 1;
 	public int spdUpgrades = 0;
@@ -25,16 +24,16 @@ public class PlayerStatus : MonoBehaviour
 	public float playerAS = 1;
 	public int asUpgrades = 0;
 
-    public float playerDef = 0;
-    public int defUpgrades = 0;
-    
-    public float playerCD = 0;
-    public int cdUpgrades = 0;
+	public float playerDef = 0; // note: not implemented yet
+	public int defUpgrades = 0;
+	
+	public float playerCD = 0;
+	public int cdUpgrades = 0;
 
 	public float playerEXP = 1.00f; // note: affects experience required to level up rather than exp gained
 	public int expUpgrades = 0;
 
-	public float playerPoint = 1.00f; // note: not implemented yet (idk what this is supposed to do)
+	public float playerPoint = 1.00f; // note: not implemented yet
 	public int pointUpgrades = 0;
 
 	public int playerUpgradePoints = 10000;
@@ -52,102 +51,102 @@ public class PlayerStatus : MonoBehaviour
 		}
 	}
 
-    public void UpdateStat(string stat, int cost, int maxLevel, float amount)
-    {
-        if (playerUpgradePoints >= cost)
-        {
-            switch (stat)
-            {
-                case "ATK":
-                    if (ATKUpgrades < maxLevel)
-                    {
-                        ATKUpgrades++;
-                        playerDMG += amount;
-                        playerUpgradePoints -= cost;
-                    }
-                    break;
-                case "HP":
-                    if (hpUpgrades < maxLevel)
-                    {
-                        hpUpgrades++;
-                        playerHP += (int)(basePlayerHP * (amount));
-                        playerUpgradePoints -= cost;
-                    }
-                    break;
-                case "CRIT":
-                    if (critUpgrades < maxLevel)
-                    {
-                        critUpgrades++;
-                        playerCrit += amount;
-                        playerUpgradePoints -= cost;
-                    }
-                    break;
-                case "SPD":
-                    if (spdUpgrades < maxLevel)
-                    {
-                        spdUpgrades++;
-                        playerSPD += amount;
-                        playerUpgradePoints -= cost;
-                    }
-                    break;
-                case "PICKUP":
-                    if (purUpgrades < maxLevel)
-                    {
-                        purUpgrades++;
-                        playerPUR += amount;
-                        playerUpgradePoints -= cost;
-                    }
-                    break;
-                case "ATKSPD":
-                    if (asUpgrades < maxLevel)
-                    {
-                        asUpgrades++;
-                        playerAS += amount;
-                        playerUpgradePoints -= cost;
-                    }
-                    break;
-                case "DEF":
-                    if (defUpgrades < maxLevel)
-                    {
-                        defUpgrades++;
-                        playerDef += amount;
-                        playerUpgradePoints -= cost;
-                    }
-                    break;
-                case "CD":
-                    if (cdUpgrades < maxLevel)
-                    {
-                        cdUpgrades++;
-                        playerCD += amount;
-                        playerUpgradePoints -= cost;
-                    }
-                    break;
-                case "EXP":
-                    if (expUpgrades < maxLevel)
-                    {
-                        expUpgrades++;
-                        playerEXP += amount;
-                        playerUpgradePoints -= cost;
-                    }
-                    break;
-                case "POINT":
-                    if (pointUpgrades < maxLevel)
-                    {
-                        pointUpgrades++;
-                        playerPoint += amount;
-                        playerUpgradePoints -= cost;
-                    }
-                    break;
-            }
-        }
-    }
+	public void UpdateStat(string stat, int cost, int maxLevel, float amount)
+	{
+		if (playerUpgradePoints >= cost)
+		{
+			switch (stat)
+			{
+				case "ATK":
+					if (ATKUpgrades < maxLevel)
+					{
+						ATKUpgrades++;
+						playerDMG += amount;
+						playerUpgradePoints -= cost;
+					}
+					break;
+				case "HP":
+					if (hpUpgrades < maxLevel)
+					{
+						hpUpgrades++;
+						playerHP += (int)(basePlayerHP * (amount));
+						playerUpgradePoints -= cost;
+					}
+					break;
+				case "CRIT":
+					if (critUpgrades < maxLevel)
+					{
+						critUpgrades++;
+						playerCrit += amount;
+						playerUpgradePoints -= cost;
+					}
+					break;
+				case "SPD":
+					if (spdUpgrades < maxLevel)
+					{
+						spdUpgrades++;
+						playerSPD += amount;
+						playerUpgradePoints -= cost;
+					}
+					break;
+				case "PICKUP":
+					if (purUpgrades < maxLevel)
+					{
+						purUpgrades++;
+						playerPUR += amount;
+						playerUpgradePoints -= cost;
+					}
+					break;
+				case "ATKSPD":
+					if (asUpgrades < maxLevel)
+					{
+						asUpgrades++;
+						playerAS += amount;
+						playerUpgradePoints -= cost;
+					}
+					break;
+				case "DEF":
+					if (defUpgrades < maxLevel)
+					{
+						defUpgrades++;
+						playerDef += amount;
+						playerUpgradePoints -= cost;
+					}
+					break;
+				case "CD":
+					if (cdUpgrades < maxLevel)
+					{
+						cdUpgrades++;
+						playerCD += amount;
+						playerUpgradePoints -= cost;
+					}
+					break;
+				case "EXP":
+					if (expUpgrades < maxLevel)
+					{
+						expUpgrades++;
+						playerEXP += amount;
+						playerUpgradePoints -= cost;
+					}
+					break;
+				case "POINT":
+					if (pointUpgrades < maxLevel)
+					{
+						pointUpgrades++;
+						playerPoint += amount;
+						playerUpgradePoints -= cost;
+					}
+					break;
+			}
+		}
+	}
 
-	public int getUpgradePoints()
+	public int GetUpgradePoints()
 	{
 		return playerUpgradePoints;
 	}
 
-	public int getUpgrades(string stat)
+	public int GetUpgrades(string stat)
 	{
 		switch (stat)
 		{
