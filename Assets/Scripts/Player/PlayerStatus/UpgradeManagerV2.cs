@@ -13,18 +13,11 @@ public class UpgradeManagerV2 : MonoBehaviour, IPointerEnterHandler, IPointerExi
 	public Text displayTextBox;
 	private Coroutine resetCoroutine;
 
-	// Start is called before the first frame update
 	void Start()
 	{
 		UpdateUpgradeStatus();
 	}
 
-	// Update is called once per frame
-	void Update()
-	{
-		
-
-	}
 	public void UpgradeStat()
 	{
 		PlayerStatus.Instance.UpdateStat(upgradeName, currentUpgradeCost, maxUpgradeCount, upgradeAmount);

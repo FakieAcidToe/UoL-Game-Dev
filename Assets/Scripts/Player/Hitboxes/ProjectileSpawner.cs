@@ -34,8 +34,8 @@ public class ProjectileSpawner : MonoBehaviour
 	{
 		mainCamera = Camera.main;
 
-		if (affectedByAttackSpeedUpgrade && PlayerStatus.Instance != null && PlayerStatus.Instance.playerAS > 0)
-			interval /= PlayerStatus.Instance.playerAS;
+		if (affectedByAttackSpeedUpgrade && PlayerStatus.Instance != null && PlayerStatus.Instance.playerATKSPD > 0)
+			interval /= PlayerStatus.Instance.playerATKSPD;
 
 		ResetWeaponTiming();
 

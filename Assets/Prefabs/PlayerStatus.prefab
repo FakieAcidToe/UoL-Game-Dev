@@ -44,27 +44,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedCharacter: {fileID: 11400000, guid: 4873d59d29018c245944ad56d18dd696, type: 2}
-  playerAtk: 10
+  playerDMGB: 1
+  dmgbUpgrades: 0
+  playerDMG: 1
   ATKUpgrades: 0
-  basePlayerAtk: 10
   playerHP: 100
   hpUpgrades: 0
   basePlayerHP: 100
-  playerCrit: 10
+  playerCrit: 0.1
   critUpgrades: 0
   playerSPD: 1
   spdUpgrades: 0
   playerPUR: 1
   purUpgrades: 0
-  playerAS: 1
-  asUpgrades: 0
-  playerDef: 10
-  defUpgrades: 0
-  basePlayerDef: 10
+  playerATKSPD: 1
+  atkspdUpgrades: 0
+  playerDMGR: 0
+  dmgrUpgrades: 0
   playerCD: 0
   cdUpgrades: 0
   playerEXP: 1
   expUpgrades: 0
   playerPoint: 1
   pointUpgrades: 0
-  playerUpgradePoints: 100000
+  playerUpgradePoints: 10000
