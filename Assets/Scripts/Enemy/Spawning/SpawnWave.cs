@@ -69,7 +69,7 @@ public class SpawnWave : ScriptableObject
 		intervals = 0;
 	}
 
-	public void SpawnUpdate(Transform playerTransform)
+	public void SpawnUpdate(Transform playerTransform, int hpBuff = 0, float movementBuff = 0, int damageBuff = 0)
 	{
 		if (enemyWaveTime > 0) waveTimer += Time.deltaTime;
 		if ((numIntervals > 0 && intervals >= numIntervals) || enemyPrefabs.Length <= 0) return;
@@ -90,7 +90,8 @@ public class SpawnWave : ScriptableObject
 							playerTransform.position.y + Mathf.Sin(donutAngle) * donutDistance,
 							playerTransform.position.z),
 							enemyPrefabs[Mathf.FloorToInt(Random.value * enemyPrefabs.Length)], // random enemy
-							playerTransform);
+							playerTransform,
+							hpBuff, movementBuff, damageBuff);
 					}
 					break;
 
@@ -104,7 +105,8 @@ public class SpawnWave : ScriptableObject
 							playerTransform.position.y + horizontalDist,
 							playerTransform.position.z),
 							enemyPrefabs[Mathf.FloorToInt(Random.value * enemyPrefabs.Length)], // random enemy
-							playerTransform);
+							playerTransform,
+							hpBuff, movementBuff, damageBuff);
 					}
 					break;
 
@@ -118,7 +120,8 @@ public class SpawnWave : ScriptableObject
 								(spawnInOrder ? spawnLength / spawnNumber * i - spawnLength / 2 : Random.Range(-spawnLength / 2, spawnLength / 2)),
 							playerTransform.position.z),
 							enemyPrefabs[Mathf.FloorToInt(Random.value * enemyPrefabs.Length)], // random enemy
-							playerTransform);
+							playerTransform,
+							hpBuff, movementBuff, damageBuff);
 					}
 					break;
 			}
@@ -137,10 +140,14 @@ public class SpawnWave : ScriptableObject
 		if (minDist > maxDist) minDist = maxDist;
 	}
 
-	public EnemyMovement SpawnEnemy(Vector3 _position, EnemyMovement enemy, Transform playerTransform)
+	public EnemyMovement SpawnEnemy(Vector3 _position, EnemyMovement enemy, Transform playerTransform,
+		int hpBuff = 0, float movementBuff = 0, int damageBuff = 0)
 	{
 		EnemyMovement newEnemy = Instantiate(enemy, _position, Quaternion.identity);
 		newEnemy.SetTarget(playerTransform);
+		newEnemy.GetComponent<EnemyHP>().AddMaxHP(hpBuff);
+		newEnemy.AddMovement(movementBuff);
+		newEnemy.GetComponentInChildren<EnemyHitbox>().AddDamage(damageBuff);
 		return newEnemy;
 	}
 

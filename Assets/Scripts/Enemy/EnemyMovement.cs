@@ -69,4 +69,9 @@ public class EnemyMovement : MonoBehaviour
 	{
 		return movement.normalized;
 	}
+
+	public void AddMovement(float speedBoost)
+	{
+		moveSpeed += speedBoost;
+	}
 }

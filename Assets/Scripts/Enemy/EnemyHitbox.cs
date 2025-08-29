@@ -33,4 +33,9 @@ public class EnemyHitbox : MonoBehaviour
 	{
 		if (attackTimer > 0) attackTimer -= Time.deltaTime;
 	}
+
+	public void AddDamage(int damageBoost)
+	{
+		damage += damageBoost;
+	}
 }

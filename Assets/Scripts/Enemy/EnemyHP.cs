@@ -32,4 +32,10 @@ public class EnemyHP : MonoBehaviour
 		onDeath.Invoke();
 		Destroy(gameObject);
 	}
+
+	public void AddMaxHP(int hpBoost)
+	{
+		maxHP += hpBoost;
+		currentHP += hpBoost;
+	}
 }
