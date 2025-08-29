@@ -3,6 +3,7 @@
 public class PlayerStatus : MonoBehaviour
 {
     public static PlayerStatus Instance;
+    public PlayerEquipment selectedCharacter;
     public float playerDMGB = 1;
     public int dmgbUpgrades = 0;
 

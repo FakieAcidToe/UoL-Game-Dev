@@ -23,7 +23,7 @@ public class HitboxSpinner : MonoBehaviour
 		magnitude = startPosition.magnitude;
 
 		if (affectedByAttackSpeedUpgrade && PlayerStatus.Instance != null)
-			spinSpeed *= PlayerStatus.Instance.playerAS;
+			spinSpeed *= PlayerStatus.Instance.playerATKSPD;
 	}
 
 	void Update()
