@@ -71,11 +71,15 @@ public class Hitbox : MonoBehaviour
 
 	protected virtual void DamageEnemy(EnemyHP _enemy)
 	{
-		_enemy.TakeDamage(damage); // damage enemy
+		int increasedDamage = damage;
+		if (PlayerStatus.Instance != null)
+			increasedDamage = Mathf.FloorToInt(damage * PlayerStatus.Instance.playerDMGB);
+
+		_enemy.TakeDamage(increasedDamage); // damage enemy
 
 		// damage numbers
-		if (damage > 0)
-			DamageNumberSpawner.Instance.SpawnDamageNumbers(damage, _enemy.transform.position);
+		if (increasedDamage > 0)
+			DamageNumberSpawner.Instance.SpawnDamageNumbers(increasedDamage, _enemy.transform.position);
 
 		Vector2 knockbackDirection;
 		switch (knockbackType)

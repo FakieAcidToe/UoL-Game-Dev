@@ -5,7 +5,7 @@ public class PlayerStatus : MonoBehaviour
 	public static PlayerStatus Instance;
 	public PlayerEquipment selectedCharacter;
 
-	public float playerDMGB = 1; // note: not implemented yet
+	public float playerDMGB = 1;
 	public int dmgbUpgrades = 0;
 	
 	public int playerHP = 100;
@@ -24,7 +24,7 @@ public class PlayerStatus : MonoBehaviour
 	public float playerATKSPD = 1;
 	public int atkspdUpgrades = 0;
 
-	public float playerDMGR = 0; // note: not implemented yet
+	public float playerDMGR = 0;
 	public int dmgrUpgrades = 0;
 	
 	public float playerCD = 0;

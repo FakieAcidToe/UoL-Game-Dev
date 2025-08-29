@@ -14,9 +14,13 @@ public class EnemyHitbox : MonoBehaviour
 			PlayerHP playerHP = collision.GetComponent<PlayerHP>();
 			if (playerHP != null)
 			{
-				playerHP.TakeDamage(damage);
+				int reducedDamage = damage;
+				if (PlayerStatus.Instance != null)
+					reducedDamage = Mathf.CeilToInt(damage * (1 - PlayerStatus.Instance.playerDMGR));
+
+				playerHP.TakeDamage(reducedDamage);
 				DamageNumberSpawner.Instance.SpawnDamageNumbers(
-					damage,
+					reducedDamage,
 					Vector2.Lerp(transform.position, playerHP.transform.position, 0.5f),
 					Color.magenta);
 
