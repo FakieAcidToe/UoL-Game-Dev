@@ -66,7 +66,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3626d13b4b0b35e4eb1c93048bda7182, type: 3}
-    m_FontSize: 42
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -77,8 +77,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HEAL
---- !u!114 &-3002574491512890618
+  m_Text: 'COLLECT
+
+    XP GEMS'
+--- !u!114 &8421606064114156762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,24 +89,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8587990146452825508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2aa5438acebf8948b249fd7f9289d3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f14b332b3fcc0c41901eac7f6675257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardId: 14
+  cardId: 9
   hasRandomColour: 0
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 6519357434511116011}
-  blurb: 
-  cooldownTime: 12
+  blurb: Collect all XP Gems
+  cooldownTime: 4
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 2156853809086266409}
   cooldownShadeImage: {fileID: 6198301717194515570}
   sfx: {fileID: 0}
-  healAmount: 3200000064000000
-  upgradeBlurbs:
-  - Heal 50 HP
-  - Heal 100 HP
 --- !u!1001 &6184406568669472308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,22 +113,22 @@ PrefabInstance:
     - target: {fileID: 1128719096262992095, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.26600006
+      value: 0.41960788
       objectReference: {fileID: 0}
     - target: {fileID: 1128719096262992095, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.5
+      value: 0.18431373
       objectReference: {fileID: 0}
     - target: {fileID: 1128719096262992095, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.14900002
+      value: 0.16470589
       objectReference: {fileID: 0}
     - target: {fileID: 2521389668810015632, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}
       propertyPath: m_Name
-      value: Heal Card
+      value: Collect XP Card
       objectReference: {fileID: 0}
     - target: {fileID: 2521389668810015639, guid: ef17a03cfadc7894c88e0553bc726e64,
         type: 3}

@@ -101,14 +101,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329561c505576524c970b60879cbfb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardId: 0
   hasRandomColour: 1
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 1128719096262992095}
+  blurb: 
   cooldownTime: 1
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 5205530181152414237}
   cooldownShadeImage: {fileID: 276874140637479494}
+  sfx: {fileID: 0}
 --- !u!1 &7973629935394820884
 GameObject:
   m_ObjectHideFlags: 0

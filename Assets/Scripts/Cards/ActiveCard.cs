@@ -31,7 +31,7 @@ public class ActiveCard : AbstractCard
 		if (cooldown > 0 && cooldownTime > 0)
 		{
 			cooldown = Mathf.Max(cooldown - Time.deltaTime, 0);
-			cooldownShadeImage.rectTransform.localPosition = new Vector3(0, Mathf.Lerp(-cooldownShadeImage.rectTransform.rect.height, 0, cooldown / cooldownTime), 0);
+			cooldownShadeImage.rectTransform.localPosition = new Vector3(0, Mathf.Lerp(cooldownShadeImage.rectTransform.rect.height, 0, cooldown / cooldownTime), 0);
 			cooldownShadeMask.color = new Color(
 				cooldownShadeMask.color.r,
 				cooldownShadeMask.color.g,
