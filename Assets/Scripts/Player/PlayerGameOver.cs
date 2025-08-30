@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerGameOver : MonoBehaviour
 {
-    public GameObject gameOverUI;
-    public bool isGameOver = false;
+    [SerializeField] GameObject gameOverUI;
 
     // Start is called before the first frame update
     void Start()
@@ -23,5 +22,7 @@ public class PlayerGameOver : MonoBehaviour
     {
         Time.timeScale = 0f;
         gameOverUI.SetActive(true);
+        int point = GameObject.Find("Game Manager").GetComponent<PointManager>().GetPoint();
+        GameObject.Find("PlayerStatus").GetComponent<PlayerStatus>().AddUpgradePoints("GameOver", (int)(point * 0.5));
     }
 }

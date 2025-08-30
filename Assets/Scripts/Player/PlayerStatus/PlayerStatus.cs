@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -7,9 +8,9 @@ public class PlayerStatus : MonoBehaviour
 
 	public float playerDMGB = 1;
 	public int dmgbUpgrades = 0;
-	
+
 	public int playerHP = 100;
-	public int hpUpgrades= 0;
+	public int hpUpgrades = 0;
 	public int basePlayerHP = 100;
 
 	public float playerCrit = 0.1f;
@@ -22,11 +23,17 @@ public class PlayerStatus : MonoBehaviour
 	public int purUpgrades = 0;
 
 	public float playerATKSPD = 1;
-	public int atkspdUpgrades = 0;
+
+    internal void AddUpgradePoints()
+    {
+        throw new NotImplementedException();
+    }
+
+    public int atkspdUpgrades = 0;
 
 	public float playerDMGR = 0;
 	public int dmgrUpgrades = 0;
-	
+
 	public float playerCD = 0;
 	public int cdUpgrades = 0;
 
@@ -182,7 +189,7 @@ public class PlayerStatus : MonoBehaviour
 		int spdRefund = spdCost * (spdUpgrades * (spdUpgrades + 1)) / 2;
 		int critRefund = critCost * (critUpgrades * (critUpgrades + 1)) / 2;
 		int purRefund = purCost * (purUpgrades * (purUpgrades + 1)) / 2;
-		int atkspdRefund = atkspdCost * (atkspdUpgrades* (atkspdUpgrades + 1)) / 2;
+		int atkspdRefund = atkspdCost * (atkspdUpgrades * (atkspdUpgrades + 1)) / 2;
 		int cdRefund = cdCost * (cdUpgrades * (cdUpgrades + 1)) / 2;
 		int expRefund = expCost * (expUpgrades * (expUpgrades + 1)) / 2;
 		int pointRefund = pointCost * (pointUpgrades * (pointUpgrades + 1)) / 2;
@@ -190,7 +197,7 @@ public class PlayerStatus : MonoBehaviour
 		playerUpgradePoints += hpRefund + dmgbRefund + dmgrRefund + spdRefund + critRefund + purRefund + atkspdRefund + cdRefund + expRefund + pointRefund;
 		ResetStatToBase();
 	}
-	
+
 	public void ResetStatToBase()
 	{
 		playerDMGB = 1;
@@ -214,5 +221,24 @@ public class PlayerStatus : MonoBehaviour
 		cdUpgrades = 0;
 		expUpgrades = 0;
 		pointUpgrades = 0;
+	}
+
+	public float GetStat(string stat)
+	{
+		switch (stat)
+		{
+			case "POINT":
+				return playerPoint;
+			default:
+				return 0;
+		}
+	}
+
+	public void AddUpgradePoints(string state, int point)
+	{
+		if (state == "GameOver")
+        {
+			playerUpgradePoints += point;
+        }
 	}
 }

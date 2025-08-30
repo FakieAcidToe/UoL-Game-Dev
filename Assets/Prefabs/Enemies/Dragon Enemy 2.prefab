@@ -92,5 +92,10 @@ PrefabInstance:
       propertyPath: maxHP
       value: 20000
       objectReference: {fileID: 0}
+    - target: {fileID: 8397615816293774712, guid: b80d90c3c2d23ca408e835a1a065413f,
+        type: 3}
+      propertyPath: points
+      value: 5000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b80d90c3c2d23ca408e835a1a065413f, type: 3}

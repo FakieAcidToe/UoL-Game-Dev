@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3785773129676250887}
   - component: {fileID: 9171486090032111473}
   - component: {fileID: 5281302990022265989}
+  - component: {fileID: 6760096270733339677}
   m_Layer: 8
   m_Name: Durian Enemy
   m_TagString: Untagged
@@ -72,6 +73,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9171486090032111473}
         m_MethodName: SpawnPossibleDrops
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6760096270733339677}
+        m_MethodName: UpdatePoint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -229,6 +241,20 @@ MonoBehaviour:
   animationSpeed: 0.3
   shouldFlipX: 1
   facingRight: 0
+--- !u!114 &6760096270733339677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7783242988435538203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3089f42e213af44bb12982165a948e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 100
+  pManager: {fileID: 0}
 --- !u!1001 &8219625709028006096
 PrefabInstance:
   m_ObjectHideFlags: 0
