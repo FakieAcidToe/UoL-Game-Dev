@@ -801,6 +801,7 @@ GameObject:
   - component: {fileID: 5878548590872061666}
   - component: {fileID: 5878548590872061667}
   - component: {fileID: 630703870204770954}
+  - component: {fileID: 2026452656726464642}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -866,12 +867,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 1000
   healthbar: {fileID: 0}
+  hurtCover: {fileID: 0}
+  hurtColor: {r: 0.5019608, g: 0, b: 0, a: 0}
+  healColor: {r: 0.16, g: 0.8, b: 0.16, a: 0}
   onDamaged:
     m_PersistentCalls:
       m_Calls: []
   onZeroHP:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2026452656726464642}
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5507590503026576861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -999,6 +1014,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   yOffset: -0.1
   applyEveryFrame: 1
+--- !u!114 &2026452656726464642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878548590872061671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc86b3141a1cc004089393e9e30a6468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverUI: {fileID: 0}
 --- !u!1 &6749772051604751595
 GameObject:
   m_ObjectHideFlags: 0

@@ -61,4 +61,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  tickRate: 0.5
+  tickRate: 0.3
