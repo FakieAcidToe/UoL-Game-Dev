@@ -39,10 +39,10 @@ MonoBehaviour:
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 3368482249581896717}
-  blurb: 'Spawn a stunning stars that cicles around you
+  blurb: 'Spawn stunning stars that circle around you
 
-    These stars can only
-    hit 15 times each'
+    These stars can only hit
+    15 times each'
   cooldownTime: 8
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 7577454623550021327}
