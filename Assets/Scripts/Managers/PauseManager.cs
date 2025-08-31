@@ -3,6 +3,9 @@
 public class PauseManager : MonoBehaviour
 {
 	[SerializeField] GameObject pauseMenuUI;
+	[SerializeField] AudioClip pauseSound;
+	[SerializeField] AudioClip resumeSound;
+
 	bool isPaused = false;
 
 	void Awake()
@@ -18,8 +21,16 @@ public class PauseManager : MonoBehaviour
 
 	public void PauseButton()
 	{
-		if (isPaused) Resume();
-		else Pause();
+		if (isPaused)
+		{
+			SoundManager.Instance.Play(resumeSound);
+			Resume();
+		}
+		else
+		{
+			SoundManager.Instance.Play(pauseSound);
+			Pause();
+		}
 	}
 
 	public void Resume()

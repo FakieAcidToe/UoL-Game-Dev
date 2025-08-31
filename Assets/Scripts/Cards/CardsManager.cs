@@ -16,6 +16,8 @@ public class CardsManager : MonoBehaviour
 	[SerializeField, Min(0)] int maxNumOfActivatables = 3;
 	[SerializeField] GameObject levelUpScreen;
 	[SerializeField] GameObject[] cardPositions;
+	[SerializeField] AudioClip pickCardSound;
+	[SerializeField] AudioClip pickNoCardSound;
 	bool isLevelUpScreenShowing = false;
 
 	public CardsUIPositioning GetActiveCardsPositioner() { return activeCards; }
@@ -78,6 +80,8 @@ public class CardsManager : MonoBehaviour
 	public void CardSelected(int index)
 	{
 		if (!isLevelUpScreenShowing) return;
+
+		SoundManager.Instance.Play(index >= 0 ? pickCardSound : pickNoCardSound);
 
 		for (int i = 0; i < cardPositions.Length; ++i)
 		{
