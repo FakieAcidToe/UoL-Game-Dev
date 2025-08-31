@@ -6,6 +6,7 @@ public class EnemyHP : MonoBehaviour
 {
 	int currentHP;
 	[SerializeField] int maxHP = 3;
+	[SerializeField] HealthbarUI healthbar;
 	[SerializeField] UnityEvent onDeath;
 
 	public EnemyMovement movement { get; private set; }
@@ -14,11 +15,20 @@ public class EnemyHP : MonoBehaviour
 	{
 		currentHP = maxHP;
 		movement = GetComponent<EnemyMovement>();
+
+		if (healthbar != null)
+		{
+			healthbar.SetMaxHealth(maxHP, false);
+			healthbar.SetHealth(maxHP, false);
+		}
 	}
 
 	public void TakeDamage(int damageAmount)
 	{
 		currentHP -= damageAmount;
+
+		if (healthbar != null)
+			healthbar.SetHealth(currentHP);
 
 		if (currentHP <= 0)
 		{

@@ -741,7 +741,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6799518813038998896}
   - component: {fileID: 6799518813038998899}
-  - component: {fileID: 6799518812312012927}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: HealthbarUI
@@ -801,22 +800,6 @@ MonoBehaviour:
     fillBarMask: {fileID: 6799518812874439818}
     fillBar: {fileID: 6799518812396897683}
   portrait: {fileID: 8257666728950822267}
---- !u!114 &6799518812312012927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6799518813038998897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 174f75dee57301e4988c5add3a5b1251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1000
-  maxHealth: 1000
-  fillBars: []
-  portrait: {fileID: 0}
 --- !u!1 &6799518813430349097
 GameObject:
   m_ObjectHideFlags: 0
