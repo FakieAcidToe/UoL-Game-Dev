@@ -100,7 +100,7 @@ MonoBehaviour:
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 2156853809086266409}
   cooldownShadeImage: {fileID: 6198301717194515570}
-  sfx: {fileID: 0}
+  sfx: {fileID: 8300000, guid: 1d24d8dcdeff90641b2fbd3abf7a1e66, type: 3}
   healAmount: 3200000064000000
   upgradeBlurbs:
   - Heal 50 HP

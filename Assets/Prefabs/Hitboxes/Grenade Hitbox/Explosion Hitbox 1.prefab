@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 0.96
   damage: 30
+  critDamageMult: 1
   knockbackType: 1
   knockback: 4
   hitstun: 0.5
@@ -58,7 +59,7 @@ MonoBehaviour:
   pierce: -1
   screenshakeDuration: 0.06
   screenshakeMagnitude: 0.03
-  sfx: {fileID: 8300000, guid: f27a04d5641bb0e4b933a295fd6a926b, type: 3}
+  sfx: {fileID: 0}
   speed: 0
   acceleration: 0
   minSpeed: 0

@@ -59,7 +59,7 @@ MonoBehaviour:
   pierce: -1
   screenshakeDuration: 0.01
   screenshakeMagnitude: 0.03
-  sfx: {fileID: 8300000, guid: f27a04d5641bb0e4b933a295fd6a926b, type: 3}
+  sfx: {fileID: 0}
   speed: 4
   acceleration: 0
   minSpeed: 0

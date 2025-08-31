@@ -3525,6 +3525,7 @@ MonoBehaviour:
   - {fileID: 1079039459}
   - {fileID: 2112370397}
   - {fileID: 1508513539}
+  levelUpSound: {fileID: 8300000, guid: d1430e2de047ae2429233d8961518c46, type: 3}
   pickCardSound: {fileID: 8300000, guid: b7c7bf35f4f949e4381ed098a300858b, type: 3}
   pickNoCardSound: {fileID: 8300000, guid: 5b4f7f3046051d743b43096de17a8fc0, type: 3}
 --- !u!114 &780209784

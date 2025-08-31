@@ -143,7 +143,7 @@ MonoBehaviour:
     timer: 0
     angle: {x: 1, y: 0}
     spawnedAmount: 0
-  sfx: {fileID: 8300000, guid: b7fbb88037451194bb7207463e178292, type: 3}
+  sfx: {fileID: 8300000, guid: 53ac2e2a2d1aeec4bbfa2be932675c83, type: 3}
 --- !u!114 &7787735862170321163
 MonoBehaviour:
   m_ObjectHideFlags: 0
