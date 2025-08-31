@@ -39,15 +39,21 @@ MonoBehaviour:
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 3368482249581896717}
-  blurb: 'Spawn stunning stars that circle around you
-
-    These stars can only hit
-    15 times each'
+  blurb: 
   cooldownTime: 8
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 7577454623550021327}
   cooldownShadeImage: {fileID: 2504814324922271380}
   sfx: {fileID: 0}
+  hitboxPrefab:
+  - {fileID: 4297380271570106258, guid: 0e021fb87df192249ba554de44cc7f18, type: 3}
+  - {fileID: 9082052953908219787, guid: e80628bef61e89d4eae6768044d12b91, type: 3}
+  upgradeBlurbs:
+  - 'Spawn stunning stars that circle around you
+
+    These stars can only hit 15
+    times each'
+  - Increase star hit limit to 30
 --- !u!1 &4313417069404728634
 GameObject:
   m_ObjectHideFlags: 0

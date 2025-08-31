@@ -93,7 +93,7 @@ public class ProjectileSpawner : MonoBehaviour
 		}
 	}
 
-	public Hitbox SpawnHitbox(Vector2 _offset, Transform _hitboxSource = null)
+	public Hitbox SpawnHitbox(Vector2 _offset, Transform _hitboxSource = null, Hitbox hitboxPrefab = null)
 	{
 		Quaternion rotation = Quaternion.identity;
 		Transform source = _hitboxSource == null ? transform : _hitboxSource;
@@ -112,7 +112,7 @@ public class ProjectileSpawner : MonoBehaviour
 		if (rotateHitboxSprite && direction != Vector2.zero)
 			rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 
-		Hitbox newHitbox = Instantiate(projectilePrefab, source.position, rotation, spawnAsChild ? source : source.parent);
+		Hitbox newHitbox = Instantiate(hitboxPrefab == null ? projectilePrefab : hitboxPrefab, source.position, rotation, spawnAsChild ? source : source.parent);
 		newHitbox.SetDirection(direction);
 
 		if (positionOffset > 0)
@@ -121,9 +121,9 @@ public class ProjectileSpawner : MonoBehaviour
 		return newHitbox;
 	}
 
-	public Hitbox SpawnHitbox(Transform _hitboxSource = null)
+	public Hitbox SpawnHitbox(Transform _hitboxSource = null, Hitbox hitboxPrefab = null)
 	{
-		return SpawnHitbox(Vector2.right, _hitboxSource);
+		return SpawnHitbox(Vector2.right, _hitboxSource, hitboxPrefab);
 	}
 
 	public void ResetWeaponTiming()

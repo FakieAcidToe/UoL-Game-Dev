@@ -39,12 +39,18 @@ MonoBehaviour:
   lerpSpeed: 20
   lerpLeeway: 0.01
   backgroundImage: {fileID: 3368482249581896717}
-  blurb: High damage explosion
+  blurb: 
   cooldownTime: 8
   cooldownAlpha: 64
   cooldownShadeMask: {fileID: 7577454623550021327}
   cooldownShadeImage: {fileID: 2504814324922271380}
   sfx: {fileID: 8300000, guid: 9a7b557f6aa8cb74c83fe822a9c0a888, type: 3}
+  hitboxPrefab:
+  - {fileID: 2008409690302902218, guid: 1b9f93a89c6d1ee4eb7f458a045b84bd, type: 3}
+  - {fileID: 5210327931016309770, guid: af3a5126279b71645a806be467878a29, type: 3}
+  upgradeBlurbs:
+  - High damage explosion
+  - Increased explosion damage
 --- !u!1 &4313417069404728634
 GameObject:
   m_ObjectHideFlags: 0

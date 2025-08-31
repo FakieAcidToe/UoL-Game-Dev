@@ -1,4 +1,6 @@
-﻿public class CollectXPCard : ActiveCard
+﻿using System.Collections;
+
+public class CollectXPCard : ActiveCard
 {
 	public override void UseCardEffect()
 	{
@@ -8,10 +10,18 @@
 			if (player != null)
 			{
 				ExperienceGem[] xpOrbs = FindObjectsOfType<ExperienceGem>();
-				foreach (ExperienceGem exp in xpOrbs)
-					exp.Collect(player);
+				StartCoroutine(CollectGemCoroutine(player, xpOrbs));
 				TriggerCooldown();
 			}
+		}
+	}
+
+	IEnumerator CollectGemCoroutine(PlayerExperience player, ExperienceGem[] xpOrbs)
+	{
+		foreach (ExperienceGem exp in xpOrbs)
+		{
+			exp.Collect(player);
+			yield return null;
 		}
 	}
 }
