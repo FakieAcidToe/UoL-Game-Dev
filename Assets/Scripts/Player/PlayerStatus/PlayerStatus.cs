@@ -236,9 +236,17 @@ public class PlayerStatus : MonoBehaviour
 
 	public void AddUpgradePoints(string state, int point)
 	{
-		if (state == "GameOver")
-        {
-			playerUpgradePoints += point;
-        }
+		print(point);
+		switch (state)
+		{
+			case "GameOver":
+				playerUpgradePoints += (int)(point * 0.5);
+				break;
+			case "GameClear":
+				playerUpgradePoints += point;
+				break;
+			default:
+				break;
+		}
 	}
 }

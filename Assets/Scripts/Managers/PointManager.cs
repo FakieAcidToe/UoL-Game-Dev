@@ -7,7 +7,9 @@ public class PointManager : MonoBehaviour
 {
     [SerializeField] int points;
     [SerializeField] float pointMultiplier;
-    [SerializeField] Text pointText;
+    [SerializeField] Text pointTextOver;
+    [SerializeField] Text pointTextClear;
+    [SerializeField] Text pointTextPause;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,9 @@ public class PointManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pointText.text = "Points : " + points;
+        pointTextOver.text = "Points : " + points;
+        pointTextClear.text = "Points : " + points;
+        pointTextPause.text = "Points : " + points;
     }
 
     public void AddPoint(int point)

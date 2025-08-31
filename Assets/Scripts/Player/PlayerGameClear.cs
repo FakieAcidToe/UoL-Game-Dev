@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGameOver : MonoBehaviour
+public class PlayerGameClear : MonoBehaviour
 {
-    [SerializeField] GameObject gameOverUI;
+    [SerializeField] GameObject gameClearUI;
     [SerializeField] int point;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Transform canvas = GameObject.Find("Canvas").transform;
+        gameClearUI = canvas.Find("Game Clear Screen").gameObject;
     }
 
     // Update is called once per frame
@@ -19,11 +20,11 @@ public class PlayerGameOver : MonoBehaviour
         
     }
 
-    public void GameOver()
+    public void GameClear()
     {
         Time.timeScale = 0f;
-        gameOverUI.SetActive(true);
+        gameClearUI.SetActive(true);
         point = GameObject.Find("Game Manager").GetComponent<PointManager>().GetPoint();
-        GameObject.Find("PlayerStatus").GetComponent<PlayerStatus>().AddUpgradePoints("GameOver", point);
+        GameObject.Find("PlayerStatus").GetComponent<PlayerStatus>().AddUpgradePoints("GameClear", point);
     }
 }

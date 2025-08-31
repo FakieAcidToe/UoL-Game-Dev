@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5061812313747425727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393955264925603012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d4bd541b73dfd4e9b8283c9039fb93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameClearUI: {fileID: 0}
+  point: 0
 --- !u!1001 &9177193301062522335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92,6 +106,36 @@ PrefabInstance:
       propertyPath: maxHP
       value: 20000
       objectReference: {fileID: 0}
+    - target: {fileID: 7898805536319497245, guid: b80d90c3c2d23ca408e835a1a065413f,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898805536319497245, guid: b80d90c3c2d23ca408e835a1a065413f,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898805536319497245, guid: b80d90c3c2d23ca408e835a1a065413f,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 5061812313747425727}
+    - target: {fileID: 7898805536319497245, guid: b80d90c3c2d23ca408e835a1a065413f,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898805536319497245, guid: b80d90c3c2d23ca408e835a1a065413f,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GameClear
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898805536319497245, guid: b80d90c3c2d23ca408e835a1a065413f,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8397615816293774712, guid: b80d90c3c2d23ca408e835a1a065413f,
         type: 3}
       propertyPath: points
@@ -99,3 +143,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b80d90c3c2d23ca408e835a1a065413f, type: 3}
+--- !u!1 &1393955264925603012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7783242988435538203, guid: b80d90c3c2d23ca408e835a1a065413f,
+    type: 3}
+  m_PrefabInstance: {fileID: 9177193301062522335}
+  m_PrefabAsset: {fileID: 0}
