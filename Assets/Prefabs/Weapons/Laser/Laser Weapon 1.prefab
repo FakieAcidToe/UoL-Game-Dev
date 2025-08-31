@@ -47,6 +47,7 @@ MonoBehaviour:
     type: 3}
   directionType: 0
   interval: 1
+  affectedByAttackSpeedUpgrade: 1
   positionOffset: 0.1
   spawnAsChild: 1
   rotateHitboxSprite: 1
@@ -57,4 +58,4 @@ MonoBehaviour:
     timer: 0
     angle: {x: 1, y: 0}
     spawnedAmount: 0
-  sfx: {fileID: 8300000, guid: 5743852c4ac5d6546af828c0616f90b0, type: 3}
+  sfx: {fileID: 8300000, guid: 8b5caf1aec39e4b43bf372ead795a704, type: 3}
