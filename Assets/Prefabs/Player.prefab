@@ -1027,6 +1027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 0}
+  point: 0
 --- !u!1 &6749772051604751595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,11 +1094,17 @@ MonoBehaviour:
         m_CallState: 2
   levelRanges:
   - startLevel: 1
-    endLevel: 2
+    endLevel: 10
     experienceCapIncrease: 100
-  - startLevel: 0
-    endLevel: 0
-    experienceCapIncrease: 0
+  - startLevel: 11
+    endLevel: 20
+    experienceCapIncrease: 150
+  - startLevel: 21
+    endLevel: 30
+    experienceCapIncrease: 200
+  - startLevel: 31
+    endLevel: 100
+    experienceCapIncrease: 250
 --- !u!114 &596196230507602470
 MonoBehaviour:
   m_ObjectHideFlags: 0
